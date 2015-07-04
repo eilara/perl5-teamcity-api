@@ -6,7 +6,7 @@ use namespace::autoclean;
 
 use JSON::XS;
 
-sub generate_schema {
+sub generate_json_schema {
     my $self        = shift;
     my $entities    = shift;
     my $typemap     = shift;

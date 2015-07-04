@@ -10,8 +10,7 @@ version 0.000001
 
     dev-bin/generate.pl -
 
-        generates TeamCity schema Perl code by calling generate_schema() on
-        Schema
+        generates TeamCity schema Perl code by using Schema
 
     TeamCity::API::Rest::Schema -
 

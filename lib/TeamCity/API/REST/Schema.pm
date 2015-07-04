@@ -29,13 +29,12 @@ has _generator => (
     isa     => Generator,
     lazy    => 1,
     default => sub { Generator->new },
-    handles => { _generate_schema => 'generate_schema' },
 );
 
-sub generate_schema {
+sub generate_json_schema {
     my $self = shift;
 
-    return $self->_generate_schema( $self->_resources, $self->_typemap );
+    return $self->_generator->generate_json_schema( $self->_resources, $self->_typemap );
 }
 
 sub describe_resources {
