@@ -56,7 +56,7 @@ sub _build_meta_schema {
         Request,        [qw( doc representation param )],
         Response,       [qw(representation)],
         Representation, [qw( element media_type )],
-        Param,          [qw( default name type style )],
+        Param,          [qw( default name type )],
     };
 }
 
@@ -143,7 +143,6 @@ sub _unfold_child {
 
     return $child_name eq 'doc'
         ? $self->_unfold_doc($child_element)
-
         : !defined($child_element) || $child_element eq q{} ? ()
         : ref($child_element) eq 'ARRAY' && !@$child_element ? ()
         : ref($child_element)

@@ -34,7 +34,10 @@ has _generator => (
 sub generate_json_schema {
     my $self = shift;
 
-    return $self->_generator->generate_json_schema( $self->_resources, $self->_typemap );
+    return $self->_generator->generate_json_schema(
+        $self->_resources,
+        $self->_typemap
+    );
 }
 
 sub describe_resources {
@@ -154,7 +157,7 @@ sub _simplify_param {
         $param->{type} = $type;
     }
 
-    return [qw(name type style)]->map( sub { $param->{$_} } );
+    return [qw( name type )]->map( sub { $param->{$_} } );
 }
 
 sub _simplify_representation {
