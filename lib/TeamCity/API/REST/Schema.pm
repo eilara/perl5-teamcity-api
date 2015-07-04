@@ -35,10 +35,7 @@ has _generator => (
 sub generate_schema {
     my $self = shift;
 
-    return $self->_generate_schema(
-        $self->describe_resources,
-        $self->_resources, $self->_typemap
-    );
+    return $self->_generate_schema( $self->_resources, $self->_typemap );
 }
 
 sub describe_resources {
@@ -109,6 +106,8 @@ sub _describe_method_name {
     ];
 }
 
+# Push all the methods we get from the meta schema into a tree of resources, so
+# every method is inside a resource.
 sub _build_resources {
     my $self = shift;
 
