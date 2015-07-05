@@ -12,7 +12,7 @@
       <ns2:doc title="Generated" xml:lang="en"/>
     </ns2:include>
   </ns2:grammars>
-  <ns2:resources base="http://tc.mycompany.com/">
+  <ns2:resources base="http://tc.maxmind.com:8111/">
     <ns2:resource path="/app/rest/vcs-root-instances">
       <ns2:method id="serveInstances" name="GET">
         <ns2:request>

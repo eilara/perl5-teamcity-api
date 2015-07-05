@@ -136,7 +136,8 @@ sub _build_resources {
 
         if ( my $params = ( $method{request} // {} )->{param} ) {
             $leaf->{param}
-                = $params->map( sub { $self->_simplify_param( shift() ) } );
+                = { $params->map( sub { $self->_simplify_param( shift() ) } )
+                    ->flatten };
         }
 
         $leaf->{doc} = $method{doc} if $method{doc};
@@ -157,7 +158,7 @@ sub _simplify_param {
         $param->{type} = $type;
     }
 
-    return [qw( name type )]->map( sub { $param->{$_} } );
+    return ( $param->{name}, $param->{type} );
 }
 
 sub _simplify_representation {
@@ -169,11 +170,10 @@ sub _simplify_representation {
     my $media_type           = $first_representation->{media_type};
     my $element              = $first_representation->{element};
 
-    return [
-          $media_type =~ /text/ ? 'text'
-        : $media_type =~ /xml/  ? 'json'
-        :                         'any'
-    ]->push( $element // () );
+    return
+          defined $element      ? $element
+        : $media_type =~ /text/ ? 'text'
+        :                         'any';
 }
 
 __PACKAGE__->meta->make_immutable;

@@ -50,11 +50,11 @@ has _collected_methods => (
 
 sub _build_meta_schema {
     return {
-        Resources,      [qw(resource)],
+        Resources,      [qw( resource )],
         Resource,       [qw( doc method path resource )],
         Method,         [qw( doc id name request response )],
         Request,        [qw( doc representation param )],
-        Response,       [qw(representation)],
+        Response,       [qw( representation )],
         Representation, [qw( element media_type )],
         Param,          [qw( default name type )],
     };
@@ -141,8 +141,8 @@ sub _unfold_child {
     my $child_element
         = $self->_try_unfold_child( $parent_element, $child_name );
 
-    return $child_name eq 'doc'
-        ? $self->_unfold_doc($child_element)
+    return
+          $child_name eq 'doc' ? $self->_unfold_doc($child_element)
         : !defined($child_element) || $child_element eq q{} ? ()
         : ref($child_element) eq 'ARRAY' && !@$child_element ? ()
         : ref($child_element)
