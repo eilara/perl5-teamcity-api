@@ -40,7 +40,13 @@ sub generate_json_schema {
     );
 }
 
-sub describe_resources {
+sub generate_html_description {
+    my $self = shift;
+
+    return $self->_generator->generate_html_description( $self->_describe_resources );
+}
+
+sub _describe_resources {
     my $self = shift;
 
     my $methods = $self->_resources->kv->sort(
@@ -100,9 +106,9 @@ sub _describe_method_name {
         q{},
         q{},
         $name,
-        ( $method->{request}  || [] )->join(q{:}),
-        ( $method->{response} || [] )->join(q{:}),
-        ( $method->{param}    || [] )->map( sub { shift()->join(q{:}) } )
+        $method->{request}  || q{},
+        $method->{response} || q{},
+        ( $method->{param}  || {} )->kv->map( sub { shift()->join(q{:}) } )
             ->join(q{ }),
         ( $method->{doc} || q{} ),
     ];

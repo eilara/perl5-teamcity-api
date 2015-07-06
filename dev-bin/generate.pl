@@ -14,4 +14,4 @@ my $schema_dir = dir('.')->subdir('schema');
 
 $schema_dir->file('schema.json')->spew( $schema->generate_json_schema );
 
-
+$schema_dir->file('schema.html')->spew( $schema->generate_html_description );
