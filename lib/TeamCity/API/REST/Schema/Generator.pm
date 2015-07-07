@@ -63,7 +63,7 @@ sub _wrap_html_description {
     </head>
     <body>
         <div class="tc">
-            <table>
+            <table summary="TeamCity REST API">
                 <thead>$header</thead>
                 <tbody>$body</tbody>
             </table>
