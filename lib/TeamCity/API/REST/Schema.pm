@@ -79,15 +79,14 @@ sub _describe_resource {
     my $resource = shift;
     my $ids      = shift;
 
-    my @methods
-        = $ids->kv->sort(
+    my @methods = $ids->kv->sort(
         sub {
             my $m1 = shift;
             my $m2 = shift;
 
             return $m1->[0] cmp $m2->[0];
-        })->map( sub { $self->_describe_method_id( @{ shift() } ) } )
-        ->flatten;
+        }
+    )->map( sub { $self->_describe_method_id( @{ shift() } ) } )->flatten;
     $methods[0]->[0] = $resource;
 
     return @methods;
@@ -111,13 +110,17 @@ sub _describe_method_name {
     my $method = shift;
 
     return [
-        q{},
-        q{},
-        $name,
+        q{}, q{}, $name,
         $method->{request}  || q{},
         $method->{response} || q{},
-        ( $method->{param} || {} )->kv->map( sub { shift()->join(q{:}) } )
-            ->join(q{ }),
+        ( $method->{param} || {} )->kv->sort(
+            sub {
+                my $m1 = shift;
+                my $m2 = shift;
+
+                return $m1->[0] cmp $m2->[0];
+            }
+            )->map( sub { shift()->join(q{:}) } )->join(q{ }),
         ( $method->{doc} || q{} ),
     ];
 }
