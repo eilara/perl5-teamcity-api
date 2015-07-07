@@ -6,12 +6,13 @@ use namespace::autoclean;
 
 use Moose::Autobox;
 use MooseX::Types::Moose qw( ArrayRef HashRef Str );
+use URI;
 
 use relative -aliased => qw( Meta Typemap Generator );
 
 has _resources => (
     is      => 'ro',
-    isa     => HashRef [ HashRef [HashRef] ],
+    isa     => HashRef [HashRef],
     lazy    => 1,
     builder => '_build_resources',
 );
@@ -135,9 +136,11 @@ sub _build_resources {
         shift;
         my %method = %{ shift() };
 
-        my $leaf
-            = ( ( $resources{ $method{resource} } ||= { methods => {} } )
-            ->{methods}->{ $method{id} } ||= {} )->{ $method{name} } = {};
+        my $resource = $resources{ $method{resource} } ||= $self->_make_resource(%method);
+
+        my $leaf = (
+            $resource->{methods}->{ $method{id} } ||= {}
+        )->{ $method{name} } = {};
 
         if ( my $representation
             = ( $method{request} // {} )->{representation} ) {
@@ -163,6 +166,24 @@ sub _build_resources {
     Meta->new->methods->each($resource_pusher);
 
     return \%resources;
+}
+
+sub _make_resource {
+    my $self         = shift;
+    my %first_method = @_;
+
+    my $uri_string = $first_method{resource};
+    my $uri        = URI->new($uri_string);
+    my @segments   = $uri->path_segments;
+    my $resource   = $segments[3];
+    shift @segments for 1 .. 4;
+
+    return {
+        methods   => {},
+        resource  => $resource,
+        path      => join( '/', @segments ),
+        full_path => $uri_string,
+    };
 }
 
 sub _simplify_param {
