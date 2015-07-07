@@ -71,25 +71,6 @@ sub methods {
     return $self->_collected_methods;
 }
 
-sub describe_methods {
-    my $self = shift;
-
-    my $methods = $self->methods;
-    my $keys    = [qw(resource id name doc)];
-    return (
-        $keys,
-        $methods->map(
-            sub {
-                my $me = shift;
-                return [
-                    $me->{resource}, $me->{id}, $me->{name},
-                    $me->{doc} // q{},
-                ];
-            }
-        )->flatten
-    );
-}
-
 sub _unfold_element {
     my $self    = shift;
     my $element = shift;
