@@ -26,7 +26,7 @@ sub generate_html_description {
 
     my $header
         = '<tr>'
-        . [qw( resource id name request response param doc )]
+        . [qw( Resource Id Name Request Response Param Doc )]
         ->map( sub { "<th>$_</th>" } )->join(q{}) . '</tr>';
 
     my $make_row = sub {
@@ -37,6 +37,14 @@ sub generate_html_description {
 
     my $body = $description->{methods}
         ->map( sub { '<tr>' . $make_row->($_) . '</tr>' } )->join(q{});
+
+    return $self->_wrap_html_description( $header, $body );
+}
+
+sub _wrap_html_description {
+    shift;
+    my $header = shift;
+    my $body = shift;
 
     return <<"HTML_TEMPLATE";
 <html>
