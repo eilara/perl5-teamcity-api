@@ -1,1 +1,4981 @@
-{"typemap":{"agent-requirements":{"agent-requirement":{"is_sequence":1,"maxOccurs":"unbounded","is_ref":1,"minOccurs":"0"},"count":{"is_attribute":1,"type":"int"}},"change":{"username":{"type":"string","is_attribute":1},"id":{"type":"long","is_attribute":1},"files":{"type":"fileChanges","minOccurs":"0","is_sequence":1},"user":{"is_ref":1,"minOccurs":"0","is_sequence":1},"comment":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"href":{"is_attribute":1,"type":"string"},"webUrl":{"is_attribute":1,"type":"string"},"version":{"is_attribute":1,"type":"string"},"vcsRootInstance":{"is_sequence":1,"type":"vcs-root-instance","minOccurs":"0"},"locator":{"is_attribute":1,"type":"string"},"date":{"type":"string","is_attribute":1},"personal":{"is_attribute":1,"type":"boolean"}},"agentPools":{"nextHref":{"is_attribute":1,"type":"string"},"prevHref":{"is_attribute":1,"type":"string"},"agentPool":{"minOccurs":"0","is_ref":1,"maxOccurs":"unbounded","is_sequence":1},"count":{"is_attribute":1,"type":"int"},"href":{"type":"string","is_attribute":1}},"problemOccurrences":{"href":{"type":"string","is_attribute":1},"nextHref":{"type":"string","is_attribute":1},"problemOccurrence":{"maxOccurs":"unbounded","is_sequence":1,"is_ref":1,"minOccurs":"0"},"count":{"is_attribute":1,"type":"int"},"prevHref":{"type":"string","is_attribute":1},"newFailed":{"type":"int","from":"occurrencesSummary","is_attribute":1},"muted":{"is_attribute":1,"from":"occurrencesSummary","type":"int"},"failed":{"is_attribute":1,"from":"occurrencesSummary","type":"int"},"passed":{"is_attribute":1,"from":"occurrencesSummary","type":"int"},"ignored":{"type":"int","from":"occurrencesSummary","is_attribute":1}},"issueUsage":{"changes":{"is_sequence":1,"minOccurs":"0","type":"changes"},"issue":{"is_sequence":1,"type":"issue","minOccurs":"0"}},"builds":{"count":{"is_attribute":1,"type":"int"},"href":{"is_attribute":1,"type":"string"},"prevHref":{"is_attribute":1,"type":"string"},"build":{"is_sequence":1,"maxOccurs":"unbounded","is_ref":1,"minOccurs":"0"},"nextHref":{"is_attribute":1,"type":"string"}},"resolution":{"type":{"is_attribute":1,"type":"string"},"time":{"is_sequence":1,"minOccurs":"0","type":"xs:string"}},"snapshot-dependencies":{"snapshot-dependency":{"is_ref":1,"minOccurs":"0","is_sequence":1,"maxOccurs":"unbounded"},"count":{"type":"int","is_attribute":1}},"vcs-root-instance":{"name":{"is_attribute":1,"type":"string"},"vcs-root":{"minOccurs":"0","is_ref":1,"is_sequence":1},"lastVersion":{"type":"string","is_attribute":1},"lastChecked":{"type":"string","is_attribute":1},"href":{"is_attribute":1,"type":"string"},"status":{"is_attribute":1,"type":"string"},"projectLocator":{"type":"string","is_attribute":1},"lastVersionInternal":{"is_attribute":1,"type":"string"},"id":{"type":"string","is_attribute":1},"vcs-root-id":{"type":"string","is_attribute":1},"vcsRootInternalId":{"type":"string","is_attribute":1},"properties":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"vcsName":{"type":"string","is_attribute":1}},"items":{"item":{"minOccurs":"0","type":"xs:string","maxOccurs":"unbounded","is_sequence":1}},"tag":{"private":{"type":"boolean","is_attribute":1},"owner":{"is_sequence":1,"type":"user","minOccurs":"0"},"name":{"is_attribute":1,"type":"string"}},"step":{"disabled":{"is_attribute":1,"from":"propEntity","type":"boolean"},"name":{"is_attribute":1,"type":"string","from":"propEntity"},"properties":{"from":"propEntity","minOccurs":"0","is_ref":1,"is_sequence":1},"type":{"from":"propEntity","type":"string","is_attribute":1},"id":{"is_attribute":1,"from":"propEntity","type":"string"}},"vcs-root-instances":{"nextHref":{"is_attribute":1,"type":"string"},"vcs-root-instance":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1},"href":{"is_attribute":1,"type":"string"},"count":{"is_attribute":1,"type":"int"},"prevHref":{"is_attribute":1,"type":"string"}},"revisions":{"revision":{"is_sequence":1,"maxOccurs":"unbounded","type":"revision","minOccurs":"0"},"count":{"is_attribute":1,"type":"int"}},"mute":{"resolution":{"is_sequence":1,"type":"resolution","minOccurs":"0"},"scope":{"minOccurs":"0","type":"problemScope","is_sequence":1},"target":{"is_sequence":1,"minOccurs":"0","type":"problemTarget"},"id":{"is_attribute":1,"type":"int"},"assignment":{"is_sequence":1,"minOccurs":"0","type":"comment"}},"file-ref":{"name":{"is_attribute":1,"type":"string"},"href":{"is_attribute":1,"type":"string"}},"problem":{"mutes":{"is_sequence":1,"minOccurs":"0","is_ref":1},"id":{"type":"string","is_attribute":1},"identity":{"is_attribute":1,"type":"string"},"href":{"is_attribute":1,"type":"string"},"problemOccurrences":{"is_sequence":1,"minOccurs":"0","is_ref":1},"type":{"type":"string","is_attribute":1},"investigations":{"minOccurs":"0","is_ref":1,"is_sequence":1}},"project":{"projects":{"is_sequence":1,"minOccurs":"0","is_ref":1},"parentProjectInternalId":{"is_attribute":1,"type":"string"},"parentProject":{"is_sequence":1,"minOccurs":"0","type":"project"},"id":{"is_attribute":1,"type":"string"},"parentProjectName":{"type":"string","is_attribute":1},"templates":{"is_sequence":1,"minOccurs":"0","type":"buildTypes"},"internalId":{"is_attribute":1,"type":"string"},"buildTypes":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"href":{"type":"string","is_attribute":1},"description":{"is_attribute":1,"type":"string"},"name":{"is_attribute":1,"type":"string"},"archived":{"is_attribute":1,"type":"boolean"},"webUrl":{"type":"string","is_attribute":1},"locator":{"type":"string","is_attribute":1},"vcsRoots":{"type":"vcs-roots","minOccurs":"0","is_sequence":1},"parameters":{"is_sequence":1,"minOccurs":"0","type":"properties"},"uuid":{"is_attribute":1,"type":"string"},"parentProjectId":{"type":"string","is_attribute":1}},"investigations":{"nextHref":{"type":"string","is_attribute":1},"prevHref":{"type":"string","is_attribute":1},"investigation":{"maxOccurs":"unbounded","is_sequence":1,"is_ref":1,"minOccurs":"0"},"href":{"is_attribute":1,"type":"string"},"count":{"is_attribute":1,"type":"int"}},"href":{"href":{"is_attribute":1,"type":"string"}},"propEntity":{"disabled":{"is_attribute":1,"type":"boolean"},"name":{"is_attribute":1,"type":"string"},"type":{"is_attribute":1,"type":"string"},"properties":{"is_ref":1,"minOccurs":"0","is_sequence":1},"id":{"is_attribute":1,"type":"string"}},"agents":{"count":{"is_attribute":1,"type":"int"},"href":{"type":"string","is_attribute":1},"prevHref":{"type":"string","is_attribute":1},"nextHref":{"type":"string","is_attribute":1},"agent":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1}},"trigger":{"properties":{"from":"propEntity","minOccurs":"0","is_ref":1,"is_sequence":1},"type":{"type":"string","from":"propEntity","is_attribute":1},"id":{"is_attribute":1,"type":"string","from":"propEntity"},"disabled":{"is_attribute":1,"type":"boolean","from":"propEntity"},"name":{"is_attribute":1,"type":"string","from":"propEntity"}},"buildCancelRequest":{"readdIntoQueue":{"is_attribute":1,"type":"boolean"},"comment":{"is_attribute":1,"type":"string"}},"agent-requirement":{"id":{"is_attribute":1,"from":"propEntity","type":"string"},"type":{"is_attribute":1,"from":"propEntity","type":"string"},"properties":{"is_ref":1,"minOccurs":"0","from":"propEntity","is_sequence":1},"name":{"is_attribute":1,"type":"string","from":"propEntity"},"disabled":{"is_attribute":1,"from":"propEntity","type":"boolean"}},"revision":{"version":{"type":"string","is_attribute":1},"internalVersion":{"type":"string","is_attribute":1},"vcs-root-instance":{"is_ref":1,"minOccurs":"0","is_sequence":1}},"snapshot-dependency":{"disabled":{"is_attribute":1,"from":"propEntity","type":"boolean"},"source-buildType":{"minOccurs":"0","type":"buildType","is_sequence":1},"name":{"is_attribute":1,"type":"string","from":"propEntity"},"type":{"is_attribute":1,"type":"string","from":"propEntity"},"properties":{"from":"propEntity","minOccurs":"0","is_ref":1,"is_sequence":1},"id":{"is_attribute":1,"from":"propEntity","type":"string"}},"copyOptionsDescription":{"projectsIdsMap":{"minOccurs":"0","type":"properties","is_sequence":1},"copyAllAssociatedSettings":{"type":"boolean","is_attribute":1},"buildTypesIdsMap":{"type":"properties","minOccurs":"0","is_sequence":1},"vcsRootsIdsMap":{"minOccurs":"0","type":"properties","is_sequence":1}},"group":{"roles":{"is_ref":1,"minOccurs":"0","is_sequence":1},"properties":{"is_sequence":1,"minOccurs":"0","is_ref":1},"parent-groups":{"type":"groups","minOccurs":"0","is_sequence":1},"child-groups":{"type":"groups","minOccurs":"0","is_sequence":1},"users":{"minOccurs":"0","is_ref":1,"is_sequence":1},"href":{"type":"string","is_attribute":1},"key":{"type":"string","is_attribute":1},"description":{"type":"string","is_attribute":1},"name":{"type":"string","is_attribute":1}},"tests":{"prevHref":{"type":"string","is_attribute":1},"count":{"is_attribute":1,"type":"int"},"nextHref":{"type":"string","is_attribute":1},"test":{"minOccurs":"0","is_ref":1,"is_sequence":1,"maxOccurs":"unbounded"}},"testOccurrence":{"status":{"is_attribute":1,"type":"string"},"currentlyInvestigated":{"type":"boolean","is_attribute":1},"mute":{"minOccurs":"0","type":"mute","is_sequence":1},"currentlyMuted":{"type":"boolean","is_attribute":1},"details":{"type":"xs:string","minOccurs":"0","is_sequence":1},"ignoreDetails":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"firstFailed":{"minOccurs":"0","type":"testOccurrence","is_sequence":1},"ignored":{"type":"boolean","is_attribute":1},"href":{"is_attribute":1,"type":"string"},"nextFixed":{"type":"testOccurrence","minOccurs":"0","is_sequence":1},"build":{"is_ref":1,"minOccurs":"0","is_sequence":1},"test":{"minOccurs":"0","is_ref":1,"is_sequence":1},"duration":{"type":"int","is_attribute":1},"name":{"type":"string","is_attribute":1},"id":{"is_attribute":1,"type":"string"},"muted":{"type":"boolean","is_attribute":1}},"issues":{"issue":{"type":"issue","minOccurs":"0","is_sequence":1,"maxOccurs":"unbounded"}},"groups":{"count":{"is_attribute":1,"type":"int"},"group":{"is_sequence":1,"maxOccurs":"unbounded","is_ref":1,"minOccurs":"0"}},"comment":{"user":{"is_sequence":1,"minOccurs":"0","is_ref":1},"timestamp":{"is_sequence":1,"minOccurs":"0","type":"xs:string"},"text":{"minOccurs":"0","type":"xs:string","is_sequence":1}},"files":{"href":{"is_attribute":1,"type":"string"},"file":{"is_ref":1,"minOccurs":"0","maxOccurs":"unbounded","is_sequence":1}},"branches":{"branch":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1}},"vcsLabeling":{"labelName":{"is_attribute":1,"type":"string"},"vcsRoots":{"is_sequence":1,"minOccurs":"0","type":"vcs-roots"},"branchFilter":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"type":{"type":"string","is_attribute":1}},"progress-info":{"probablyHanging":{"type":"boolean","is_attribute":1},"currentStageText":{"type":"string","is_attribute":1},"estimatedTotalSeconds":{"is_attribute":1,"type":"long"},"percentageComplete":{"is_attribute":1,"type":"int"},"elapsedSeconds":{"type":"long","is_attribute":1},"outdated":{"is_attribute":1,"type":"boolean"}},"entry":{"name":{"type":"string","is_attribute":1},"value":{"type":"string","is_attribute":1}},"problemTarget":{"anyProblem":{"is_attribute":1,"type":"boolean"},"tests":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"problems":{"is_sequence":1,"minOccurs":"0","is_ref":1}},"changes":{"change":{"is_ref":1,"minOccurs":"0","is_sequence":1,"maxOccurs":"unbounded"},"nextHref":{"is_attribute":1,"type":"string"},"count":{"is_attribute":1,"type":"int"},"href":{"type":"string","is_attribute":1},"prevHref":{"is_attribute":1,"type":"string"}},"mutes":{"href":{"type":"string","is_attribute":1},"count":{"is_attribute":1,"type":"int"},"mute":{"minOccurs":"0","type":"mute","maxOccurs":"unbounded","is_sequence":1},"prevHref":{"type":"string","is_attribute":1},"nextHref":{"is_attribute":1,"type":"string"}},"issue":{"url":{"is_attribute":1,"type":"string"},"id":{"is_attribute":1,"type":"string"}},"parameterType":{"rawValue":{"type":"string","is_attribute":1}},"vcs-root-entry":{"id":{"type":"string","is_attribute":1},"checkout-rules":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"vcs-root":{"minOccurs":"0","is_ref":1,"is_sequence":1}},"users":{"user":{"minOccurs":"0","is_ref":1,"maxOccurs":"unbounded","is_sequence":1},"count":{"is_attribute":1,"type":"int"}},"fileChange":{"file":{"is_attribute":1,"type":"string"},"before-revision":{"type":"string","is_attribute":1},"relative-file":{"is_attribute":1,"type":"string"},"after-revision":{"is_attribute":1,"type":"string"}},"agent":{"properties":{"is_sequence":1,"minOccurs":"0","is_ref":1},"pool":{"minOccurs":"0","type":"agentPool","is_sequence":1},"enabled":{"is_attribute":1,"type":"boolean"},"id":{"is_attribute":1,"type":"int"},"uptodate":{"is_attribute":1,"type":"boolean"},"href":{"is_attribute":1,"type":"string"},"connected":{"type":"boolean","is_attribute":1},"typeId":{"is_attribute":1,"type":"int"},"locator":{"type":"string","is_attribute":1},"authorized":{"type":"boolean","is_attribute":1},"name":{"is_attribute":1,"type":"string"},"ip":{"is_attribute":1,"type":"string"}},"steps":{"count":{"type":"int","is_attribute":1},"step":{"maxOccurs":"unbounded","is_sequence":1,"is_ref":1,"minOccurs":"0"}},"server":{"vcsRoots":{"is_sequence":1,"minOccurs":"0","type":"href"},"agentPools":{"is_sequence":1,"minOccurs":"0","type":"href"},"version":{"is_attribute":1,"type":"string"},"versionMinor":{"is_attribute":1,"type":"byte"},"buildDate":{"type":"string","is_attribute":1},"startTime":{"is_attribute":1,"type":"string"},"builds":{"is_sequence":1,"minOccurs":"0","type":"href"},"currentTime":{"type":"string","is_attribute":1},"versionMajor":{"type":"byte","is_attribute":1},"internalId":{"type":"string","is_attribute":1},"users":{"is_sequence":1,"minOccurs":"0","type":"href"},"agents":{"is_sequence":1,"type":"href","minOccurs":"0"},"buildNumber":{"is_attribute":1,"type":"string"},"buildQueue":{"is_sequence":1,"minOccurs":"0","type":"href"},"userGroups":{"type":"href","minOccurs":"0","is_sequence":1},"projects":{"type":"href","minOccurs":"0","is_sequence":1}},"features":{"count":{"type":"int","is_attribute":1},"feature":{"minOccurs":"0","is_ref":1,"maxOccurs":"unbounded","is_sequence":1}},"agentPool":{"agents":{"is_ref":1,"minOccurs":"0","is_sequence":1},"name":{"is_attribute":1,"type":"string"},"id":{"type":"int","is_attribute":1},"locator":{"is_attribute":1,"type":"string"},"href":{"is_attribute":1,"type":"string"},"projects":{"is_sequence":1,"minOccurs":"0","is_ref":1}},"plugins":{"plugin":{"is_ref":1,"minOccurs":"0","maxOccurs":"unbounded","is_sequence":1},"count":{"type":"int","is_attribute":1}},"investigation":{"resolution":{"is_sequence":1,"minOccurs":"0","type":"resolution"},"assignee":{"is_sequence":1,"minOccurs":"0","type":"user"},"id":{"is_attribute":1,"type":"string"},"state":{"is_attribute":1,"type":"string"},"responsible":{"is_sequence":1,"type":"user","minOccurs":"0"},"scope":{"is_sequence":1,"type":"problemScope","minOccurs":"0"},"target":{"minOccurs":"0","type":"problemTarget","is_sequence":1},"href":{"is_attribute":1,"type":"string"},"assignment":{"is_sequence":1,"type":"comment","minOccurs":"0"}},"newProjectDescription":{"parentProject":{"is_sequence":1,"minOccurs":"0","type":"project"},"id":{"type":"string","is_attribute":1},"projectsIdsMap":{"minOccurs":"0","type":"properties","from":"copyOptionsDescription","is_sequence":1},"copyAllAssociatedSettings":{"is_attribute":1,"type":"boolean","from":"copyOptionsDescription"},"vcsRootsIdsMap":{"is_sequence":1,"minOccurs":"0","type":"properties","from":"copyOptionsDescription"},"buildTypesIdsMap":{"is_sequence":1,"from":"copyOptionsDescription","type":"properties","minOccurs":"0"},"sourceProject":{"minOccurs":"0","type":"project","is_sequence":1},"sourceProjectLocator":{"is_attribute":1,"type":"string"},"name":{"type":"string","is_attribute":1}},"buildType":{"description":{"is_attribute":1,"type":"string"},"projectInternalId":{"is_attribute":1,"type":"string"},"href":{"is_attribute":1,"type":"string"},"internalId":{"is_attribute":1,"type":"string"},"name":{"type":"string","is_attribute":1},"projectId":{"type":"string","is_attribute":1},"project":{"minOccurs":"0","is_ref":1,"is_sequence":1},"investigations":{"is_ref":1,"minOccurs":"0","is_sequence":1},"id":{"is_attribute":1,"type":"string"},"templateFlag":{"type":"boolean","is_attribute":1},"steps":{"is_sequence":1,"minOccurs":"0","is_ref":1},"vcs-root-entries":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"template":{"minOccurs":"0","type":"buildType","is_sequence":1},"locator":{"is_attribute":1,"type":"string"},"projectName":{"type":"string","is_attribute":1},"webUrl":{"type":"string","is_attribute":1},"settings":{"is_sequence":1,"type":"properties","minOccurs":"0"},"features":{"is_sequence":1,"minOccurs":"0","is_ref":1},"triggers":{"minOccurs":"0","is_ref":1,"is_sequence":1},"agent-requirements":{"is_ref":1,"minOccurs":"0","is_sequence":1},"parameters":{"type":"properties","minOccurs":"0","is_sequence":1},"uuid":{"type":"string","is_attribute":1},"paused":{"is_attribute":1,"type":"boolean"},"snapshot-dependencies":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"builds":{"is_ref":1,"minOccurs":"0","is_sequence":1},"artifact-dependencies":{"is_sequence":1,"minOccurs":"0","is_ref":1}},"roles":{"role":{"is_ref":1,"minOccurs":"0","is_sequence":1,"maxOccurs":"unbounded"}},"test":{"investigations":{"is_sequence":1,"minOccurs":"0","is_ref":1},"name":{"type":"string","is_attribute":1},"testOccurrences":{"is_sequence":1,"minOccurs":"0","is_ref":1},"href":{"type":"string","is_attribute":1},"id":{"is_attribute":1,"type":"long"},"mutes":{"is_sequence":1,"minOccurs":"0","is_ref":1}},"entries":{"entry":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1},"count":{"type":"long","is_attribute":1}},"occurrencesSummary":{"newFailed":{"type":"int","is_attribute":1},"muted":{"is_attribute":1,"type":"int"},"ignored":{"type":"int","is_attribute":1},"passed":{"is_attribute":1,"type":"int"},"failed":{"type":"int","is_attribute":1}},"property":{"type":{"minOccurs":"0","type":"parameterType","is_sequence":1},"own":{"type":"boolean","is_attribute":1},"value":{"type":"string","is_attribute":1},"name":{"type":"string","is_attribute":1}},"branch":{"unspecified":{"type":"boolean","is_attribute":1},"default":{"type":"boolean","is_attribute":1},"name":{"type":"string","is_attribute":1}},"fileChanges":{"file":{"type":"fileChange","minOccurs":"0","is_sequence":1,"maxOccurs":"unbounded"}},"tags":{"count":{"is_attribute":1,"type":"int"},"tag":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1}},"triggers":{"trigger":{"maxOccurs":"unbounded","is_sequence":1,"is_ref":1,"minOccurs":"0"},"count":{"type":"int","is_attribute":1}},"problemOccurrence":{"currentlyMuted":{"type":"boolean","is_attribute":1},"id":{"type":"string","is_attribute":1},"details":{"type":"xs:string","minOccurs":"0","is_sequence":1},"additionalData":{"type":"xs:string","minOccurs":"0","is_sequence":1},"currentlyInvestigated":{"is_attribute":1,"type":"boolean"},"identity":{"type":"string","is_attribute":1},"mute":{"minOccurs":"0","type":"mute","is_sequence":1},"muted":{"type":"boolean","is_attribute":1},"build":{"is_sequence":1,"minOccurs":"0","is_ref":1},"href":{"type":"string","is_attribute":1},"type":{"type":"string","is_attribute":1},"problem":{"is_sequence":1,"is_ref":1,"minOccurs":"0"}},"feature":{"name":{"is_attribute":1,"type":"string","from":"propEntity"},"disabled":{"from":"propEntity","type":"boolean","is_attribute":1},"id":{"is_attribute":1,"type":"string","from":"propEntity"},"type":{"from":"propEntity","type":"string","is_attribute":1},"properties":{"is_ref":1,"minOccurs":"0","from":"propEntity","is_sequence":1}},"vcs-root":{"project":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"uuid":{"type":"string","is_attribute":1},"modificationCheckInterval":{"type":"int","is_attribute":1},"name":{"is_attribute":1,"type":"string"},"internalId":{"type":"long","is_attribute":1},"href":{"type":"string","is_attribute":1},"status":{"is_attribute":1,"type":"string"},"lastChecked":{"is_attribute":1,"type":"string"},"locator":{"is_attribute":1,"type":"string"},"projectLocator":{"is_attribute":1,"type":"string"},"vcsRootInstances":{"is_sequence":1,"type":"vcs-root-instances","minOccurs":"0"},"properties":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"vcsName":{"is_attribute":1,"type":"string"},"id":{"is_attribute":1,"type":"string"}},"issuesUsages":{"issueUsage":{"type":"issueUsage","minOccurs":"0","is_sequence":1,"maxOccurs":"unbounded"},"href":{"type":"string","is_attribute":1},"count":{"type":"int","is_attribute":1}},"newBuildTypeDescription":{"id":{"is_attribute":1,"type":"string"},"sourceBuildType":{"minOccurs":"0","type":"buildType","is_sequence":1},"projectsIdsMap":{"is_sequence":1,"minOccurs":"0","from":"copyOptionsDescription","type":"properties"},"copyAllAssociatedSettings":{"from":"copyOptionsDescription","type":"boolean","is_attribute":1},"buildTypesIdsMap":{"type":"properties","from":"copyOptionsDescription","minOccurs":"0","is_sequence":1},"vcsRootsIdsMap":{"is_sequence":1,"type":"properties","from":"copyOptionsDescription","minOccurs":"0"},"sourceBuildTypeLocator":{"type":"string","is_attribute":1},"name":{"is_attribute":1,"type":"string"}},"artifact-dependency":{"name":{"type":"string","from":"propEntity","is_attribute":1},"disabled":{"is_attribute":1,"from":"propEntity","type":"boolean"},"source-buildType":{"type":"buildType","minOccurs":"0","is_sequence":1},"id":{"is_attribute":1,"type":"string","from":"propEntity"},"type":{"is_attribute":1,"from":"propEntity","type":"string"},"properties":{"from":"propEntity","is_ref":1,"minOccurs":"0","is_sequence":1}},"file":{"modificationTime":{"is_attribute":1,"type":"string"},"size":{"is_attribute":1,"type":"long"},"name":{"is_attribute":1,"from":"file-ref","type":"string"},"href":{"is_attribute":1,"type":"string","from":"file-ref"},"parent":{"is_sequence":1,"type":"file-ref","minOccurs":"0"},"content":{"is_sequence":1,"type":"href","minOccurs":"0"},"children":{"type":"href","minOccurs":"0","is_sequence":1}},"artifact-dependencies":{"artifact-dependency":{"minOccurs":"0","is_ref":1,"is_sequence":1,"maxOccurs":"unbounded"},"count":{"is_attribute":1,"type":"int"}},"plugin":{"loadPath":{"type":"string","is_attribute":1},"parameters":{"minOccurs":"0","type":"properties","is_sequence":1},"displayName":{"is_attribute":1,"type":"string"},"name":{"type":"string","is_attribute":1},"version":{"type":"string","is_attribute":1}},"vcs-roots":{"vcs-root":{"minOccurs":"0","is_ref":1,"maxOccurs":"unbounded","is_sequence":1},"prevHref":{"type":"string","is_attribute":1},"count":{"type":"int","is_attribute":1},"href":{"type":"string","is_attribute":1},"nextHref":{"type":"string","is_attribute":1}},"buildTriggeringOptions":{"queueAtTop":{"is_attribute":1,"type":"boolean"},"cleanSources":{"is_attribute":1,"type":"boolean"},"rebuildDependencies":{"minOccurs":"0","type":"buildTypes","is_sequence":1},"rebuildAllDependencies":{"type":"boolean","is_attribute":1}},"build":{"statistics":{"is_sequence":1,"type":"properties","minOccurs":"0"},"pinned":{"type":"boolean","is_attribute":1},"running-info":{"is_sequence":1,"minOccurs":"0","type":"progress-info"},"custom-artifact-dependencies":{"is_sequence":1,"minOccurs":"0","type":"artifact-dependencies"},"comment":{"type":"comment","minOccurs":"0","is_sequence":1},"artifact-dependencies":{"is_sequence":1,"type":"builds","minOccurs":"0"},"webUrl":{"is_attribute":1,"type":"string"},"tags":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"compatibleAgents":{"is_sequence":1,"type":"agents","minOccurs":"0"},"id":{"is_attribute":1,"type":"long"},"properties":{"is_sequence":1,"minOccurs":"0","is_ref":1},"user":{"minOccurs":"0","is_ref":1,"is_sequence":1},"buildTypeInternalId":{"is_attribute":1,"type":"string"},"number":{"type":"string","is_attribute":1},"testOccurrences":{"is_sequence":1,"minOccurs":"0","is_ref":1},"agent":{"is_ref":1,"minOccurs":"0","is_sequence":1},"canceledInfo":{"is_sequence":1,"type":"comment","minOccurs":"0"},"changes":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"buildTypeId":{"is_attribute":1,"type":"string"},"statusText":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"running":{"type":"boolean","is_attribute":1},"unspecifiedBranch":{"is_attribute":1,"type":"boolean"},"defaultBranch":{"type":"boolean","is_attribute":1},"artifacts":{"is_sequence":1,"minOccurs":"0","type":"files"},"personal":{"type":"boolean","is_attribute":1},"lastChanges":{"is_sequence":1,"type":"changes","minOccurs":"0"},"branchName":{"type":"string","is_attribute":1},"buildType":{"is_sequence":1,"minOccurs":"0","is_ref":1},"revisions":{"minOccurs":"0","type":"revisions","is_sequence":1},"finishDate":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"startDate":{"is_sequence":1,"minOccurs":"0","type":"xs:string"},"snapshot-dependencies":{"is_sequence":1,"type":"builds","minOccurs":"0"},"history":{"is_attribute":1,"type":"boolean"},"locator":{"type":"string","is_attribute":1},"startEstimate":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"percentageComplete":{"is_attribute":1,"type":"int"},"status":{"is_attribute":1,"type":"string"},"problemOccurrences":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"attributes":{"is_sequence":1,"minOccurs":"0","type":"entries"},"triggered":{"minOccurs":"0","type":"triggeredBy","is_sequence":1},"queuedDate":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"taskId":{"is_attribute":1,"type":"long"},"state":{"type":"string","is_attribute":1},"relatedIssues":{"is_sequence":1,"minOccurs":"0","type":"issuesUsages"},"triggeringOptions":{"is_sequence":1,"type":"buildTriggeringOptions","minOccurs":"0"},"href":{"is_attribute":1,"type":"string"},"waitReason":{"is_sequence":1,"type":"xs:string","minOccurs":"0"},"pinInfo":{"minOccurs":"0","type":"comment","is_sequence":1}},"buildTypes":{"buildType":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1},"prevHref":{"type":"string","is_attribute":1},"count":{"is_attribute":1,"type":"int"},"href":{"is_attribute":1,"type":"string"},"nextHref":{"type":"string","is_attribute":1}},"role":{"href":{"type":"string","is_attribute":1},"roleId":{"is_attribute":1,"type":"string"},"scope":{"is_attribute":1,"type":"string"}},"user":{"password":{"type":"string","is_attribute":1},"email":{"is_attribute":1,"type":"string"},"groups":{"is_sequence":1,"minOccurs":"0","is_ref":1},"properties":{"is_sequence":1,"minOccurs":"0","is_ref":1},"roles":{"is_ref":1,"minOccurs":"0","is_sequence":1},"username":{"is_attribute":1,"type":"string"},"id":{"type":"long","is_attribute":1},"name":{"type":"string","is_attribute":1},"lastLogin":{"type":"string","is_attribute":1},"href":{"type":"string","is_attribute":1},"realm":{"is_attribute":1,"type":"string"}},"vcs-root-entries":{"count":{"type":"int","is_attribute":1},"vcs-root-entry":{"minOccurs":"0","is_ref":1,"maxOccurs":"unbounded","is_sequence":1}},"testOccurrences":{"ignored":{"type":"int","from":"occurrencesSummary","is_attribute":1},"failed":{"type":"int","from":"occurrencesSummary","is_attribute":1},"passed":{"from":"occurrencesSummary","type":"int","is_attribute":1},"muted":{"is_attribute":1,"from":"occurrencesSummary","type":"int"},"prevHref":{"type":"string","is_attribute":1},"newFailed":{"type":"int","from":"occurrencesSummary","is_attribute":1},"count":{"type":"int","is_attribute":1},"testOccurrence":{"is_sequence":1,"maxOccurs":"unbounded","is_ref":1,"minOccurs":"0"},"nextHref":{"is_attribute":1,"type":"string"},"href":{"is_attribute":1,"type":"string"}},"problems":{"nextHref":{"is_attribute":1,"type":"string"},"problem":{"minOccurs":"0","is_ref":1,"is_sequence":1,"maxOccurs":"unbounded"},"count":{"is_attribute":1,"type":"int"},"prevHref":{"is_attribute":1,"type":"string"}},"problemScope":{"project":{"minOccurs":"0","is_ref":1,"is_sequence":1},"buildTypes":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"buildType":{"minOccurs":"0","is_ref":1,"is_sequence":1}},"triggeredBy":{"details":{"is_attribute":1,"type":"string"},"buildType":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"properties":{"is_sequence":1,"is_ref":1,"minOccurs":"0"},"type":{"type":"string","is_attribute":1},"rawValue":{"is_attribute":1,"type":"string"},"user":{"is_ref":1,"minOccurs":"0","is_sequence":1},"date":{"is_attribute":1,"type":"string"}},"properties":{"count":{"is_attribute":1,"type":"int"},"property":{"is_sequence":1,"maxOccurs":"unbounded","is_ref":1,"minOccurs":"0"},"href":{"type":"string","is_attribute":1}},"projects":{"project":{"maxOccurs":"unbounded","is_sequence":1,"minOccurs":"0","is_ref":1},"nextHref":{"is_attribute":1,"type":"string"},"count":{"type":"int","is_attribute":1},"href":{"is_attribute":1,"type":"string"},"prevHref":{"is_attribute":1,"type":"string"}}},"entities":{"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}":{"deleteProject":{"DELETE":{}},"serveProject":{"GET":{"response":"project","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds":{"serveBuilds":{"GET":{"param":{"count":"int","triggeredByUser":"string","includeCanceled":"boolean","sinceDate":"string","agentName":"string","tag":"string","sinceBuild":"string","fields":"string","status":"string","onlyPinned":"boolean","locator":"string","includePersonal":"boolean","start":"long"},"doc":"Serves builds matching supplied condition.","response":"builds"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/{field}":{"serveBuildTypeFieldWithProject":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path:(/.*)?}":{"getVcsFile":{"GET":{"response":"file","doc":"Gets VCS file details Experimental support only","param":{"resolveParameters":"boolean"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}":{"changeTriggerSetting":{"PUT":{"response":"text","request":"text"}},"getTriggerSetting":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}":{"changeStepSetting":{"PUT":{"request":"text","response":"text"}},"getStepSetting":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/debug/requestDetails":{"getRequestDetails":{"GET":{"response":"text","doc":"Experimental use only!"}}},"http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}/{field}":{"serveAgentField":{"GET":{"response":"text"}},"setAgentField":{"PUT":{"response":"text","request":"text"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/sources/files/{fileName:.+}":{"serveSourceFile":{"GET":{"response":"any"}}},"http://tc.maxmind.com:8111/app/rest/debug/database/tables":{"listDBTables":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/newBuildTypeDescription":{"getExampleNewProjectDescriptionCompatibilityVersion1":{"GET":{"response":"newBuildTypeDescription","doc":"For compatibility with experimental feature of 8.0"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/children{path:(/.*)?}":{"getVcsFileListing":{"GET":{"response":"files","param":{"resolveParameters":"boolean","fields":"string"},"doc":"Lists files in VCS Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/server":{"serveServerInfo":{"GET":{"response":"server"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters":{"replaceStepParameters":{"PUT":{"response":"properties","request":"properties","param":{"fields":"string"}}},"getStepParameters":{"GET":{"response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}":{"getStep":{"GET":{"param":{"fields":"string"},"response":"step"}},"replaceStep":{"PUT":{"param":{"fields":"string"},"response":"step","request":"step"}},"deleteStep":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/testOccurrences":{"getTestOccurrences":{"GET":{"param":{"fields":"string","locator":"string"},"doc":"Experimental, the requests and results returned will change in future versions!","response":"testOccurrences"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/content{path:(/.*)?}":{"getVcsFileContent":{"GET":{"doc":"Gets content of a file form VCS Experimental support only","param":{"resolveParameters":"boolean"},"response":"any"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}":{"deleteRoot":{"DELETE":{}},"serveRoot":{"GET":{"param":{"fields":"string"},"response":"vcs-root"}}},"http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/{field}":{"serveBuildFieldByBuildOnly":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements":{"getAgentRequirements":{"GET":{"param":{"fields":"string"},"response":"agent-requirements"}},"addAgentRequirement":{"POST":{"response":"agent-requirement","request":"agent-requirement","param":{"fields":"string"},"doc":"Creates new agent requirement. 'id' attribute is ignored in the submitted descriptor. Reports error if new requirement cannot be created (e.g. another requirement is present for the parameter)."}},"replaceAgentRequirements":{"PUT":{"param":{"fields":"string"},"doc":"Replaces agent requirements with those sent in the request.","request":"agent-requirements","response":"agent-requirements"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters":{"replaceFeatureParameters":{"PUT":{"request":"properties","response":"properties","param":{"fields":"string"}}},"getFeatureParameters":{"GET":{"param":{"fields":"string"},"response":"properties"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/investigations":{"getInvestigations":{"GET":{"response":"investigations","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-instances":{"getCurrentVcsInstances":{"GET":{"param":{"fields":"string"},"doc":"Experimental support only!","response":"vcs-root-instances"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settingsFile":{"getSettingsFile":{"GET":{"doc":"Experimental support only","response":"text"}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}/properties/{name}":{"removeUserProperty":{"DELETE":{}},"serveUserProperty":{"GET":{"response":"text"}},"putUserProperty":{"PUT":{"request":"text","response":"text"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/example/buildCancelRequest":{"cancelBuild":{"GET":{"response":"buildCancelRequest"}}},"http://tc.maxmind.com:8111/app/rest/info":{"servePluginInfo":{"GET":{"response":"plugin","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies":{"addArtifactDep":{"POST":{"response":"artifact-dependency","request":"artifact-dependency","param":{"fields":"string"}}},"getArtifactDeps":{"GET":{"response":"artifact-dependencies","param":{"fields":"string"}}},"replaceArtifactDeps":{"PUT":{"param":{"fields":"string"},"doc":"Replaces the dependencies to those sent in the request.","response":"artifact-dependencies","request":"artifact-dependencies"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/properties":{"deleteAllProperties":{"DELETE":{}},"serveProperties":{"GET":{"response":"properties","param":{"fields":"string"}}},"changProperties":{"PUT":{"request":"properties","response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/version":{"serveVersion":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/agents":{"serveAgents":{"GET":{"param":{"locator":"string","includeDisconnected":"boolean","fields":"string","includeUnauthorized":"boolean"},"doc":"Returns list of agents","response":"agents"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/buildTags":{"serveBuildTypeBuildsTags":{"GET":{"response":"tags"}}},"http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/agents":{"addAgent":{"POST":{"request":"agent","response":"agent","doc":"Moves the agent posted to the pool","param":{"fields":"string"}}},"getPoolAgents":{"GET":{"param":{"fields":"string"},"response":"agents"}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}":{"serveInstance":{"GET":{"param":{"fields":"string"},"response":"vcs-root-instance"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/{field}":{"setBuildTypeField":{"PUT":{"request":"text","response":"text"}},"serveBuildTypeField":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}":{"replaceSnapshotDep":{"PUT":{"param":{"fields":"string"},"response":"snapshot-dependency","request":"snapshot-dependency"}},"getSnapshotDep":{"GET":{"response":"snapshot-dependency","param":{"fields":"string"}}},"deleteSnapshotDep":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/files{path:(/.*)?}":{"getArtifactFilesContent":{"GET":{"response":"any"}}},"http://tc.maxmind.com:8111/app/rest/tests":{"getTests":{"GET":{"response":"tests","param":{"fields":"string","locator":"string"},"doc":"Experimental, the requests and results returned will change in future versions!"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters":{"setParameter":{"POST":{"param":{"fields":"string"},"response":"property","request":"property"}},"changeBuildTypeParameters":{"PUT":{"request":"properties","response":"properties","param":{"fields":"string"}}},"deleteAllBuildTypeParameters":{"DELETE":{}},"serveBuildTypeParameters":{"GET":{"response":"properties","param":{"fields":"string","locator":"string"}}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/{field}":{"serveProjectField":{"GET":{"response":"text"}},"setProjectFiled":{"PUT":{"request":"text","response":"text"}}},"http://tc.maxmind.com:8111/app/rest/cctray":{"serveProjectsConvenienceCopy":{"GET":{"param":{"locator":"string"},"response":"Projects"}}},"http://tc.maxmind.com:8111/app/rest/apiVersion":{"serveApiVersion":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/relatedIssues":{"serveBuildRelatedIssues":{"GET":{"param":{"fields":"string"},"response":"issuesUsages"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/duplicates":{"getChangeDuplicates":{"GET":{"response":"changes","param":{"fields":"string"},"doc":"Experimental support only!"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}":{"replaceTrigger":{"PUT":{"param":{"fields":"string"},"response":"trigger","request":"trigger"}},"getTrigger":{"GET":{"param":{"fields":"string"},"response":"trigger"}},"deleteTrigger":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/{field}":{"getChangeField":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}":{"serveUser":{"GET":{"param":{"fields":"string"},"response":"user"}},"updateUser":{"PUT":{"param":{"fields":"string"},"request":"user","response":"user"}},"deleteUser":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/":{"serveBuildStatisticValues":{"GET":{"response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState/creationDate":{"getRepositoryStateCreationDate":{"GET":{"response":"any"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/newProjectDescription":{"getExampleNewProjectDescriptionCompatibilityVersion1":{"GET":{"doc":"For compatibility with experimental feature of 8.0","param":{"id":"string"},"response":"newProjectDescription"}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}/groups":{"getGroups":{"GET":{"param":{"fields":"string"},"response":"groups"}},"addGroup":{"POST":{"param":{"fields":"string"},"response":"group","request":"group"}},"replaceGroups":{"PUT":{"param":{"fields":"string"},"doc":"Replaces user's roles with the submitted ones","response":"groups","request":"groups"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features":{"getFeatures":{"GET":{"response":"features","param":{"fields":"string"}}},"addFeature":{"POST":{"response":"feature","request":"feature","param":{"fields":"string"}}},"replaceFeatures":{"PUT":{"response":"features","request":"features","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildQueue":{"getBuilds":{"GET":{"doc":"Serves build queue.","param":{"fields":"string","locator":"string"},"response":"builds"}},"deleteBuildsExperimental":{"DELETE":{"doc":"Experimental! Deletes the set of builds filtered","param":{"locator":"string","fields":"string"}}},"queueNewBuild":{"POST":{"request":"build","response":"build"}},"replaceBuilds":{"PUT":{"request":"builds","response":"builds","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription":{"getExampleNewProjectDescription":{"GET":{"doc":"Experimental support only. Use this to get an example of the bean to be posted to the /buildTypes request to create a new build type","response":"newBuildTypeDescription"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parentProject":{"getParentProject":{"GET":{"response":"project","param":{"fields":"string"}}},"setParentProject":{"PUT":{"request":"project","response":"project"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcsLabeling":{"getVCSLabelingOptions":{"GET":{"doc":"Gets VCS labeling settings Experimental support only","response":"vcsLabeling"}},"setVCSLabelingOptions":{"PUT":{"response":"vcsLabeling","request":"vcsLabeling","doc":"Sets VCS labeling settings Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/resulting-properties/{propertyName}":{"getParameter":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}":{"deleteFeature":{"DELETE":{}},"getFeature":{"GET":{"response":"feature","param":{"fields":"string"}}},"replaceFeature":{"PUT":{"param":{"fields":"string"},"request":"feature","response":"feature"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps":{"getSteps":{"GET":{"response":"steps","param":{"fields":"string"}}},"replaceSteps":{"PUT":{"request":"steps","response":"steps","param":{"fields":"string"}}},"addStep":{"POST":{"param":{"fields":"string"},"request":"step","response":"step"}}},"http://tc.maxmind.com:8111/app/rest/problemOccurrences":{"getProblems":{"GET":{"param":{"fields":"string","locator":"string"},"doc":"Experimental, the requests and results returned will change in future versions!","response":"problemOccurrences"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds":{"serveBuilds":{"GET":{"response":"builds","param":{"status":"string","onlyPinned":"boolean","locator":"string","includePersonal":"boolean","start":"long","count":"int","sinceDate":"string","agentName":"string","triggeredByUser":"string","includeCanceled":"boolean","tag":"string","sinceBuild":"string","fields":"string"},"doc":"Serves builds matching supplied condition."}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/properties":{"serveRootInstanceProperties":{"GET":{"response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest":{"cancelBuild":{"GET":{"response":"buildCancelRequest"}}},"http://tc.maxmind.com:8111/app/rest/users":{"serveUsers":{"GET":{"param":{"fields":"string"},"response":"users"}},"createUser":{"POST":{"request":"user","response":"user","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/canceledInfo":{"getCanceledInfo":{"GET":{"response":"comment","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/{field}":{"setField":{"PUT":{"request":"text","response":"text"}},"serveField":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest":{"serveRoot":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentChanges":{"getParentChanges":{"GET":{"response":"changes","param":{"fields":"string"},"doc":"Experimental support only!"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}/{field}":{"serveBuildField":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/firstBuilds":{"getChangeFirstBuilds":{"GET":{"doc":"Experimental support only!","param":{"fields":"string"},"response":"builds"}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/children{path:(/.*)?}":{"getVcsFileListing":{"GET":{"response":"files","param":{"fields":"string"},"doc":"Lists files in VCS Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters/{name}":{"getParameterValue":{"GET":{"response":"text"}},"deleteBuildTypeParameter":{"DELETE":{}},"getParameter":{"GET":{"response":"property"}},"setParameterValue":{"PUT":{"request":"text","response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/tags/":{"replaceTags":{"PUT":{"doc":"Replaces build's tags.","param":{"fields":"string","locator":"string"},"response":"tags","request":"tags"}},"serveTags":{"GET":{"response":"tags","param":{"fields":"string","locator":"string"}}},"addTags":{"POST":{"doc":"Adds a set of tags to a build","request":"tags"}},"addTag":{"POST":{"request":"text","response":"text","doc":"Adds a single tag to a build"}}},"http://tc.maxmind.com:8111/app/rest/investigations":{"getInvestigations":{"GET":{"doc":"Experimental, the requests and results returned will change in future versions!","param":{"locator":"string","fields":"string"},"response":"investigations"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies":{"replaceSnapshotDeps":{"PUT":{"response":"snapshot-dependencies","request":"snapshot-dependencies","param":{"fields":"string"},"doc":"Replaces snapshot dependency with those sent in request."}},"getSnapshotDeps":{"GET":{"response":"snapshot-dependencies","param":{"fields":"string"}}},"addSnapshotDep":{"POST":{"response":"snapshot-dependency","request":"snapshot-dependency","param":{"fields":"string"},"doc":"Creates new snapshot dependency. 'id' attribute is ignored in the submitted descriptor. Reports error if new dependency cannot be created (e.g. another dependency on the specified build configuration already exists)."}}},"http://tc.maxmind.com:8111/app/rest/server/plugins":{"servePlugins":{"GET":{"param":{"fields":"string"},"response":"plugins"}}},"http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties/{name}":{"removeUserProperty":{"DELETE":{}},"serveUserProperties":{"GET":{"response":"text"}},"putUserProperty":{"PUT":{"response":"text","request":"text"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/content{path:(/.*)?}":{"getArtifactContent":{"GET":{"response":"any","param":{"logBuildUsage":"boolean","resolveParameters":"boolean"}}}},"http://tc.maxmind.com:8111/app/rest/builds":{"serveAllBuilds":{"GET":{"response":"builds","doc":"Serves builds matching supplied condition.","param":{"status":"string","locator":"string","onlyPinned":"boolean","includePersonal":"boolean","start":"long","count":"int","buildType":"string","includeCanceled":"boolean","triggeredByUser":"string","sinceDate":"string","agentName":"string","tag":"string","sinceBuild":"string","fields":"string"}}},"deleteBuilds":{"DELETE":{"param":{"locator":"string"}}}},"http://tc.maxmind.com:8111/app/rest/debug/database/query/{query}":{"executeDBQuery":{"GET":{"param":{"fieldDelimiter":"string","count":"int"},"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles/{roleId}/{scope}":{"deleteRole":{"DELETE":{}},"addRoleSimple":{"PUT":{"response":"role"}},"listRole":{"GET":{"response":"role"}},"addRoleSimplePost":{"POST":{}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/templates/{btLocator}":{"serveBuildTypeTemplates":{"GET":{"response":"buildType","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}":{"getStepParameter":{"GET":{"response":"text"}},"addStepParameter":{"PUT":{"response":"text","request":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}":{"getVcsRootEntry":{"GET":{"param":{"fields":"string"},"response":"vcs-root-entry"}},"updateVcsRootEntry":{"PUT":{"request":"vcs-root-entry","response":"vcs-root-entry","param":{"fields":"string"}}},"deleteVcsRootEntry":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}":{"cancelBuild":{"POST":{"param":{"fields":"string"},"request":"buildCancelRequest","response":"build"}},"serveBuild":{"GET":{"param":{"fields":"string"},"doc":"Serves a build described by the locator provided searching through those accessible by the current user. See {@link jetbrains.buildServer.server.rest.request.BuildRequest#serveAllBuilds(String, String, String, boolean, boolean, boolean, java.util.List, String, String, String, Long, Integer, String, javax.ws.rs.core.UriInfo, javax.servlet.http.HttpServletRequest)} If several builds are matched, the first one is used (the effect is the same as if \",count:1\" locator dimension is added)","response":"build"}},"deleteBuild":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}":{"serveInstanceField":{"GET":{"response":"text"}},"setInstanceField":{"PUT":{"response":"text","request":"text"}},"deleteInstanceField":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/aliases":{"getAliases":{"GET":{"response":"items","doc":"Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/server/backup":{"getBackupStatus":{"GET":{"response":"text"}},"startBackup":{"POST":{"param":{"fileName":"string","includePersonalChanges":"boolean","includeBuildLogs":"boolean","includeConfigs":"boolean","includeRunningBuilds":"boolean","addTimestamp":"boolean","includeDatabase":"boolean","includeSupplimentaryData":"boolean"},"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries":{"addVcsRootEntry":{"POST":{"param":{"fields":"string"},"request":"vcs-root-entry","response":"vcs-root-entry"}},"replaceVcsRootEntries":{"PUT":{"request":"vcs-root-entries","response":"vcs-root-entries","param":{"fields":"string"}}},"getVcsRootEntries":{"GET":{"param":{"fields":"string"},"response":"vcs-root-entries"}}},"http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties":{"getProperties":{"GET":{"response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentRevisions":{"getChangeParentRevisions":{"GET":{"response":"items","doc":"Experimental support only!"}}},"http://tc.maxmind.com:8111/app/rest/userGroups":{"addGroup":{"POST":{"response":"group","request":"group","param":{"fields":"string"}}},"serveGroups":{"GET":{"param":{"fields":"string"},"response":"groups"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/resulting-properties/":{"serveBuildActualParameters":{"GET":{"response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/testOccurrences":{"getTests":{"GET":{"param":{"fields":"string"},"response":"testOccurrences"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statusIcon":{"serveBuildStatusIcon":{"GET":{"response":"any"}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles":{"replaceRoles":{"PUT":{"doc":"Replaces user's roles with the submitted ones","response":"roles","request":"roles"}},"addRole":{"POST":{"response":"role","request":"role"}},"listRoles":{"GET":{"response":"roles"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}":{"serveBuildType":{"GET":{"response":"buildType","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path:(/.*)?}":{"getVcsFile":{"GET":{"response":"file","doc":"Gets VCS file details Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}":{"deleteArtifactDep":{"DELETE":{}},"getArtifactDep":{"GET":{"response":"artifact-dependency","param":{"fields":"string"}}},"replaceArtifactDep":{"PUT":{"param":{"fields":"string"},"response":"artifact-dependency","request":"artifact-dependency"}}},"http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}":{"deleteAgent":{"DELETE":{}},"serveAgent":{"GET":{"param":{"fields":"string"},"response":"agent"}}},"http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}":{"cancelBuild":{"POST":{"request":"buildCancelRequest","response":"build"}},"getBuild":{"GET":{"response":"build","param":{"fields":"string"}}},"deleteBuild":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/settingsFile":{"getSettingsFile":{"GET":{"response":"text","doc":"Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/related-issues":{"serveBuildRelatedIssuesOld":{"GET":{"param":{"fields":"string"},"response":"issuesUsages"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}":{"changeFeatureSetting":{"PUT":{"response":"text","request":"text"}},"getFeatureSetting":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties":{"serveRootInstanceProperties":{"GET":{"param":{"fields":"string"},"response":"properties"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts{path:(/.*)?}":{"getArtifacts":{"GET":{"doc":"More user-friendly URL for \"/{buildLocator}/artifacts/children\" one.","param":{"fields":"string","resolveParameters":"boolean","locator":"string"},"response":"files"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/{field}":{"serveBuildFieldByBuildOnly":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/projects":{"createEmptyProject":{"POST":{"request":"text","response":"project"}},"serveProjects":{"GET":{"param":{"fields":"string"},"response":"projects"}},"createProject":{"POST":{"request":"newProjectDescription","response":"project"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRoot":{"getChangeVCSRoot":{"GET":{"response":"vcs-root-instance","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}":{"deleteGroup":{"DELETE":{}},"serveGroup":{"GET":{"param":{"fields":"string"},"response":"group"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}":{"serveChange":{"GET":{"response":"change","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/settingsFile":{"getSettingsFile":{"GET":{"response":"text","doc":"Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/tests/{testLocator}":{"serveInstance":{"GET":{"response":"test","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters":{"deleteAllParameters":{"DELETE":{}},"changeAllParameters":{"PUT":{"request":"properties","response":"properties","param":{"fields":"string"}}},"setParameter":{"POST":{"request":"property","response":"property"}},"serveParameters":{"GET":{"response":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/server/{field}":{"serveServerVersion":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/agentPools":{"setProjectAgentPools":{"PUT":{"param":{"fields":"string"},"request":"agentPools","response":"agentPools"},"POST":{"response":"agentPool","request":"agentPool"}},"getProjectAgentPools":{"GET":{"param":{"fields":"string"},"response":"agentPools"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/branches":{"serveBranches":{"GET":{"response":"branches","param":{"locator":"string"},"doc":"Lists branches of the build type."}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}":{"addFeatureParameter":{"PUT":{"response":"text","request":"any"}},"getFeatureParameter":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}":{"serveInstanceField":{"GET":{"response":"text"}},"setInstanceField":{"PUT":{"response":"text","request":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}/compatibleAgents":{"serveCompatibleAgents":{"GET":{"response":"agents","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/content{path:(/.*)?}":{"getVcsFileContent":{"GET":{"response":"any","doc":"Gets content of a file form VCS Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}":{"serveRootInstance":{"GET":{"param":{"fields":"string"},"response":"vcs-root-instance"}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances":{"serveInstances":{"GET":{"response":"vcs-root-instances","param":{"fields":"string","locator":"string"}}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots":{"addRoot":{"POST":{"param":{"fields":"string"},"response":"vcs-root","request":"vcs-root"}},"serveRoots":{"GET":{"response":"vcs-roots","param":{"locator":"string","fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/metadata{path:(/.*)?}":{"getArtifactMetadata":{"GET":{"param":{"resolveParameters":"boolean","locator":"string"},"response":"file"}}},"http://tc.maxmind.com:8111/app/rest/problems/{problemLocator}":{"serveInstance":{"GET":{"response":"problem","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/testOccurrences/{testLocator}":{"serveInstance":{"GET":{"param":{"fields":"string"},"response":"testOccurrence"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}":{"serveBuildTypeXML":{"GET":{"doc":"Serves build configuration or templates according to the locator.","param":{"fields":"string"},"response":"buildType"}},"deleteBuildType":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/cctray/projects.xml":{"serveProjects":{"GET":{"response":"Projects","param":{"locator":"string"}}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters/{name}/value":{"getParameterValueLong":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/{name}":{"serveBuildStatisticValue":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles":{"addRolePut":{"PUT":{"response":"roles","request":"roles"}},"addRole":{"POST":{"request":"role","response":"role"}},"listRoles":{"GET":{"response":"roles"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/templates":{"createEmptyBuildTypeTemplate":{"POST":{"response":"buildType","request":"text","param":{"fields":"string"}}},"createBuildTypeTemplate":{"POST":{"param":{"fields":"string"},"doc":"Creates a new build configuration template by copying existing one.","request":"newBuildTypeDescription","response":"buildType"}},"serveTemplatesInProject":{"GET":{"response":"buildTypes","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/example/newProjectDescription":{"getExampleNewProjectDescription":{"GET":{"response":"newProjectDescription","param":{"id":"string"},"doc":"Experimental support only. Use this to get an example of the bean to be posted to the /projects request to create a new project"}}},"http://tc.maxmind.com:8111/app/rest/debug/memory/dumps":{"saveMemoryDump":{"POST":{"response":"text","doc":"Experimental use only!","param":{"archived":"boolean"}}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}/properties":{"serveUserProperties":{"GET":{"param":{"fields":"string"},"response":"properties"}}},"http://tc.maxmind.com:8111/app/rest/debug/vcsCheckingForChangesQueue":{"scheduleCheckingForChanges":{"POST":{"doc":"Experimental use only!","param":{"locator":"string","fields":"string"},"response":"vcs-root-instances"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/problemOccurrences":{"getProblems":{"GET":{"param":{"fields":"string"},"response":"problemOccurrences"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/template":{"serveBuildTypeTemplate":{"GET":{"response":"buildType","param":{"fields":"string"}}},"deleteTemplateAssociation":{"DELETE":{}},"getTemplateAssociation":{"PUT":{"request":"text","response":"buildType","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/problemOccurrences/{problemLocator}":{"serveInstance":{"GET":{"response":"problemOccurrence","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings":{"serveBuildTypeSettings":{"GET":{"param":{"fields":"string"},"response":"properties"}},"replaceBuildTypeSettings":{"PUT":{"response":"properties","request":"properties","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/children{path:(/.*)?}":{"getArtifactChildren":{"GET":{"response":"files","param":{"fields":"string","locator":"string","resolveParameters":"boolean"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}":{"serveBuildWithProject":{"GET":{"response":"build","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}":{"getPoolProject":{"GET":{"response":"project","param":{"fields":"string"}}},"deletePoolProject":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes":{"createBuildType":{"POST":{"param":{"fields":"string"},"doc":"Creates a new build configuration by copying existing one.","request":"newBuildTypeDescription","response":"buildType"}},"createEmptyBuildType":{"POST":{"param":{"fields":"string"},"request":"text","response":"buildType"}},"serveBuildTypesInProject":{"GET":{"param":{"fields":"string"},"response":"buildTypes"}}},"http://tc.maxmind.com:8111/app/rest/agentPools":{"setPools":{"POST":{"request":"agentPool","response":"agentPool"}},"getPools":{"GET":{"param":{"fields":"string"},"response":"agentPools"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/agentPools/{agentPoolLocator}":{"deleteProjectAgentPools":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/attributes":{"getChangeAttributes":{"GET":{"response":"entries","doc":"Experimental support only!"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}/checkout-rules":{"updateVcsRootEntryCheckoutRules":{"PUT":{"request":"text","response":"text"}},"getVcsRootEntryCheckoutRules":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers":{"addTrigger":{"POST":{"request":"trigger","response":"trigger","param":{"fields":"string"},"doc":"Creates new trigger. 'id' attribute is ignored in the submitted descriptor. Reports error if new trigger cannot be created (e.g. only single trigger of the type is allowed for a build configuration)."}},"getTriggers":{"GET":{"param":{"fields":"string"},"response":"triggers"}},"replaceTriggers":{"PUT":{"response":"triggers","request":"triggers","param":{"fields":"string"},"doc":"Replaces trigger with those sent inthe request."}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifactsDirectory":{"getArtifactsDirectory":{"GET":{"response":"text","doc":"Experimental support only"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings/{name}":{"serveBuildTypeSetting":{"GET":{"response":"text"}},"putBuildTypeSetting":{"PUT":{"response":"text","request":"any"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/archived{path:(/.*)?}":{"getZippedArtifacts":{"GET":{"param":{"locator":"string","resolveParameters":"boolean","logBuildUsage":"boolean","name":"string"},"doc":"Experimental","response":"any"}}},"http://tc.maxmind.com:8111/app/rest/{projectLocator}/{btLocator}/{buildLocator}/{field}":{"serveBuildFieldShort":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRootInstance":{"getChangeVCSRootInstance":{"GET":{"response":"vcs-root-instance","param":{"fields":"string"},"doc":"Experimental support only!"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/pin/":{"pinBuild":{"PUT":{"request":"text","doc":"Pins a build"}},"unpinBuild":{"DELETE":{"request":"text","doc":"Unpins a build"}},"getPinned":{"GET":{"doc":"Fetches current build pinned status.","response":"text"}}},"http://tc.maxmind.com:8111/app/rest/buildTypes":{"addBuildType":{"POST":{"request":"buildType","response":"buildType","param":{"fields":"string"}}},"getBuildTypes":{"GET":{"response":"buildTypes","param":{"locator":"string","fields":"string"},"doc":"Lists build types registered on the server. Build templates are not included by default"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}":{"serveBuildWithProject":{"GET":{"param":{"fields":"string"},"response":"build"}}},"http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}/pool":{"setAgentPool":{"PUT":{"request":"agentPool","response":"agentPool"}},"getAgentPool":{"GET":{"param":{"fields":"string"},"response":"agentPool"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances":{"serveRootInstances":{"GET":{"param":{"fields":"string"},"response":"vcs-root-instances"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters/{name}":{"putParameter":{"PUT":{"response":"text","request":"text"}},"getParameter":{"GET":{"response":"property"}},"getParameterValue":{"GET":{"response":"text"}},"deleteParameter":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters/{name}/value":{"getParameterValueLong":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}":{"listRole":{"GET":{"response":"role"}},"deleteRole":{"DELETE":{}},"addRoleSimple":{"POST":{"response":"role"}}},"http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}/{field}":{"serveBuildFieldWithProject":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/buildTypes":{"getRelatedBuildTypes":{"GET":{"doc":"Experimental support only!","param":{"fields":"string"},"response":"buildTypes"}}},"http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}":{"deletePool":{"DELETE":{}},"getPool":{"GET":{"param":{"fields":"string"},"response":"agentPool"}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/comment":{"deleteComment":{"DELETE":{}},"replaceComment":{"PUT":{"request":"text"}}},"http://tc.maxmind.com:8111/app/rest/changes":{"serveChanges":{"GET":{"doc":"Lists changes by the specified locator","param":{"start":"long","project":"string","locator":"string","build":"string","sinceChange":"string","fields":"string","vcsRoot":"string","buildType":"string","count":"int"},"response":"changes"}}},"http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}":{"putParameter":{"PUT":{"request":"text","response":"text"}},"serveProperty":{"GET":{"response":"text"}},"deleteParameter":{"DELETE":{}}},"http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/tags/":{"addTag":{"POST":{"doc":"Adds a single tag to a build","request":"text","response":"text"}},"addTags":{"POST":{"doc":"Adds a set of tags to a build","request":"tags"}},"serveTags":{"GET":{"param":{"fields":"string","locator":"string"},"response":"tags"}},"replaceTags":{"PUT":{"response":"tags","request":"tags","doc":"Replaces the build's tags designated by the tags 'locator' to the set of tags passed.","param":{"locator":"string","fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/investigations/{investigationLocator}":{"serveInstance":{"GET":{"response":"investigation","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}":{"deleteAgentRequirement":{"DELETE":{}},"getAgentRequirement":{"GET":{"param":{"fields":"string"},"response":"agent-requirement"}},"replaceAgentRequirement":{"PUT":{"response":"agent-requirement","request":"agent-requirement","param":{"fields":"string"}}}},"http://tc.maxmind.com:8111/app/rest/problems":{"getProblems":{"GET":{"response":"problems","param":{"fields":"string","locator":"string"},"doc":"Experimental, the requests and results returned will change in future versions!"}}},"http://tc.maxmind.com:8111/app/rest/users/{userLocator}/{field}":{"setUserField":{"PUT":{"request":"text","response":"text"}},"serveUserField":{"GET":{"response":"text"}}},"http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/issues":{"getChangeIssue":{"GET":{"response":"issues","doc":"Experimental support only!"}}},"http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects":{"getPoolProjects":{"GET":{"response":"projects","param":{"fields":"string"}}},"replaceProjects":{"PUT":{"doc":"Associates the posted set of projects with the pool which replaces earlier associations on this pool","response":"projects","request":"projects"}},"addProject":{"POST":{"response":"project","request":"project","doc":"Adds the posted project to the pool associated projects"}}},"http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState":{"setRepositoryState":{"PUT":{"response":"entries","request":"entries"}},"deleteRepositoryState":{"DELETE":{}},"getRepositoryState":{"GET":{"response":"entries"}}},"http://tc.maxmind.com:8111/app/rest/debug/threadDump":{"scheduleCheckingForChanges":{"GET":{"doc":"Experimental use only!","param":{"lockedSynchronizers":"string","lockedMonitors":"string"},"response":"text"}}}}}
+{
+  "entities": {
+    "http://tc.maxmind.com:8111/app/rest/cctray": {
+      "serveProjectsConvenienceCopy": {
+        "GET": {
+          "param": {
+            "locator": "string"
+          },
+          "response": "Projects"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agents": {
+      "serveAgents": {
+        "GET": {
+          "response": "agents",
+          "doc": "Returns list of agents",
+          "param": {
+            "fields": "string",
+            "includeDisconnected": "boolean",
+            "locator": "string",
+            "includeUnauthorized": "boolean"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/properties": {
+      "serveRootInstanceProperties": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/content{path:(/.*)?}": {
+      "getVcsFileContent": {
+        "GET": {
+          "response": "any",
+          "doc": "Gets content of a file form VCS Experimental support only",
+          "param": {
+            "resolveParameters": "boolean"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/tests": {
+      "getTests": {
+        "GET": {
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          },
+          "doc": "Experimental, the requests and results returned will change in future versions!",
+          "response": "tests"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/firstBuilds": {
+      "getChangeFirstBuilds": {
+        "GET": {
+          "response": "builds",
+          "doc": "Experimental support only!",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/buildTypes": {
+      "getRelatedBuildTypes": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Experimental support only!",
+          "response": "buildTypes"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/debug/threadDump": {
+      "scheduleCheckingForChanges": {
+        "GET": {
+          "response": "text",
+          "doc": "Experimental use only!",
+          "param": {
+            "lockedSynchronizers": "string",
+            "lockedMonitors": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps": {
+      "replaceSteps": {
+        "PUT": {
+          "request": "steps",
+          "response": "steps",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getSteps": {
+        "GET": {
+          "response": "steps",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "addStep": {
+        "POST": {
+          "request": "step",
+          "response": "step",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/children{path:(/.*)?}": {
+      "getArtifactChildren": {
+        "GET": {
+          "param": {
+            "fields": "string",
+            "resolveParameters": "boolean",
+            "locator": "string"
+          },
+          "response": "files"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/testOccurrences/{testLocator}": {
+      "serveInstance": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "testOccurrence"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters": {
+      "replaceFeatureParameters": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties",
+          "request": "properties"
+        }
+      },
+      "getFeatureParameters": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/debug/database/query/{query}": {
+      "executeDBQuery": {
+        "GET": {
+          "param": {
+            "fieldDelimiter": "string",
+            "count": "int"
+          },
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/attributes": {
+      "getChangeAttributes": {
+        "GET": {
+          "doc": "Experimental support only!",
+          "response": "entries"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/settingsFile": {
+      "getSettingsFile": {
+        "GET": {
+          "response": "text",
+          "doc": "Experimental support only"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/children{path:(/.*)?}": {
+      "getVcsFileListing": {
+        "GET": {
+          "doc": "Lists files in VCS Experimental support only",
+          "param": {
+            "fields": "string"
+          },
+          "response": "files"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statusIcon": {
+      "serveBuildStatusIcon": {
+        "GET": {
+          "response": "any"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds": {
+      "serveBuilds": {
+        "GET": {
+          "response": "builds",
+          "doc": "Serves builds matching supplied condition.",
+          "param": {
+            "sinceBuild": "string",
+            "agentName": "string",
+            "includeCanceled": "boolean",
+            "triggeredByUser": "string",
+            "includePersonal": "boolean",
+            "status": "string",
+            "count": "int",
+            "onlyPinned": "boolean",
+            "tag": "string",
+            "locator": "string",
+            "sinceDate": "string",
+            "fields": "string",
+            "start": "long"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/tags/": {
+      "addTags": {
+        "POST": {
+          "request": "tags",
+          "doc": "Adds a set of tags to a build"
+        }
+      },
+      "serveTags": {
+        "GET": {
+          "response": "tags",
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          }
+        }
+      },
+      "addTag": {
+        "POST": {
+          "response": "text",
+          "request": "text",
+          "doc": "Adds a single tag to a build"
+        }
+      },
+      "replaceTags": {
+        "PUT": {
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          },
+          "doc": "Replaces build's tags.",
+          "response": "tags",
+          "request": "tags"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path:(/.*)?}": {
+      "getVcsFile": {
+        "GET": {
+          "response": "file",
+          "doc": "Gets VCS file details Experimental support only",
+          "param": {
+            "resolveParameters": "boolean"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/templates/{btLocator}": {
+      "serveBuildTypeTemplates": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "buildType"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}": {
+      "serveChange": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "change"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/tags/": {
+      "addTags": {
+        "POST": {
+          "doc": "Adds a set of tags to a build",
+          "request": "tags"
+        }
+      },
+      "serveTags": {
+        "GET": {
+          "response": "tags",
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          }
+        }
+      },
+      "replaceTags": {
+        "PUT": {
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          },
+          "doc": "Replaces the build's tags designated by the tags 'locator' to the set of tags passed.",
+          "response": "tags",
+          "request": "tags"
+        }
+      },
+      "addTag": {
+        "POST": {
+          "response": "text",
+          "request": "text",
+          "doc": "Adds a single tag to a build"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}": {
+      "deleteProject": {
+        "DELETE": {}
+      },
+      "serveProject": {
+        "GET": {
+          "response": "project",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}": {
+      "getFeatureSetting": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "changeFeatureSetting": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles": {
+      "listRoles": {
+        "GET": {
+          "response": "roles"
+        }
+      },
+      "addRolePut": {
+        "PUT": {
+          "response": "roles",
+          "request": "roles"
+        }
+      },
+      "addRole": {
+        "POST": {
+          "response": "role",
+          "request": "role"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings": {
+      "replaceBuildTypeSettings": {
+        "PUT": {
+          "request": "properties",
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "serveBuildTypeSettings": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/problemOccurrences": {
+      "getProblems": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "problemOccurrences"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/templates": {
+      "serveTemplatesInProject": {
+        "GET": {
+          "response": "buildTypes",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "createEmptyBuildTypeTemplate": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "buildType",
+          "request": "text"
+        }
+      },
+      "createBuildTypeTemplate": {
+        "POST": {
+          "response": "buildType",
+          "request": "newBuildTypeDescription",
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Creates a new build configuration template by copying existing one."
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/content{path:(/.*)?}": {
+      "getVcsFileContent": {
+        "GET": {
+          "response": "any",
+          "doc": "Gets content of a file form VCS Experimental support only"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}": {
+      "getTriggerSetting": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "changeTriggerSetting": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/{field}": {
+      "getChangeField": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles": {
+      "addRole": {
+        "POST": {
+          "response": "role",
+          "request": "role"
+        }
+      },
+      "listRoles": {
+        "GET": {
+          "response": "roles"
+        }
+      },
+      "replaceRoles": {
+        "PUT": {
+          "response": "roles",
+          "request": "roles",
+          "doc": "Replaces user's roles with the submitted ones"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/properties/{name}": {
+      "deleteParameter": {
+        "DELETE": {}
+      },
+      "putParameter": {
+        "PUT": {
+          "response": "text",
+          "request": "text"
+        }
+      },
+      "serveProperty": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}": {
+      "deleteVcsRootEntry": {
+        "DELETE": {}
+      },
+      "getVcsRootEntry": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root-entry"
+        }
+      },
+      "updateVcsRootEntry": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root-entry",
+          "request": "vcs-root-entry"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/{field}": {
+      "setBuildTypeField": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      },
+      "serveBuildTypeField": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}": {
+      "setInstanceField": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      },
+      "serveInstanceField": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}": {
+      "deleteBuild": {
+        "DELETE": {}
+      },
+      "getBuild": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "build"
+        }
+      },
+      "cancelBuild": {
+        "POST": {
+          "request": "buildCancelRequest",
+          "response": "build"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/settingsFile": {
+      "getSettingsFile": {
+        "GET": {
+          "response": "text",
+          "doc": "Experimental support only"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState/creationDate": {
+      "getRepositoryStateCreationDate": {
+        "GET": {
+          "response": "any"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest": {
+      "serveRoot": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances": {
+      "serveInstances": {
+        "GET": {
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          },
+          "response": "vcs-root-instances"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes": {
+      "serveBuildTypesInProject": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "buildTypes"
+        }
+      },
+      "createBuildType": {
+        "POST": {
+          "response": "buildType",
+          "request": "newBuildTypeDescription",
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Creates a new build configuration by copying existing one."
+        }
+      },
+      "createEmptyBuildType": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "text",
+          "response": "buildType"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/files{path:(/.*)?}": {
+      "getArtifactFilesContent": {
+        "GET": {
+          "response": "any"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/agentPools": {
+      "setProjectAgentPools": {
+        "POST": {
+          "response": "agentPool",
+          "request": "agentPool"
+        },
+        "PUT": {
+          "request": "agentPools",
+          "response": "agentPools",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getProjectAgentPools": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "agentPools"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/problemOccurrences/{problemLocator}": {
+      "serveInstance": {
+        "GET": {
+          "response": "problemOccurrence",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/newBuildTypeDescription": {
+      "getExampleNewProjectDescriptionCompatibilityVersion1": {
+        "GET": {
+          "doc": "For compatibility with experimental feature of 8.0",
+          "response": "newBuildTypeDescription"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}": {
+      "serveInstance": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root-instance"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/issues": {
+      "getChangeIssue": {
+        "GET": {
+          "doc": "Experimental support only!",
+          "response": "issues"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/{projectLocator}/{btLocator}/{buildLocator}/{field}": {
+      "serveBuildFieldShort": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies": {
+      "replaceArtifactDeps": {
+        "PUT": {
+          "doc": "Replaces the dependencies to those sent in the request.",
+          "param": {
+            "fields": "string"
+          },
+          "request": "artifact-dependencies",
+          "response": "artifact-dependencies"
+        }
+      },
+      "getArtifactDeps": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "artifact-dependencies"
+        }
+      },
+      "addArtifactDep": {
+        "POST": {
+          "request": "artifact-dependency",
+          "response": "artifact-dependency",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifactsDirectory": {
+      "getArtifactsDirectory": {
+        "GET": {
+          "response": "text",
+          "doc": "Experimental support only"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/server/plugins": {
+      "servePlugins": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "plugins"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds": {
+      "serveBuilds": {
+        "GET": {
+          "response": "builds",
+          "param": {
+            "status": "string",
+            "count": "int",
+            "sinceBuild": "string",
+            "includeCanceled": "boolean",
+            "agentName": "string",
+            "triggeredByUser": "string",
+            "includePersonal": "boolean",
+            "locator": "string",
+            "tag": "string",
+            "fields": "string",
+            "start": "long",
+            "sinceDate": "string",
+            "onlyPinned": "boolean"
+          },
+          "doc": "Serves builds matching supplied condition."
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}/compatibleAgents": {
+      "serveCompatibleAgents": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "agents"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies": {
+      "getSnapshotDeps": {
+        "GET": {
+          "response": "snapshot-dependencies",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "addSnapshotDep": {
+        "POST": {
+          "request": "snapshot-dependency",
+          "response": "snapshot-dependency",
+          "doc": "Creates new snapshot dependency. 'id' attribute is ignored in the submitted descriptor. Reports error if new dependency cannot be created (e.g. another dependency on the specified build configuration already exists).",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "replaceSnapshotDeps": {
+        "PUT": {
+          "request": "snapshot-dependencies",
+          "response": "snapshot-dependencies",
+          "doc": "Replaces snapshot dependency with those sent in request.",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/{field}": {
+      "setField": {
+        "PUT": {
+          "response": "text",
+          "request": "text"
+        }
+      },
+      "serveField": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}": {
+      "serveBuildWithProject": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "build"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}": {
+      "getStepParameter": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "addStepParameter": {
+        "PUT": {
+          "response": "text",
+          "request": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRoot": {
+      "getChangeVCSRoot": {
+        "GET": {
+          "response": "vcs-root-instance",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/properties": {
+      "serveUserProperties": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/testOccurrences": {
+      "getTests": {
+        "GET": {
+          "response": "testOccurrences",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/example/buildCancelRequest": {
+      "cancelBuild": {
+        "GET": {
+          "response": "buildCancelRequest"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/groups": {
+      "addGroup": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "group",
+          "request": "group"
+        }
+      },
+      "replaceGroups": {
+        "PUT": {
+          "request": "groups",
+          "response": "groups",
+          "doc": "Replaces user's roles with the submitted ones",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getGroups": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "groups"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}": {
+      "deleteStep": {
+        "DELETE": {}
+      },
+      "replaceStep": {
+        "PUT": {
+          "request": "step",
+          "response": "step",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getStep": {
+        "GET": {
+          "response": "step",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/comment": {
+      "replaceComment": {
+        "PUT": {
+          "request": "text"
+        }
+      },
+      "deleteComment": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters/{name}": {
+      "putParameter": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      },
+      "deleteParameter": {
+        "DELETE": {}
+      },
+      "getParameterValue": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "getParameter": {
+        "GET": {
+          "response": "property"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}/checkout-rules": {
+      "getVcsRootEntryCheckoutRules": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "updateVcsRootEntryCheckoutRules": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties": {
+      "serveRootInstanceProperties": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}": {
+      "serveRootInstance": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root-instance"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}": {
+      "getFeatureParameter": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "addFeatureParameter": {
+        "PUT": {
+          "response": "text",
+          "request": "any"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}/{field}": {
+      "serveBuildFieldWithProject": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}": {
+      "replaceArtifactDep": {
+        "PUT": {
+          "request": "artifact-dependency",
+          "response": "artifact-dependency",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getArtifactDep": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "artifact-dependency"
+        }
+      },
+      "deleteArtifactDep": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest": {
+      "cancelBuild": {
+        "GET": {
+          "response": "buildCancelRequest"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settingsFile": {
+      "getSettingsFile": {
+        "GET": {
+          "doc": "Experimental support only",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/duplicates": {
+      "getChangeDuplicates": {
+        "GET": {
+          "response": "changes",
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Experimental support only!"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters": {
+      "replaceStepParameters": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "properties",
+          "response": "properties"
+        }
+      },
+      "getStepParameters": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/testOccurrences": {
+      "getTestOccurrences": {
+        "GET": {
+          "response": "testOccurrences",
+          "doc": "Experimental, the requests and results returned will change in future versions!",
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}": {
+      "replaceAgentRequirement": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "agent-requirement",
+          "request": "agent-requirement"
+        }
+      },
+      "getAgentRequirement": {
+        "GET": {
+          "response": "agent-requirement",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "deleteAgentRequirement": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/metadata{path:(/.*)?}": {
+      "getArtifactMetadata": {
+        "GET": {
+          "response": "file",
+          "param": {
+            "locator": "string",
+            "resolveParameters": "boolean"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/problems": {
+      "getProblems": {
+        "GET": {
+          "doc": "Experimental, the requests and results returned will change in future versions!",
+          "param": {
+            "fields": "string",
+            "locator": "string"
+          },
+          "response": "problems"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes": {
+      "serveChanges": {
+        "GET": {
+          "response": "changes",
+          "doc": "Lists changes by the specified locator",
+          "param": {
+            "project": "string",
+            "count": "int",
+            "build": "string",
+            "locator": "string",
+            "sinceChange": "string",
+            "buildType": "string",
+            "fields": "string",
+            "start": "long",
+            "vcsRoot": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}": {
+      "updateUser": {
+        "PUT": {
+          "response": "user",
+          "request": "user",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "deleteUser": {
+        "DELETE": {}
+      },
+      "serveUser": {
+        "GET": {
+          "response": "user",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState": {
+      "setRepositoryState": {
+        "PUT": {
+          "response": "entries",
+          "request": "entries"
+        }
+      },
+      "deleteRepositoryState": {
+        "DELETE": {}
+      },
+      "getRepositoryState": {
+        "GET": {
+          "response": "entries"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}": {
+      "replaceFeature": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "feature",
+          "response": "feature"
+        }
+      },
+      "deleteFeature": {
+        "DELETE": {}
+      },
+      "getFeature": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "feature"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/{field}": {
+      "serveBuildTypeFieldWithProject": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildQueue": {
+      "queueNewBuild": {
+        "POST": {
+          "request": "build",
+          "response": "build"
+        }
+      },
+      "deleteBuildsExperimental": {
+        "DELETE": {
+          "doc": "Experimental! Deletes the set of builds filtered",
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          }
+        }
+      },
+      "replaceBuilds": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "builds",
+          "response": "builds"
+        }
+      },
+      "getBuilds": {
+        "GET": {
+          "param": {
+            "fields": "string",
+            "locator": "string"
+          },
+          "doc": "Serves build queue.",
+          "response": "builds"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/content{path:(/.*)?}": {
+      "getArtifactContent": {
+        "GET": {
+          "response": "any",
+          "param": {
+            "logBuildUsage": "boolean",
+            "resolveParameters": "boolean"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/properties/{name}": {
+      "putUserProperty": {
+        "PUT": {
+          "response": "text",
+          "request": "text"
+        }
+      },
+      "serveUserProperty": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "removeUserProperty": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription": {
+      "getExampleNewProjectDescription": {
+        "GET": {
+          "response": "newBuildTypeDescription",
+          "doc": "Experimental support only. Use this to get an example of the bean to be posted to the /buildTypes request to create a new build type"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}": {
+      "deleteInstanceField": {
+        "DELETE": {}
+      },
+      "setInstanceField": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      },
+      "serveInstanceField": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties": {
+      "getProperties": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}": {
+      "deleteBuildType": {
+        "DELETE": {}
+      },
+      "serveBuildTypeXML": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Serves build configuration or templates according to the locator.",
+          "response": "buildType"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-instances": {
+      "getCurrentVcsInstances": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Experimental support only!",
+          "response": "vcs-root-instances"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}": {
+      "serveBuild": {
+        "GET": {
+          "response": "build",
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Serves a build described by the locator provided searching through those accessible by the current user. See {@link jetbrains.buildServer.server.rest.request.BuildRequest#serveAllBuilds(String, String, String, boolean, boolean, boolean, java.util.List, String, String, String, Long, Integer, String, javax.ws.rs.core.UriInfo, javax.servlet.http.HttpServletRequest)} If several builds are matched, the first one is used (the effect is the same as if \",count:1\" locator dimension is added)"
+        }
+      },
+      "cancelBuild": {
+        "POST": {
+          "response": "build",
+          "request": "buildCancelRequest",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "deleteBuild": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}": {
+      "addRoleSimple": {
+        "POST": {
+          "response": "role"
+        }
+      },
+      "listRole": {
+        "GET": {
+          "response": "role"
+        }
+      },
+      "deleteRole": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds": {
+      "deleteBuilds": {
+        "DELETE": {
+          "param": {
+            "locator": "string"
+          }
+        }
+      },
+      "serveAllBuilds": {
+        "GET": {
+          "response": "builds",
+          "doc": "Serves builds matching supplied condition.",
+          "param": {
+            "tag": "string",
+            "locator": "string",
+            "sinceDate": "string",
+            "fields": "string",
+            "start": "long",
+            "buildType": "string",
+            "onlyPinned": "boolean",
+            "status": "string",
+            "count": "int",
+            "sinceBuild": "string",
+            "includePersonal": "boolean",
+            "agentName": "string",
+            "includeCanceled": "boolean",
+            "triggeredByUser": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements": {
+      "addAgentRequirement": {
+        "POST": {
+          "response": "agent-requirement",
+          "request": "agent-requirement",
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Creates new agent requirement. 'id' attribute is ignored in the submitted descriptor. Reports error if new requirement cannot be created (e.g. another requirement is present for the parameter)."
+        }
+      },
+      "getAgentRequirements": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "agent-requirements"
+        }
+      },
+      "replaceAgentRequirements": {
+        "PUT": {
+          "doc": "Replaces agent requirements with those sent in the request.",
+          "param": {
+            "fields": "string"
+          },
+          "request": "agent-requirements",
+          "response": "agent-requirements"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/server/{field}": {
+      "serveServerVersion": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}": {
+      "deletePoolProject": {
+        "DELETE": {}
+      },
+      "getPoolProject": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "project"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/{field}": {
+      "serveBuildFieldByBuildOnly": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parentProject": {
+      "getParentProject": {
+        "GET": {
+          "response": "project",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "setParentProject": {
+        "PUT": {
+          "response": "project",
+          "request": "project"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}": {
+      "serveBuildType": {
+        "GET": {
+          "response": "buildType",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/debug/database/tables": {
+      "listDBTables": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/canceledInfo": {
+      "getCanceledInfo": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "comment"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers": {
+      "getTriggers": {
+        "GET": {
+          "response": "triggers",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "replaceTriggers": {
+        "PUT": {
+          "request": "triggers",
+          "response": "triggers",
+          "doc": "Replaces trigger with those sent inthe request.",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "addTrigger": {
+        "POST": {
+          "doc": "Creates new trigger. 'id' attribute is ignored in the submitted descriptor. Reports error if new trigger cannot be created (e.g. only single trigger of the type is allowed for a build configuration).",
+          "param": {
+            "fields": "string"
+          },
+          "request": "trigger",
+          "response": "trigger"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles/{roleId}/{scope}": {
+      "deleteRole": {
+        "DELETE": {}
+      },
+      "listRole": {
+        "GET": {
+          "response": "role"
+        }
+      },
+      "addRoleSimplePost": {
+        "POST": {}
+      },
+      "addRoleSimple": {
+        "PUT": {
+          "response": "role"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}": {
+      "serveBuildWithProject": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "build"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/newProjectDescription": {
+      "getExampleNewProjectDescriptionCompatibilityVersion1": {
+        "GET": {
+          "response": "newProjectDescription",
+          "doc": "For compatibility with experimental feature of 8.0",
+          "param": {
+            "id": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties/{name}": {
+      "serveUserProperties": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "putUserProperty": {
+        "PUT": {
+          "response": "text",
+          "request": "text"
+        }
+      },
+      "removeUserProperty": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/info": {
+      "servePluginInfo": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "plugin"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/server": {
+      "serveServerInfo": {
+        "GET": {
+          "response": "server"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/{name}": {
+      "serveBuildStatisticValue": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts{path:(/.*)?}": {
+      "getArtifacts": {
+        "GET": {
+          "response": "files",
+          "param": {
+            "fields": "string",
+            "resolveParameters": "boolean",
+            "locator": "string"
+          },
+          "doc": "More user-friendly URL for \"/{buildLocator}/artifacts/children\" one."
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/resulting-properties/{propertyName}": {
+      "getParameter": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries": {
+      "getVcsRootEntries": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root-entries"
+        }
+      },
+      "addVcsRootEntry": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "vcs-root-entry",
+          "response": "vcs-root-entry"
+        }
+      },
+      "replaceVcsRootEntries": {
+        "PUT": {
+          "request": "vcs-root-entries",
+          "response": "vcs-root-entries",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/agentPools/{agentPoolLocator}": {
+      "deleteProjectAgentPools": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/investigations": {
+      "getInvestigations": {
+        "GET": {
+          "response": "investigations",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances": {
+      "serveRootInstances": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root-instances"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/problemOccurrences": {
+      "getProblems": {
+        "GET": {
+          "response": "problemOccurrences",
+          "param": {
+            "fields": "string",
+            "locator": "string"
+          },
+          "doc": "Experimental, the requests and results returned will change in future versions!"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/investigations": {
+      "getInvestigations": {
+        "GET": {
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          },
+          "doc": "Experimental, the requests and results returned will change in future versions!",
+          "response": "investigations"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}": {
+      "replaceTrigger": {
+        "PUT": {
+          "request": "trigger",
+          "response": "trigger",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getTrigger": {
+        "GET": {
+          "response": "trigger",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "deleteTrigger": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters/{name}": {
+      "getParameter": {
+        "GET": {
+          "response": "property"
+        }
+      },
+      "deleteBuildTypeParameter": {
+        "DELETE": {}
+      },
+      "getParameterValue": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "setParameterValue": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/cctray/projects.xml": {
+      "serveProjects": {
+        "GET": {
+          "param": {
+            "locator": "string"
+          },
+          "response": "Projects"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/aliases": {
+      "getAliases": {
+        "GET": {
+          "doc": "Experimental support only",
+          "response": "items"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/version": {
+      "serveVersion": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/{field}": {
+      "serveProjectField": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "setProjectFiled": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/children{path:(/.*)?}": {
+      "getVcsFileListing": {
+        "GET": {
+          "doc": "Lists files in VCS Experimental support only",
+          "param": {
+            "resolveParameters": "boolean",
+            "fields": "string"
+          },
+          "response": "files"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/problems/{problemLocator}": {
+      "serveInstance": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "problem"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentRevisions": {
+      "getChangeParentRevisions": {
+        "GET": {
+          "doc": "Experimental support only!",
+          "response": "items"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/example/newProjectDescription": {
+      "getExampleNewProjectDescription": {
+        "GET": {
+          "response": "newProjectDescription",
+          "doc": "Experimental support only. Use this to get an example of the bean to be posted to the /projects request to create a new project",
+          "param": {
+            "id": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}": {
+      "deleteRoot": {
+        "DELETE": {}
+      },
+      "serveRoot": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings/{name}": {
+      "putBuildTypeSetting": {
+        "PUT": {
+          "response": "text",
+          "request": "any"
+        }
+      },
+      "serveBuildTypeSetting": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/properties": {
+      "deleteAllProperties": {
+        "DELETE": {}
+      },
+      "serveProperties": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties"
+        }
+      },
+      "changProperties": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties",
+          "request": "properties"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/{field}": {
+      "serveBuildFieldByBuildOnly": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/agents": {
+      "addAgent": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Moves the agent posted to the pool",
+          "response": "agent",
+          "request": "agent"
+        }
+      },
+      "getPoolAgents": {
+        "GET": {
+          "response": "agents",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/archived{path:(/.*)?}": {
+      "getZippedArtifacts": {
+        "GET": {
+          "response": "any",
+          "param": {
+            "name": "string",
+            "locator": "string",
+            "resolveParameters": "boolean",
+            "logBuildUsage": "boolean"
+          },
+          "doc": "Experimental"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/server/backup": {
+      "startBackup": {
+        "POST": {
+          "response": "text",
+          "param": {
+            "addTimestamp": "boolean",
+            "includeSupplimentaryData": "boolean",
+            "includeConfigs": "boolean",
+            "includeDatabase": "boolean",
+            "includePersonalChanges": "boolean",
+            "fileName": "string",
+            "includeRunningBuilds": "boolean",
+            "includeBuildLogs": "boolean"
+          }
+        }
+      },
+      "getBackupStatus": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/template": {
+      "getTemplateAssociation": {
+        "PUT": {
+          "request": "text",
+          "response": "buildType",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "serveBuildTypeTemplate": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "buildType"
+        }
+      },
+      "deleteTemplateAssociation": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/debug/memory/dumps": {
+      "saveMemoryDump": {
+        "POST": {
+          "response": "text",
+          "param": {
+            "archived": "boolean"
+          },
+          "doc": "Experimental use only!"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}": {
+      "getStepSetting": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "changeStepSetting": {
+        "PUT": {
+          "response": "text",
+          "request": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}": {
+      "getPool": {
+        "GET": {
+          "response": "agentPool",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "deletePool": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}": {
+      "deleteGroup": {
+        "DELETE": {}
+      },
+      "serveGroup": {
+        "GET": {
+          "response": "group",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentChanges": {
+      "getParentChanges": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Experimental support only!",
+          "response": "changes"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}/{field}": {
+      "serveBuildField": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/branches": {
+      "serveBranches": {
+        "GET": {
+          "response": "branches",
+          "param": {
+            "locator": "string"
+          },
+          "doc": "Lists branches of the build type."
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users": {
+      "createUser": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "user",
+          "request": "user"
+        }
+      },
+      "serveUsers": {
+        "GET": {
+          "response": "users",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects": {
+      "createProject": {
+        "POST": {
+          "request": "newProjectDescription",
+          "response": "project"
+        }
+      },
+      "createEmptyProject": {
+        "POST": {
+          "response": "project",
+          "request": "text"
+        }
+      },
+      "serveProjects": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "projects"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}/{field}": {
+      "serveAgentField": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "setAgentField": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/{field}": {
+      "serveUserField": {
+        "GET": {
+          "response": "text"
+        }
+      },
+      "setUserField": {
+        "PUT": {
+          "request": "text",
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-roots": {
+      "addRoot": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "vcs-root",
+          "request": "vcs-root"
+        }
+      },
+      "serveRoots": {
+        "GET": {
+          "response": "vcs-roots",
+          "param": {
+            "fields": "string",
+            "locator": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/sources/files/{fileName:.+}": {
+      "serveSourceFile": {
+        "GET": {
+          "response": "any"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features": {
+      "getFeatures": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "features"
+        }
+      },
+      "replaceFeatures": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "features",
+          "response": "features"
+        }
+      },
+      "addFeature": {
+        "POST": {
+          "response": "feature",
+          "request": "feature",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/userGroups": {
+      "addGroup": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "group",
+          "response": "group"
+        }
+      },
+      "serveGroups": {
+        "GET": {
+          "response": "groups",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/apiVersion": {
+      "serveApiVersion": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}": {
+      "deleteAgent": {
+        "DELETE": {}
+      },
+      "serveAgent": {
+        "GET": {
+          "response": "agent",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}/pool": {
+      "setAgentPool": {
+        "PUT": {
+          "response": "agentPool",
+          "request": "agentPool"
+        }
+      },
+      "getAgentPool": {
+        "GET": {
+          "response": "agentPool",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects": {
+      "addProject": {
+        "POST": {
+          "request": "project",
+          "response": "project",
+          "doc": "Adds the posted project to the pool associated projects"
+        }
+      },
+      "getPoolProjects": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "projects"
+        }
+      },
+      "replaceProjects": {
+        "PUT": {
+          "doc": "Associates the posted set of projects with the pool which replaces earlier associations on this pool",
+          "request": "projects",
+          "response": "projects"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters": {
+      "deleteAllParameters": {
+        "DELETE": {}
+      },
+      "changeAllParameters": {
+        "PUT": {
+          "response": "properties",
+          "request": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "serveParameters": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "setParameter": {
+        "POST": {
+          "request": "property",
+          "response": "property"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRootInstance": {
+      "getChangeVCSRootInstance": {
+        "GET": {
+          "response": "vcs-root-instance",
+          "param": {
+            "fields": "string"
+          },
+          "doc": "Experimental support only!"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters/{name}/value": {
+      "getParameterValueLong": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/investigations/{investigationLocator}": {
+      "serveInstance": {
+        "GET": {
+          "response": "investigation",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/tests/{testLocator}": {
+      "serveInstance": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "test"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/debug/requestDetails": {
+      "getRequestDetails": {
+        "GET": {
+          "response": "text",
+          "doc": "Experimental use only!"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/relatedIssues": {
+      "serveBuildRelatedIssues": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "issuesUsages"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters/{name}/value": {
+      "getParameterValueLong": {
+        "GET": {
+          "response": "text"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/pin/": {
+      "unpinBuild": {
+        "DELETE": {
+          "doc": "Unpins a build",
+          "request": "text"
+        }
+      },
+      "pinBuild": {
+        "PUT": {
+          "request": "text",
+          "doc": "Pins a build"
+        }
+      },
+      "getPinned": {
+        "GET": {
+          "response": "text",
+          "doc": "Fetches current build pinned status."
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/buildTags": {
+      "serveBuildTypeBuildsTags": {
+        "GET": {
+          "response": "tags"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcsLabeling": {
+      "getVCSLabelingOptions": {
+        "GET": {
+          "response": "vcsLabeling",
+          "doc": "Gets VCS labeling settings Experimental support only"
+        }
+      },
+      "setVCSLabelingOptions": {
+        "PUT": {
+          "doc": "Sets VCS labeling settings Experimental support only",
+          "request": "vcsLabeling",
+          "response": "vcsLabeling"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path:(/.*)?}": {
+      "getVcsFile": {
+        "GET": {
+          "doc": "Gets VCS file details Experimental support only",
+          "response": "file"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/resulting-properties/": {
+      "serveBuildActualParameters": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/related-issues": {
+      "serveBuildRelatedIssuesOld": {
+        "GET": {
+          "response": "issuesUsages",
+          "param": {
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/agentPools": {
+      "getPools": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "agentPools"
+        }
+      },
+      "setPools": {
+        "POST": {
+          "response": "agentPool",
+          "request": "agentPool"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters": {
+      "changeBuildTypeParameters": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties",
+          "request": "properties"
+        }
+      },
+      "setParameter": {
+        "POST": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "property",
+          "request": "property"
+        }
+      },
+      "serveBuildTypeParameters": {
+        "GET": {
+          "response": "properties",
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          }
+        }
+      },
+      "deleteAllBuildTypeParameters": {
+        "DELETE": {}
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes": {
+      "addBuildType": {
+        "POST": {
+          "response": "buildType",
+          "request": "buildType",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "getBuildTypes": {
+        "GET": {
+          "response": "buildTypes",
+          "doc": "Lists build types registered on the server. Build templates are not included by default",
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          }
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/": {
+      "serveBuildStatisticValues": {
+        "GET": {
+          "param": {
+            "fields": "string"
+          },
+          "response": "properties"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/debug/vcsCheckingForChangesQueue": {
+      "scheduleCheckingForChanges": {
+        "POST": {
+          "param": {
+            "locator": "string",
+            "fields": "string"
+          },
+          "doc": "Experimental use only!",
+          "response": "vcs-root-instances"
+        }
+      }
+    },
+    "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}": {
+      "getSnapshotDep": {
+        "GET": {
+          "response": "snapshot-dependency",
+          "param": {
+            "fields": "string"
+          }
+        }
+      },
+      "deleteSnapshotDep": {
+        "DELETE": {}
+      },
+      "replaceSnapshotDep": {
+        "PUT": {
+          "param": {
+            "fields": "string"
+          },
+          "request": "snapshot-dependency",
+          "response": "snapshot-dependency"
+        }
+      }
+    }
+  },
+  "typemap": {
+    "items": {
+      "item": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      }
+    },
+    "vcs-root-entry": {
+      "checkout-rules": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcs-root": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      }
+    },
+    "occurrencesSummary": {
+      "muted": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "ignored": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "newFailed": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "passed": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "failed": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "problemOccurrence": {
+      "build": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "type": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "mute": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "mute"
+      },
+      "problem": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "muted": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "currentlyInvestigated": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "details": {
+        "type": "xs:string",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "currentlyMuted": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "additionalData": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "identity": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "vcs-root": {
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "internalId": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcsRootInstances": {
+        "is_sequence": 1,
+        "type": "vcs-root-instances",
+        "minOccurs": "0"
+      },
+      "modificationCheckInterval": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "lastChecked": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "projectLocator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "uuid": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "properties": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "project": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "vcsName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "status": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "artifact-dependency": {
+      "source-buildType": {
+        "type": "buildType",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "from": "propEntity"
+      },
+      "id": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "disabled": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      }
+    },
+    "mute": {
+      "scope": {
+        "is_sequence": 1,
+        "type": "problemScope",
+        "minOccurs": "0"
+      },
+      "resolution": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "resolution"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "assignment": {
+        "minOccurs": "0",
+        "type": "comment",
+        "is_sequence": 1
+      },
+      "target": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "problemTarget"
+      }
+    },
+    "branch": {
+      "default": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "unspecified": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "problem": {
+      "type": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "investigations": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "problemOccurrences": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "identity": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "mutes": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      }
+    },
+    "snapshot-dependency": {
+      "disabled": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "type": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "from": "propEntity"
+      },
+      "source-buildType": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "buildType"
+      },
+      "name": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "id": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "comment": {
+      "user": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "text": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "timestamp": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "xs:string"
+      }
+    },
+    "features": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "feature": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      }
+    },
+    "change": {
+      "locator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "webUrl": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "personal": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "id": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "user": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "version": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsRootInstance": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "vcs-root-instance"
+      },
+      "files": {
+        "is_sequence": 1,
+        "type": "fileChanges",
+        "minOccurs": "0"
+      },
+      "date": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "username": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "comment": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      }
+    },
+    "properties": {
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "property": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "project": {
+      "webUrl": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "internalId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcsRoots": {
+        "is_sequence": 1,
+        "type": "vcs-roots",
+        "minOccurs": "0"
+      },
+      "archived": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "uuid": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "buildTypes": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "projects": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "parentProjectId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "parentProjectInternalId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "templates": {
+        "is_sequence": 1,
+        "type": "buildTypes",
+        "minOccurs": "0"
+      },
+      "parentProjectName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "parentProject": {
+        "minOccurs": "0",
+        "type": "project",
+        "is_sequence": 1
+      },
+      "description": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "parameters": {
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1
+      }
+    },
+    "changes": {
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "change": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "testOccurrences": {
+      "muted": {
+        "from": "occurrencesSummary",
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "failed": {
+        "is_attribute": 1,
+        "from": "occurrencesSummary",
+        "type": "int"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "newFailed": {
+        "type": "int",
+        "from": "occurrencesSummary",
+        "is_attribute": 1
+      },
+      "ignored": {
+        "from": "occurrencesSummary",
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "testOccurrence": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      "passed": {
+        "type": "int",
+        "from": "occurrencesSummary",
+        "is_attribute": 1
+      }
+    },
+    "fileChanges": {
+      "file": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "type": "fileChange",
+        "is_sequence": 1
+      }
+    },
+    "files": {
+      "file": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "snapshot-dependencies": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "snapshot-dependency": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      }
+    },
+    "agentPool": {
+      "agents": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "projects": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "fileChange": {
+      "relative-file": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "before-revision": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "after-revision": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "file": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "file": {
+      "parent": {
+        "minOccurs": "0",
+        "type": "file-ref",
+        "is_sequence": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1,
+        "from": "file-ref"
+      },
+      "children": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "href"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1,
+        "from": "file-ref"
+      },
+      "content": {
+        "type": "href",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "modificationTime": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "size": {
+        "is_attribute": 1,
+        "type": "long"
+      }
+    },
+    "branches": {
+      "branch": {
+        "maxOccurs": "unbounded",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "users": {
+      "user": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "maxOccurs": "unbounded"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "step": {
+      "type": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "disabled": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "boolean"
+      },
+      "id": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "from": "propEntity"
+      }
+    },
+    "vcs-root-instance": {
+      "lastChecked": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcs-root": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "projectLocator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsRootInternalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcs-root-id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastVersionInternal": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastVersion": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "properties": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "status": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsName": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "role": {
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "roleId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "scope": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "propEntity": {
+      "type": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "disabled": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "properties": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "user": {
+      "groups": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "id": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "password": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastLogin": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "email": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "roles": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "realm": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "username": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "agentPools": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "agentPool": {
+        "maxOccurs": "unbounded",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "parameterType": {
+      "rawValue": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "agent-requirements": {
+      "agent-requirement": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "tags": {
+      "tag": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "problems": {
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "problem": {
+        "maxOccurs": "unbounded",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "projects": {
+      "project": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "property": {
+      "value": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "type": {
+        "is_sequence": 1,
+        "type": "parameterType",
+        "minOccurs": "0"
+      },
+      "own": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "revision": {
+      "vcs-root-instance": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "internalVersion": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "version": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "vcs-roots": {
+      "vcs-root": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "build": {
+      "lastChanges": {
+        "minOccurs": "0",
+        "type": "changes",
+        "is_sequence": 1
+      },
+      "statusText": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      },
+      "percentageComplete": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "compatibleAgents": {
+        "minOccurs": "0",
+        "type": "agents",
+        "is_sequence": 1
+      },
+      "unspecifiedBranch": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "pinned": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "running-info": {
+        "minOccurs": "0",
+        "type": "progress-info",
+        "is_sequence": 1
+      },
+      "state": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "finishDate": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "waitReason": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "number": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "buildTypeInternalId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agent": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "comment": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "comment"
+      },
+      "testOccurrences": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "triggered": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "triggeredBy"
+      },
+      "snapshot-dependencies": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "builds"
+      },
+      "canceledInfo": {
+        "type": "comment",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "running": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "properties": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "changes": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "status": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "queuedDate": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "artifact-dependencies": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "builds"
+      },
+      "buildType": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "startEstimate": {
+        "type": "xs:string",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "artifacts": {
+        "minOccurs": "0",
+        "type": "files",
+        "is_sequence": 1
+      },
+      "triggeringOptions": {
+        "is_sequence": 1,
+        "type": "buildTriggeringOptions",
+        "minOccurs": "0"
+      },
+      "branchName": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "attributes": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "entries"
+      },
+      "user": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "startDate": {
+        "type": "xs:string",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "tags": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "pinInfo": {
+        "minOccurs": "0",
+        "type": "comment",
+        "is_sequence": 1
+      },
+      "personal": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "revisions": {
+        "minOccurs": "0",
+        "type": "revisions",
+        "is_sequence": 1
+      },
+      "relatedIssues": {
+        "is_sequence": 1,
+        "type": "issuesUsages",
+        "minOccurs": "0"
+      },
+      "problemOccurrences": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "statistics": {
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0"
+      },
+      "taskId": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "buildTypeId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "defaultBranch": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "history": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "custom-artifact-dependencies": {
+        "is_sequence": 1,
+        "type": "artifact-dependencies",
+        "minOccurs": "0"
+      },
+      "webUrl": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "tests": {
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "test": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "vcsLabeling": {
+      "type": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "labelName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcsRoots": {
+        "type": "vcs-roots",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "branchFilter": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      }
+    },
+    "entries": {
+      "entry": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      },
+      "count": {
+        "type": "long",
+        "is_attribute": 1
+      }
+    },
+    "builds": {
+      "build": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "testOccurrence": {
+      "ignored": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "build": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "muted": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "details": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "xs:string"
+      },
+      "ignoreDetails": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "xs:string"
+      },
+      "currentlyInvestigated": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "status": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "firstFailed": {
+        "minOccurs": "0",
+        "type": "testOccurrence",
+        "is_sequence": 1
+      },
+      "nextFixed": {
+        "minOccurs": "0",
+        "type": "testOccurrence",
+        "is_sequence": 1
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "mute": {
+        "type": "mute",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "test": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "currentlyMuted": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "duration": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "investigation": {
+      "assignment": {
+        "type": "comment",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "resolution": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "resolution"
+      },
+      "state": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "scope": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "problemScope"
+      },
+      "assignee": {
+        "is_sequence": 1,
+        "type": "user",
+        "minOccurs": "0"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "responsible": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "user"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "target": {
+        "is_sequence": 1,
+        "type": "problemTarget",
+        "minOccurs": "0"
+      }
+    },
+    "steps": {
+      "step": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "vcs-root-entries": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "vcs-root-entry": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "maxOccurs": "unbounded"
+      }
+    },
+    "trigger": {
+      "disabled": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "boolean"
+      },
+      "type": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "properties": {
+        "from": "propEntity",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "name": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      }
+    },
+    "newProjectDescription": {
+      "sourceProjectLocator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "sourceProject": {
+        "type": "project",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "projectsIdsMap": {
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0",
+        "from": "copyOptionsDescription"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "buildTypesIdsMap": {
+        "from": "copyOptionsDescription",
+        "type": "properties",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "copyAllAssociatedSettings": {
+        "from": "copyOptionsDescription",
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "vcsRootsIdsMap": {
+        "from": "copyOptionsDescription",
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0"
+      },
+      "parentProject": {
+        "minOccurs": "0",
+        "type": "project",
+        "is_sequence": 1
+      }
+    },
+    "triggeredBy": {
+      "details": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "date": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "type": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "user": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "rawValue": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "buildType": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "problemTarget": {
+      "tests": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "anyProblem": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "problems": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      }
+    },
+    "agent": {
+      "typeId": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "pool": {
+        "type": "agentPool",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "authorized": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "ip": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "locator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "connected": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "enabled": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "uptodate": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "id": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "mutes": {
+      "mute": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "type": "mute",
+        "minOccurs": "0"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "groups": {
+      "group": {
+        "maxOccurs": "unbounded",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "issuesUsages": {
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "issueUsage": {
+        "maxOccurs": "unbounded",
+        "type": "issueUsage",
+        "minOccurs": "0",
+        "is_sequence": 1
+      }
+    },
+    "vcs-root-instances": {
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcs-root-instance": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "triggers": {
+      "trigger": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "copyOptionsDescription": {
+      "copyAllAssociatedSettings": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "vcsRootsIdsMap": {
+        "type": "properties",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "projectsIdsMap": {
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1
+      },
+      "buildTypesIdsMap": {
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0"
+      }
+    },
+    "file-ref": {
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "issue": {
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "url": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "progress-info": {
+      "outdated": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "estimatedTotalSeconds": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "elapsedSeconds": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "currentStageText": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "probablyHanging": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "percentageComplete": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "newBuildTypeDescription": {
+      "projectsIdsMap": {
+        "from": "copyOptionsDescription",
+        "type": "properties",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "sourceBuildTypeLocator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "sourceBuildType": {
+        "type": "buildType",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "buildTypesIdsMap": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "properties",
+        "from": "copyOptionsDescription"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcsRootsIdsMap": {
+        "from": "copyOptionsDescription",
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1
+      },
+      "copyAllAssociatedSettings": {
+        "type": "boolean",
+        "from": "copyOptionsDescription",
+        "is_attribute": 1
+      }
+    },
+    "server": {
+      "version": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agentPools": {
+        "type": "href",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "userGroups": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "href"
+      },
+      "versionMinor": {
+        "type": "byte",
+        "is_attribute": 1
+      },
+      "buildQueue": {
+        "type": "href",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "buildDate": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "versionMajor": {
+        "is_attribute": 1,
+        "type": "byte"
+      },
+      "startTime": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "buildNumber": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agents": {
+        "type": "href",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "users": {
+        "minOccurs": "0",
+        "type": "href",
+        "is_sequence": 1
+      },
+      "internalId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "builds": {
+        "type": "href",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "projects": {
+        "type": "href",
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "currentTime": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcsRoots": {
+        "is_sequence": 1,
+        "type": "href",
+        "minOccurs": "0"
+      }
+    },
+    "roles": {
+      "role": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      }
+    },
+    "artifact-dependencies": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "artifact-dependency": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      }
+    },
+    "buildType": {
+      "triggers": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "investigations": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "projectName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "features": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "project": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "paused": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "uuid": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "snapshot-dependencies": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "template": {
+        "is_sequence": 1,
+        "type": "buildType",
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "projectId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "webUrl": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "internalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "artifact-dependencies": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "builds": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "projectInternalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "description": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "parameters": {
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0"
+      },
+      "steps": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "vcs-root-entries": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agent-requirements": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "templateFlag": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "settings": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "properties"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "problemScope": {
+      "buildTypes": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "buildType": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "project": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "test": {
+      "mutes": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "testOccurrences": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "investigations": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      }
+    },
+    "issueUsage": {
+      "issue": {
+        "minOccurs": "0",
+        "type": "issue",
+        "is_sequence": 1
+      },
+      "changes": {
+        "minOccurs": "0",
+        "type": "changes",
+        "is_sequence": 1
+      }
+    },
+    "plugins": {
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "plugin": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded"
+      }
+    },
+    "feature": {
+      "type": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "disabled": {
+        "type": "boolean",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "name": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "id": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "from": "propEntity"
+      }
+    },
+    "issues": {
+      "issue": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "type": "issue",
+        "is_sequence": 1
+      }
+    },
+    "buildTypes": {
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "buildType": {
+        "maxOccurs": "unbounded",
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "investigations": {
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "investigation": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "maxOccurs": "unbounded"
+      }
+    },
+    "revisions": {
+      "revision": {
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "type": "revision",
+        "is_sequence": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "resolution": {
+      "type": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "time": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      }
+    },
+    "agent-requirement": {
+      "type": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "disabled": {
+        "type": "boolean",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "properties": {
+        "from": "propEntity",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      }
+    },
+    "group": {
+      "properties": {
+        "minOccurs": "0",
+        "is_ref": 1,
+        "is_sequence": 1
+      },
+      "parent-groups": {
+        "minOccurs": "0",
+        "type": "groups",
+        "is_sequence": 1
+      },
+      "key": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "description": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "child-groups": {
+        "minOccurs": "0",
+        "type": "groups",
+        "is_sequence": 1
+      },
+      "users": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "roles": {
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "agents": {
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agent": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "href": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "buildTriggeringOptions": {
+      "rebuildAllDependencies": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "cleanSources": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "rebuildDependencies": {
+        "is_sequence": 1,
+        "type": "buildTypes",
+        "minOccurs": "0"
+      },
+      "queueAtTop": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "plugin": {
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "displayName": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "parameters": {
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0"
+      },
+      "version": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "loadPath": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "problemOccurrences": {
+      "passed": {
+        "type": "int",
+        "from": "occurrencesSummary",
+        "is_attribute": 1
+      },
+      "ignored": {
+        "from": "occurrencesSummary",
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "newFailed": {
+        "from": "occurrencesSummary",
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "problemOccurrence": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "failed": {
+        "type": "int",
+        "is_attribute": 1,
+        "from": "occurrencesSummary"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "muted": {
+        "type": "int",
+        "is_attribute": 1,
+        "from": "occurrencesSummary"
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "buildCancelRequest": {
+      "comment": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "readdIntoQueue": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "tag": {
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "private": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "owner": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "type": "user"
+      }
+    },
+    "entry": {
+      "value": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    }
+  }
+}
