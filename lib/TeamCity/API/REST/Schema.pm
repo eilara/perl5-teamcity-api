@@ -43,21 +43,23 @@ sub generate_json_schema {
 sub generate_html_description {
     my $self = shift;
 
-    return $self->_generator->generate_html_description( $self->_describe_resources );
+    return $self->_generator->generate_html_description(
+        $self->_describe_resources );
 }
 
 sub _describe_resources {
     my $self = shift;
 
-    my $methods = $self->_resources->kv->sort(
+    my $methods
+        = $self->_resources->kv->map(
+        sub { [ $_[0]->[0], $_[0]->[1]->{methods} ] } )->sort(
         sub {
             my $m1 = shift;
             my $m2 = shift;
 
             return $m1->[0] cmp $m2->[0];
-
         }
-    )->map( sub { $self->_describe_resource( @{ shift() } ) } );
+        )->map( sub { $self->_describe_resource( @{ shift() } ) } );
 
     my $prefix = '/app/rest';
     ( my $base = $methods->[0]->[0] )
@@ -78,7 +80,13 @@ sub _describe_resource {
     my $ids      = shift;
 
     my @methods
-        = $ids->kv->map( sub { $self->_describe_method_id( @{ shift() } ) } )
+        = $ids->kv->sort(
+        sub {
+            my $m1 = shift;
+            my $m2 = shift;
+
+            return $m1->[0] cmp $m2->[0];
+        })->map( sub { $self->_describe_method_id( @{ shift() } ) } )
         ->flatten;
     $methods[0]->[0] = $resource;
 
@@ -108,7 +116,7 @@ sub _describe_method_name {
         $name,
         $method->{request}  || q{},
         $method->{response} || q{},
-        ( $method->{param}  || {} )->kv->map( sub { shift()->join(q{:}) } )
+        ( $method->{param} || {} )->kv->map( sub { shift()->join(q{:}) } )
             ->join(q{ }),
         ( $method->{doc} || q{} ),
     ];
@@ -125,8 +133,8 @@ sub _build_resources {
         my %method = %{ shift() };
 
         my $leaf
-            = ( ( $resources{ $method{resource} } ||= {} )->{ $method{id} }
-                ||= {} )->{ $method{name} } = {};
+            = ( ( $resources{ $method{resource} } ||= { methods => {} } )
+            ->{methods}->{ $method{id} } ||= {} )->{ $method{name} } = {};
 
         if ( my $representation
             = ( $method{request} // {} )->{representation} ) {
