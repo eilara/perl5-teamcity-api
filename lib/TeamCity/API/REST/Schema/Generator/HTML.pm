@@ -103,6 +103,11 @@ template action => sub {
     }
 
     table_row {
+        td { attr colspan => 5, class => 'spacer-cell' }
+    }
+    if $entity_row_span;
+
+    table_row {
 
         td {
             attr rowspan => $entity_row_span, class => 'entity';
@@ -120,7 +125,7 @@ template action => sub {
             my $name = $action->{name};
             span { attr class => "method-$name"; $name };
 
-            my $request = $action->{request};
+            my $request  = $action->{request};
             my $response = $action->{response};
 
             span { q{ } };
@@ -130,7 +135,7 @@ template action => sub {
         };
 
         td {
-            span { attr class => 'action-id'; $action->{id} };
+            span { attr class => 'action-id';  $action->{id} };
             span { attr class => 'param-name'; '(' };
             if ( my $param = $action->{param} ) {
                 my $is_first = 1;
@@ -214,10 +219,14 @@ td {
 }
 
 .method-GET, .method-POST, .method-PUT, .method-DELETE {
+    border-radius    : 3pt;
+    display          : inline-block;
     font-family      : monospace;
     font-weight      : bold;
     padding-left     : 2pt;
     padding-right    : 2pt;
+    text-align       : center;
+    width            : 4em;
 }
 
 .method-GET {
@@ -234,6 +243,13 @@ td {
 
 .method-DELETE {
     background-color : #E08080;
+}
+
+.spacer-cell {
+    border-left      : none;
+    border-right     : none;
+    padding          : 2px;
+    margin           : 0px;
 }
 
 CSS

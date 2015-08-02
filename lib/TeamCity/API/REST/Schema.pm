@@ -7,9 +7,14 @@ use namespace::autoclean;
 use Moose::Autobox;
 use URI;
 
-use relative -aliased => qw( Meta Meta::Server Typemap );
-use relative -to      => qw( TeamCity::API::REST::Schema::Meta),
-    -aliased          => qw( Action Entity Resource );
+use relative -aliased => qw(
+    Meta
+    Meta::Action
+    Meta::Entity
+    Meta::Resource
+    Meta::Server
+    Typemap
+);
 
 has _server => (
     is      => 'ro',
@@ -64,7 +69,11 @@ sub _build_server {
         = $entities->values->sort( sub { $_[0]->{name} cmp $_[1]->{name} } )
         ->map( sub                     { $make_entity->($_) } );
 
-    return Server->new( base_uri => $base_uri, entities => $sorted_entities );
+    return Server->new(
+        base_uri => $base_uri,
+        entities => $sorted_entities,
+        typemap  => $self->_typemap->typemap,
+    );
 }
 
 sub _make_action {

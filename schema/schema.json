@@ -4,37 +4,37 @@
       "name": "/",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest",
           "actions": [
             {
+              "id": "serveRoot",
               "response": "text",
-              "name": "GET",
-              "id": "serveRoot"
+              "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest"
+          ]
         }
       ]
     },
     {
       "resources": [
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools",
           "actions": [
             {
-              "id": "getPools",
               "param": {
                 "fields": "string"
               },
               "name": "GET",
-              "response": "agentPools"
+              "response": "agentPools",
+              "id": "getPools"
             },
             {
               "request": "agentPool",
               "response": "agentPool",
-              "id": "setPools",
-              "name": "POST"
+              "name": "POST",
+              "id": "setPools"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools"
         },
         {
           "actions": [
@@ -43,119 +43,118 @@
               "name": "DELETE"
             },
             {
-              "response": "agentPool",
-              "id": "getPool",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "response": "agentPool",
+              "name": "GET",
+              "id": "getPool"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/agents",
           "actions": [
             {
               "param": {
                 "fields": "string"
               },
-              "id": "addAgent",
-              "name": "POST",
               "request": "agent",
+              "name": "POST",
               "response": "agent",
+              "id": "addAgent",
               "doc": "Moves the agent posted to the pool"
             },
             {
+              "name": "GET",
               "response": "agents",
               "param": {
                 "fields": "string"
               },
-              "id": "getPoolAgents",
-              "name": "GET"
+              "id": "getPoolAgents"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/agents"
+          ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects",
           "actions": [
             {
               "name": "POST",
-              "id": "addProject",
-              "doc": "Adds the posted project to the pool associated projects",
+              "response": "project",
               "request": "project",
-              "response": "project"
+              "doc": "Adds the posted project to the pool associated projects",
+              "id": "addProject"
             },
             {
-              "name": "GET",
-              "id": "getPoolProjects",
               "param": {
                 "fields": "string"
               },
-              "response": "projects"
+              "name": "GET",
+              "response": "projects",
+              "id": "getPoolProjects"
             },
             {
+              "id": "replaceProjects",
               "doc": "Associates the posted set of projects with the pool which replaces earlier associations on this pool",
-              "response": "projects",
               "request": "projects",
               "name": "PUT",
-              "id": "replaceProjects"
+              "response": "projects"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects"
+          ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}",
           "actions": [
             {
-              "id": "deletePoolProject",
-              "name": "DELETE"
+              "name": "DELETE",
+              "id": "deletePoolProject"
             },
             {
+              "id": "getPoolProject",
+              "response": "project",
               "name": "GET",
               "param": {
                 "fields": "string"
-              },
-              "id": "getPoolProject",
-              "response": "project"
+              }
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/agentPools/{agentPoolLocator}/projects/{projectLocator}"
+          ]
         }
       ],
       "name": "agentPools"
     },
     {
-      "name": "agents",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/agents",
           "actions": [
             {
+              "id": "serveAgents",
               "doc": "Returns list of agents",
-              "response": "agents",
-              "name": "GET",
               "param": {
-                "fields": "string",
                 "includeDisconnected": "boolean",
                 "includeUnauthorized": "boolean",
-                "locator": "string"
+                "locator": "string",
+                "fields": "string"
               },
-              "id": "serveAgents"
+              "response": "agents",
+              "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/agents"
+          ]
         },
         {
           "actions": [
             {
-              "id": "deleteAgent",
-              "name": "DELETE"
+              "name": "DELETE",
+              "id": "deleteAgent"
             },
             {
               "response": "agent",
               "name": "GET",
-              "id": "serveAgent",
               "param": {
                 "fields": "string"
-              }
+              },
+              "id": "serveAgent"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}"
@@ -164,18 +163,18 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}/pool",
           "actions": [
             {
+              "name": "GET",
               "response": "agentPool",
               "param": {
                 "fields": "string"
               },
-              "id": "getAgentPool",
-              "name": "GET"
+              "id": "getAgentPool"
             },
             {
-              "request": "agentPool",
+              "name": "PUT",
               "response": "agentPool",
-              "id": "setAgentPool",
-              "name": "PUT"
+              "request": "agentPool",
+              "id": "setAgentPool"
             }
           ]
         },
@@ -183,19 +182,20 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/agents/{agentLocator}/{field}",
           "actions": [
             {
-              "response": "text",
               "id": "serveAgentField",
-              "name": "GET"
+              "name": "GET",
+              "response": "text"
             },
             {
               "id": "setAgentField",
-              "name": "PUT",
               "request": "text",
+              "name": "PUT",
               "response": "text"
             }
           ]
         }
-      ]
+      ],
+      "name": "agents"
     },
     {
       "name": "apiVersion",
@@ -213,91 +213,90 @@
       ]
     },
     {
-      "name": "buildQueue",
       "resources": [
         {
           "actions": [
             {
-              "id": "deleteBuildsExperimental",
               "param": {
                 "locator": "string",
                 "fields": "string"
               },
               "name": "DELETE",
+              "id": "deleteBuildsExperimental",
               "doc": "Experimental! Deletes the set of builds filtered"
             },
             {
               "id": "getBuilds",
+              "doc": "Serves build queue.",
               "param": {
                 "fields": "string",
                 "locator": "string"
               },
               "name": "GET",
-              "response": "builds",
-              "doc": "Serves build queue."
+              "response": "builds"
             },
             {
+              "id": "queueNewBuild",
               "request": "build",
               "response": "build",
-              "id": "queueNewBuild",
               "name": "POST"
             },
             {
+              "id": "replaceBuilds",
+              "response": "builds",
               "name": "PUT",
+              "request": "builds",
               "param": {
                 "fields": "string"
-              },
-              "id": "replaceBuilds",
-              "request": "builds",
-              "response": "builds"
+              }
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest",
           "actions": [
             {
-              "response": "buildCancelRequest",
               "id": "cancelBuild",
+              "response": "buildCancelRequest",
               "name": "GET"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/example/buildCancelRequest"
         },
         {
           "actions": [
             {
-              "response": "text",
               "request": "text",
-              "doc": "Adds a single tag to a build",
+              "response": "text",
+              "name": "POST",
               "id": "addTag",
+              "doc": "Adds a single tag to a build"
+            },
+            {
+              "id": "addTags",
+              "doc": "Adds a set of tags to a build",
+              "request": "tags",
               "name": "POST"
             },
             {
-              "doc": "Adds a set of tags to a build",
-              "request": "tags",
-              "name": "POST",
-              "id": "addTags"
-            },
-            {
-              "doc": "Replaces build's tags.",
-              "request": "tags",
-              "response": "tags",
-              "name": "PUT",
               "param": {
                 "fields": "string",
                 "locator": "string"
               },
-              "id": "replaceTags"
+              "request": "tags",
+              "response": "tags",
+              "name": "PUT",
+              "id": "replaceTags",
+              "doc": "Replaces build's tags."
             },
             {
               "name": "GET",
-              "id": "serveTags",
+              "response": "tags",
               "param": {
-                "locator": "string",
-                "fields": "string"
+                "fields": "string",
+                "locator": "string"
               },
-              "response": "tags"
+              "id": "serveTags"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/tags/"
@@ -306,219 +305,220 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{buildLocator}/{field}",
           "actions": [
             {
-              "name": "GET",
               "id": "serveBuildFieldByBuildOnly",
-              "response": "text"
-            }
-          ]
-        },
-        {
-          "actions": [
-            {
-              "name": "POST",
-              "id": "cancelBuild",
-              "request": "buildCancelRequest",
-              "response": "build"
-            },
-            {
-              "id": "deleteBuild",
-              "name": "DELETE"
-            },
-            {
-              "response": "build",
-              "id": "getBuild",
-              "param": {
-                "fields": "string"
-              },
+              "response": "text",
               "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}/compatibleAgents",
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}",
           "actions": [
             {
+              "id": "cancelBuild",
+              "name": "POST",
+              "response": "build",
+              "request": "buildCancelRequest"
+            },
+            {
+              "name": "DELETE",
+              "id": "deleteBuild"
+            },
+            {
+              "id": "getBuild",
+              "response": "build",
+              "name": "GET",
               "param": {
                 "fields": "string"
-              },
-              "id": "serveCompatibleAgents",
-              "name": "GET",
-              "response": "agents"
+              }
             }
           ]
+        },
+        {
+          "actions": [
+            {
+              "id": "serveCompatibleAgents",
+              "name": "GET",
+              "response": "agents",
+              "param": {
+                "fields": "string"
+              }
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildQueue/{queuedBuildLocator}/compatibleAgents"
         }
-      ]
+      ],
+      "name": "buildQueue"
     },
     {
       "name": "buildTypes",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes",
           "actions": [
             {
-              "request": "buildType",
+              "id": "addBuildType",
               "response": "buildType",
+              "name": "POST",
+              "request": "buildType",
               "param": {
                 "fields": "string"
-              },
-              "id": "addBuildType",
-              "name": "POST"
+              }
             },
             {
+              "doc": "Lists build types registered on the server. Build templates are not included by default",
+              "id": "getBuildTypes",
+              "response": "buildTypes",
               "name": "GET",
               "param": {
-                "fields": "string",
-                "locator": "string"
-              },
-              "id": "getBuildTypes",
-              "doc": "Lists build types registered on the server. Build templates are not included by default",
-              "response": "buildTypes"
+                "locator": "string",
+                "fields": "string"
+              }
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes"
+          ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}",
           "actions": [
             {
               "name": "DELETE",
               "id": "deleteBuildType"
             },
             {
+              "doc": "Serves build configuration or templates according to the locator.",
               "id": "serveBuildTypeXML",
-              "param": {
-                "fields": "string"
-              },
               "name": "GET",
               "response": "buildType",
-              "doc": "Serves build configuration or templates according to the locator."
+              "param": {
+                "fields": "string"
+              }
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements",
           "actions": [
             {
-              "request": "agent-requirement",
-              "response": "agent-requirement",
-              "doc": "Creates new agent requirement. 'id' attribute is ignored in the submitted descriptor. Reports error if new requirement cannot be created (e.g. another requirement is present for the parameter).",
-              "param": {
-                "fields": "string"
-              },
               "id": "addAgentRequirement",
-              "name": "POST"
-            },
-            {
+              "doc": "Creates new agent requirement. 'id' attribute is ignored in the submitted descriptor. Reports error if new requirement cannot be created (e.g. another requirement is present for the parameter).",
+              "request": "agent-requirement",
               "param": {
                 "fields": "string"
               },
-              "id": "getAgentRequirements",
-              "name": "GET",
-              "response": "agent-requirements"
+              "name": "POST",
+              "response": "agent-requirement"
             },
             {
-              "doc": "Replaces agent requirements with those sent in the request.",
-              "request": "agent-requirements",
+              "response": "agent-requirements",
+              "name": "GET",
+              "param": {
+                "fields": "string"
+              },
+              "id": "getAgentRequirements"
+            },
+            {
               "response": "agent-requirements",
               "name": "PUT",
               "param": {
                 "fields": "string"
               },
+              "request": "agent-requirements",
+              "doc": "Replaces agent requirements with those sent in the request.",
               "id": "replaceAgentRequirements"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}",
           "actions": [
             {
               "name": "DELETE",
               "id": "deleteAgentRequirement"
             },
             {
-              "response": "agent-requirement",
-              "id": "getAgentRequirement",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "name": "GET",
+              "response": "agent-requirement",
+              "id": "getAgentRequirement"
             },
             {
               "response": "agent-requirement",
-              "request": "agent-requirement",
-              "id": "replaceAgentRequirement",
+              "name": "PUT",
               "param": {
                 "fields": "string"
               },
-              "name": "PUT"
+              "request": "agent-requirement",
+              "id": "replaceAgentRequirement"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/agent-requirements/{agentRequirementLocator}"
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/aliases",
+          "actions": [
+            {
+              "doc": "Experimental support only",
+              "id": "getAliases",
+              "name": "GET",
+              "response": "items"
+            }
+          ]
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies",
+          "actions": [
+            {
+              "param": {
+                "fields": "string"
+              },
+              "request": "artifact-dependency",
+              "name": "POST",
+              "response": "artifact-dependency",
+              "id": "addArtifactDep"
+            },
+            {
+              "param": {
+                "fields": "string"
+              },
+              "name": "GET",
+              "response": "artifact-dependencies",
+              "id": "getArtifactDeps"
+            },
+            {
+              "request": "artifact-dependencies",
+              "param": {
+                "fields": "string"
+              },
+              "response": "artifact-dependencies",
+              "name": "PUT",
+              "id": "replaceArtifactDeps",
+              "doc": "Replaces the dependencies to those sent in the request."
             }
           ]
         },
         {
           "actions": [
             {
-              "response": "items",
-              "doc": "Experimental support only",
-              "id": "getAliases",
-              "name": "GET"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/aliases"
-        },
-        {
-          "actions": [
-            {
-              "request": "artifact-dependency",
-              "response": "artifact-dependency",
-              "param": {
-                "fields": "string"
-              },
-              "id": "addArtifactDep",
-              "name": "POST"
-            },
-            {
-              "name": "GET",
-              "id": "getArtifactDeps",
-              "param": {
-                "fields": "string"
-              },
-              "response": "artifact-dependencies"
-            },
-            {
-              "param": {
-                "fields": "string"
-              },
-              "id": "replaceArtifactDeps",
-              "name": "PUT",
-              "request": "artifact-dependencies",
-              "response": "artifact-dependencies",
-              "doc": "Replaces the dependencies to those sent in the request."
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies"
-        },
-        {
-          "actions": [
-            {
-              "name": "DELETE",
-              "id": "deleteArtifactDep"
+              "id": "deleteArtifactDep",
+              "name": "DELETE"
             },
             {
               "id": "getArtifactDep",
               "param": {
                 "fields": "string"
               },
-              "name": "GET",
-              "response": "artifact-dependency"
+              "response": "artifact-dependency",
+              "name": "GET"
             },
             {
-              "name": "PUT",
+              "id": "replaceArtifactDep",
               "param": {
                 "fields": "string"
               },
-              "id": "replaceArtifactDep",
               "request": "artifact-dependency",
-              "response": "artifact-dependency"
+              "response": "artifact-dependency",
+              "name": "PUT"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/artifact-dependencies/{artifactDepLocator}"
@@ -527,114 +527,114 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/branches",
           "actions": [
             {
-              "doc": "Lists branches of the build type.",
-              "response": "branches",
-              "name": "GET",
               "id": "serveBranches",
+              "doc": "Lists branches of the build type.",
               "param": {
                 "locator": "string"
-              }
+              },
+              "response": "branches",
+              "name": "GET"
+            }
+          ]
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/buildTags",
+          "actions": [
+            {
+              "id": "serveBuildTypeBuildsTags",
+              "response": "tags",
+              "name": "GET"
             }
           ]
         },
         {
           "actions": [
             {
-              "response": "tags",
-              "id": "serveBuildTypeBuildsTags",
-              "name": "GET"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/buildTags"
-        },
-        {
-          "actions": [
-            {
-              "id": "serveBuilds",
               "param": {
-                "fields": "string",
-                "count": "int",
-                "includeCanceled": "boolean",
-                "agentName": "string",
-                "status": "string",
-                "sinceDate": "string",
                 "triggeredByUser": "string",
-                "locator": "string",
-                "sinceBuild": "string",
-                "start": "long",
-                "onlyPinned": "boolean",
                 "includePersonal": "boolean",
+                "count": "int",
+                "sinceBuild": "string",
+                "includeCanceled": "boolean",
+                "start": "long",
+                "sinceDate": "string",
+                "fields": "string",
+                "locator": "string",
+                "status": "string",
+                "agentName": "string",
+                "onlyPinned": "boolean",
                 "tag": "string"
               },
-              "name": "GET",
               "response": "builds",
+              "name": "GET",
+              "id": "serveBuilds",
               "doc": "Serves builds matching supplied condition."
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}",
           "actions": [
             {
-              "response": "build",
               "param": {
                 "fields": "string"
               },
-              "id": "serveBuildWithProject",
-              "name": "GET"
+              "name": "GET",
+              "response": "build",
+              "id": "serveBuildWithProject"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}"
         },
         {
           "actions": [
             {
+              "id": "serveBuildField",
               "response": "text",
-              "name": "GET",
-              "id": "serveBuildField"
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/builds/{buildLocator}/{field}"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription",
           "actions": [
             {
-              "id": "getExampleNewProjectDescription",
-              "name": "GET",
               "response": "newBuildTypeDescription",
-              "doc": "Experimental support only. Use this to get an example of the bean to be posted to the /buildTypes request to create a new build type"
+              "name": "GET",
+              "doc": "Experimental support only. Use this to get an example of the bean to be posted to the /buildTypes request to create a new build type",
+              "id": "getExampleNewProjectDescription"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/example/newBuildTypeDescription"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features",
           "actions": [
             {
-              "response": "feature",
               "request": "feature",
-              "name": "POST",
-              "id": "addFeature",
               "param": {
                 "fields": "string"
-              }
+              },
+              "response": "feature",
+              "name": "POST",
+              "id": "addFeature"
             },
             {
+              "id": "getFeatures",
               "response": "features",
               "name": "GET",
               "param": {
                 "fields": "string"
-              },
-              "id": "getFeatures"
+              }
             },
             {
-              "response": "features",
-              "request": "features",
-              "name": "PUT",
-              "id": "replaceFeatures",
               "param": {
                 "fields": "string"
-              }
+              },
+              "request": "features",
+              "response": "features",
+              "name": "PUT",
+              "id": "replaceFeatures"
             }
           ]
         },
@@ -642,78 +642,78 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}",
           "actions": [
             {
-              "name": "DELETE",
-              "id": "deleteFeature"
+              "id": "deleteFeature",
+              "name": "DELETE"
             },
             {
-              "response": "feature",
-              "id": "getFeature",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "response": "feature",
+              "name": "GET",
+              "id": "getFeature"
             },
             {
               "id": "replaceFeature",
               "param": {
                 "fields": "string"
               },
+              "request": "feature",
               "name": "PUT",
-              "response": "feature",
-              "request": "feature"
+              "response": "feature"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters",
           "actions": [
             {
               "name": "GET",
+              "response": "properties",
               "param": {
                 "fields": "string"
               },
-              "id": "getFeatureParameters",
-              "response": "properties"
+              "id": "getFeatureParameters"
             },
             {
-              "response": "properties",
               "request": "properties",
-              "id": "replaceFeatureParameters",
               "param": {
                 "fields": "string"
               },
-              "name": "PUT"
+              "name": "PUT",
+              "response": "properties",
+              "id": "replaceFeatureParameters"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/parameters/{parameterName}",
           "actions": [
             {
-              "response": "text",
-              "request": "any",
               "id": "addFeatureParameter",
-              "name": "PUT"
+              "response": "text",
+              "name": "PUT",
+              "request": "any"
             },
             {
-              "id": "getFeatureParameter",
+              "response": "text",
               "name": "GET",
-              "response": "text"
+              "id": "getFeatureParameter"
             }
           ]
         },
         {
           "actions": [
             {
-              "id": "changeFeatureSetting",
+              "response": "text",
               "name": "PUT",
               "request": "text",
-              "response": "text"
+              "id": "changeFeatureSetting"
             },
             {
-              "response": "text",
+              "id": "getFeatureSetting",
               "name": "GET",
-              "id": "getFeatureSetting"
+              "response": "text"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/features/{featureId}/{name}"
@@ -721,12 +721,12 @@
         {
           "actions": [
             {
-              "response": "investigations",
-              "name": "GET",
-              "id": "getInvestigations",
               "param": {
                 "fields": "string"
-              }
+              },
+              "response": "investigations",
+              "name": "GET",
+              "id": "getInvestigations"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/investigations"
@@ -736,9 +736,9 @@
           "actions": [
             {
               "id": "getExampleNewProjectDescriptionCompatibilityVersion1",
+              "doc": "For compatibility with experimental feature of 8.0",
               "name": "GET",
-              "response": "newBuildTypeDescription",
-              "doc": "For compatibility with experimental feature of 8.0"
+              "response": "newBuildTypeDescription"
             }
           ]
         },
@@ -746,11 +746,11 @@
           "actions": [
             {
               "request": "properties",
-              "response": "properties",
-              "name": "PUT",
               "param": {
                 "fields": "string"
               },
+              "response": "properties",
+              "name": "PUT",
               "id": "changeBuildTypeParameters"
             },
             {
@@ -758,22 +758,22 @@
               "id": "deleteAllBuildTypeParameters"
             },
             {
-              "name": "GET",
               "id": "serveBuildTypeParameters",
               "param": {
                 "locator": "string",
                 "fields": "string"
               },
+              "name": "GET",
               "response": "properties"
             },
             {
               "response": "property",
+              "name": "POST",
               "request": "property",
-              "id": "setParameter",
               "param": {
                 "fields": "string"
               },
-              "name": "POST"
+              "id": "setParameter"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters"
@@ -786,63 +786,63 @@
               "name": "DELETE"
             },
             {
-              "id": "getParameter",
               "name": "GET",
-              "response": "property"
+              "response": "property",
+              "id": "getParameter"
             },
             {
-              "id": "getParameterValue",
               "name": "GET",
-              "response": "text"
-            },
-            {
               "response": "text",
-              "request": "text",
+              "id": "getParameterValue"
+            },
+            {
               "id": "setParameterValue",
+              "request": "text",
+              "response": "text",
               "name": "PUT"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters/{name}/value",
           "actions": [
             {
-              "name": "GET",
               "id": "getParameterValueLong",
-              "response": "text"
+              "response": "text",
+              "name": "GET"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/parameters/{name}/value"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings",
           "actions": [
             {
+              "name": "PUT",
+              "response": "properties",
               "param": {
                 "fields": "string"
               },
-              "id": "replaceBuildTypeSettings",
-              "name": "PUT",
               "request": "properties",
-              "response": "properties"
+              "id": "replaceBuildTypeSettings"
             },
             {
+              "id": "serveBuildTypeSettings",
               "param": {
                 "fields": "string"
               },
-              "id": "serveBuildTypeSettings",
-              "name": "GET",
-              "response": "properties"
+              "response": "properties",
+              "name": "GET"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settings/{name}",
           "actions": [
             {
+              "response": "text",
               "name": "PUT",
-              "id": "putBuildTypeSetting",
               "request": "any",
-              "response": "text"
+              "id": "putBuildTypeSetting"
             },
             {
               "response": "text",
@@ -855,9 +855,9 @@
           "actions": [
             {
               "doc": "Experimental support only",
+              "id": "getSettingsFile",
               "response": "text",
-              "name": "GET",
-              "id": "getSettingsFile"
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/settingsFile"
@@ -865,118 +865,118 @@
         {
           "actions": [
             {
-              "doc": "Creates new snapshot dependency. 'id' attribute is ignored in the submitted descriptor. Reports error if new dependency cannot be created (e.g. another dependency on the specified build configuration already exists).",
-              "response": "snapshot-dependency",
               "request": "snapshot-dependency",
-              "name": "POST",
-              "id": "addSnapshotDep",
               "param": {
                 "fields": "string"
-              }
+              },
+              "response": "snapshot-dependency",
+              "name": "POST",
+              "id": "addSnapshotDep",
+              "doc": "Creates new snapshot dependency. 'id' attribute is ignored in the submitted descriptor. Reports error if new dependency cannot be created (e.g. another dependency on the specified build configuration already exists)."
             },
             {
-              "name": "GET",
               "id": "getSnapshotDeps",
               "param": {
                 "fields": "string"
               },
-              "response": "snapshot-dependencies"
+              "response": "snapshot-dependencies",
+              "name": "GET"
             },
             {
-              "doc": "Replaces snapshot dependency with those sent in request.",
-              "response": "snapshot-dependencies",
               "request": "snapshot-dependencies",
-              "name": "PUT",
-              "id": "replaceSnapshotDeps",
               "param": {
                 "fields": "string"
-              }
+              },
+              "name": "PUT",
+              "response": "snapshot-dependencies",
+              "id": "replaceSnapshotDeps",
+              "doc": "Replaces snapshot dependency with those sent in request."
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}",
           "actions": [
             {
-              "name": "DELETE",
-              "id": "deleteSnapshotDep"
+              "id": "deleteSnapshotDep",
+              "name": "DELETE"
             },
             {
-              "response": "snapshot-dependency",
               "id": "getSnapshotDep",
-              "param": {
-                "fields": "string"
-              },
-              "name": "GET"
-            },
-            {
+              "name": "GET",
               "response": "snapshot-dependency",
-              "request": "snapshot-dependency",
-              "id": "replaceSnapshotDep",
-              "param": {
-                "fields": "string"
-              },
-              "name": "PUT"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/snapshot-dependencies/{snapshotDepLocator}"
-        },
-        {
-          "actions": [
-            {
-              "response": "step",
-              "request": "step",
-              "name": "POST",
-              "id": "addStep",
               "param": {
                 "fields": "string"
               }
             },
             {
-              "name": "GET",
+              "request": "snapshot-dependency",
               "param": {
                 "fields": "string"
               },
-              "id": "getSteps",
-              "response": "steps"
+              "name": "PUT",
+              "response": "snapshot-dependency",
+              "id": "replaceSnapshotDep"
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "response": "step",
+              "name": "POST",
+              "param": {
+                "fields": "string"
+              },
+              "request": "step",
+              "id": "addStep"
             },
             {
-              "name": "PUT",
+              "name": "GET",
+              "response": "steps",
               "param": {
                 "fields": "string"
               },
-              "id": "replaceSteps",
+              "id": "getSteps"
+            },
+            {
               "request": "steps",
-              "response": "steps"
+              "param": {
+                "fields": "string"
+              },
+              "name": "PUT",
+              "response": "steps",
+              "id": "replaceSteps"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}",
           "actions": [
             {
               "name": "DELETE",
               "id": "deleteStep"
             },
             {
-              "response": "step",
               "name": "GET",
+              "response": "step",
               "param": {
                 "fields": "string"
               },
               "id": "getStep"
             },
             {
-              "param": {
-                "fields": "string"
-              },
               "id": "replaceStep",
               "name": "PUT",
+              "response": "step",
               "request": "step",
-              "response": "step"
+              "param": {
+                "fields": "string"
+              }
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}"
+          ]
         },
         {
           "actions": [
@@ -984,18 +984,18 @@
               "param": {
                 "fields": "string"
               },
-              "id": "getStepParameters",
               "name": "GET",
-              "response": "properties"
+              "response": "properties",
+              "id": "getStepParameters"
             },
             {
               "response": "properties",
-              "request": "properties",
               "name": "PUT",
-              "id": "replaceStepParameters",
               "param": {
                 "fields": "string"
-              }
+              },
+              "request": "properties",
+              "id": "replaceStepParameters"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters"
@@ -1004,71 +1004,71 @@
           "actions": [
             {
               "id": "addStepParameter",
+              "response": "text",
               "name": "PUT",
-              "request": "text",
-              "response": "text"
+              "request": "text"
             },
             {
+              "id": "getStepParameter",
               "response": "text",
-              "name": "GET",
-              "id": "getStepParameter"
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/parameters/{parameterName}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}",
           "actions": [
             {
-              "response": "text",
               "request": "text",
+              "response": "text",
               "name": "PUT",
               "id": "changeStepSetting"
             },
             {
-              "response": "text",
               "id": "getStepSetting",
-              "name": "GET"
+              "name": "GET",
+              "response": "text"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/steps/{stepId}/{fieldName}"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/template",
           "actions": [
             {
-              "name": "DELETE",
-              "id": "deleteTemplateAssociation"
+              "id": "deleteTemplateAssociation",
+              "name": "DELETE"
             },
             {
-              "response": "buildType",
-              "request": "text",
-              "name": "PUT",
               "id": "getTemplateAssociation",
-              "param": {
-                "fields": "string"
-              }
-            },
-            {
-              "response": "buildType",
-              "name": "GET",
+              "request": "text",
               "param": {
                 "fields": "string"
               },
+              "response": "buildType",
+              "name": "PUT"
+            },
+            {
+              "param": {
+                "fields": "string"
+              },
+              "name": "GET",
+              "response": "buildType",
               "id": "serveBuildTypeTemplate"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/template"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers",
           "actions": [
             {
-              "doc": "Creates new trigger. 'id' attribute is ignored in the submitted descriptor. Reports error if new trigger cannot be created (e.g. only single trigger of the type is allowed for a build configuration).",
-              "request": "trigger",
               "response": "trigger",
               "name": "POST",
               "param": {
                 "fields": "string"
               },
+              "request": "trigger",
+              "doc": "Creates new trigger. 'id' attribute is ignored in the submitted descriptor. Reports error if new trigger cannot be created (e.g. only single trigger of the type is allowed for a build configuration).",
               "id": "addTrigger"
             },
             {
@@ -1080,14 +1080,14 @@
               "id": "getTriggers"
             },
             {
+              "id": "replaceTriggers",
+              "doc": "Replaces trigger with those sent inthe request.",
               "param": {
                 "fields": "string"
               },
-              "id": "replaceTriggers",
-              "name": "PUT",
               "request": "triggers",
               "response": "triggers",
-              "doc": "Replaces trigger with those sent inthe request."
+              "name": "PUT"
             }
           ]
         },
@@ -1095,25 +1095,25 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}",
           "actions": [
             {
-              "id": "deleteTrigger",
-              "name": "DELETE"
+              "name": "DELETE",
+              "id": "deleteTrigger"
             },
             {
               "response": "trigger",
               "name": "GET",
-              "id": "getTrigger",
-              "param": {
-                "fields": "string"
-              }
-            },
-            {
               "param": {
                 "fields": "string"
               },
-              "id": "replaceTrigger",
+              "id": "getTrigger"
+            },
+            {
               "name": "PUT",
+              "response": "trigger",
+              "param": {
+                "fields": "string"
+              },
               "request": "trigger",
-              "response": "trigger"
+              "id": "replaceTrigger"
             }
           ]
         },
@@ -1121,101 +1121,101 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/triggers/{triggerLocator}/{fieldName}",
           "actions": [
             {
-              "response": "text",
               "request": "text",
+              "response": "text",
               "name": "PUT",
               "id": "changeTriggerSetting"
             },
             {
-              "response": "text",
               "id": "getTriggerSetting",
+              "response": "text",
               "name": "GET"
             }
           ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries",
           "actions": [
             {
-              "id": "addVcsRootEntry",
               "param": {
                 "fields": "string"
               },
+              "request": "vcs-root-entry",
               "name": "POST",
               "response": "vcs-root-entry",
-              "request": "vcs-root-entry"
+              "id": "addVcsRootEntry"
             },
             {
               "param": {
                 "fields": "string"
               },
-              "id": "getVcsRootEntries",
+              "response": "vcs-root-entries",
               "name": "GET",
-              "response": "vcs-root-entries"
+              "id": "getVcsRootEntries"
             },
             {
-              "response": "vcs-root-entries",
               "request": "vcs-root-entries",
-              "name": "PUT",
-              "id": "replaceVcsRootEntries",
               "param": {
                 "fields": "string"
-              }
+              },
+              "name": "PUT",
+              "response": "vcs-root-entries",
+              "id": "replaceVcsRootEntries"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}",
           "actions": [
             {
               "id": "deleteVcsRootEntry",
               "name": "DELETE"
             },
             {
-              "param": {
-                "fields": "string"
-              },
               "id": "getVcsRootEntry",
-              "name": "GET",
-              "response": "vcs-root-entry"
-            },
-            {
-              "name": "PUT",
-              "id": "updateVcsRootEntry",
               "param": {
                 "fields": "string"
               },
               "response": "vcs-root-entry",
-              "request": "vcs-root-entry"
-            }
-          ]
-        },
-        {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}/checkout-rules",
-          "actions": [
-            {
-              "response": "text",
-              "name": "GET",
-              "id": "getVcsRootEntryCheckoutRules"
+              "name": "GET"
             },
             {
-              "request": "text",
-              "response": "text",
-              "name": "PUT",
-              "id": "updateVcsRootEntryCheckoutRules"
-            }
-          ]
-        },
-        {
-          "actions": [
-            {
-              "id": "getCurrentVcsInstances",
               "param": {
                 "fields": "string"
               },
-              "name": "GET",
+              "request": "vcs-root-entry",
+              "response": "vcs-root-entry",
+              "name": "PUT",
+              "id": "updateVcsRootEntry"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}"
+        },
+        {
+          "actions": [
+            {
+              "id": "getVcsRootEntryCheckoutRules",
+              "response": "text",
+              "name": "GET"
+            },
+            {
+              "id": "updateVcsRootEntryCheckoutRules",
+              "request": "text",
+              "response": "text",
+              "name": "PUT"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-entries/{id}/checkout-rules"
+        },
+        {
+          "actions": [
+            {
               "response": "vcs-root-instances",
-              "doc": "Experimental support only!"
+              "name": "GET",
+              "param": {
+                "fields": "string"
+              },
+              "doc": "Experimental support only!",
+              "id": "getCurrentVcsInstances"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs-root-instances"
@@ -1224,14 +1224,14 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/children{path:(/.*)?}",
           "actions": [
             {
-              "name": "GET",
+              "doc": "Lists files in VCS Experimental support only",
               "id": "getVcsFileListing",
+              "name": "GET",
+              "response": "files",
               "param": {
                 "fields": "string",
                 "resolveParameters": "boolean"
-              },
-              "doc": "Lists files in VCS Experimental support only",
-              "response": "files"
+              }
             }
           ]
         },
@@ -1239,13 +1239,13 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/content{path:(/.*)?}",
           "actions": [
             {
-              "name": "GET",
               "param": {
                 "resolveParameters": "boolean"
               },
+              "name": "GET",
+              "response": "any",
               "id": "getVcsFileContent",
-              "doc": "Gets content of a file form VCS Experimental support only",
-              "response": "any"
+              "doc": "Gets content of a file form VCS Experimental support only"
             }
           ]
         },
@@ -1253,13 +1253,13 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcs/files/latest/metadata{path:(/.*)?}",
           "actions": [
             {
-              "doc": "Gets VCS file details Experimental support only",
-              "response": "file",
-              "name": "GET",
               "id": "getVcsFile",
+              "doc": "Gets VCS file details Experimental support only",
               "param": {
                 "resolveParameters": "boolean"
-              }
+              },
+              "name": "GET",
+              "response": "file"
             }
           ]
         },
@@ -1267,35 +1267,35 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/vcsLabeling",
           "actions": [
             {
+              "doc": "Gets VCS labeling settings Experimental support only",
               "id": "getVCSLabelingOptions",
-              "name": "GET",
               "response": "vcsLabeling",
-              "doc": "Gets VCS labeling settings Experimental support only"
+              "name": "GET"
             },
             {
               "id": "setVCSLabelingOptions",
-              "name": "PUT",
+              "doc": "Sets VCS labeling settings Experimental support only",
               "request": "vcsLabeling",
               "response": "vcsLabeling",
-              "doc": "Sets VCS labeling settings Experimental support only"
+              "name": "PUT"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/{field}",
           "actions": [
             {
-              "response": "text",
+              "id": "serveBuildTypeField",
               "name": "GET",
-              "id": "serveBuildTypeField"
+              "response": "text"
             },
             {
-              "name": "PUT",
-              "id": "setBuildTypeField",
               "request": "text",
-              "response": "text"
+              "name": "PUT",
+              "response": "text",
+              "id": "setBuildTypeField"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/buildTypes/{btLocator}/{field}"
         }
       ]
     },
@@ -1305,32 +1305,32 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/builds",
           "actions": [
             {
-              "name": "DELETE",
+              "id": "deleteBuilds",
               "param": {
                 "locator": "string"
               },
-              "id": "deleteBuilds"
+              "name": "DELETE"
             },
             {
-              "response": "builds",
+              "id": "serveAllBuilds",
               "doc": "Serves builds matching supplied condition.",
               "param": {
-                "start": "long",
-                "onlyPinned": "boolean",
-                "sinceBuild": "string",
-                "locator": "string",
-                "sinceDate": "string",
-                "triggeredByUser": "string",
-                "status": "string",
-                "buildType": "string",
-                "agentName": "string",
-                "fields": "string",
                 "count": "int",
+                "includePersonal": "boolean",
+                "triggeredByUser": "string",
+                "sinceDate": "string",
+                "start": "long",
+                "buildType": "string",
+                "sinceBuild": "string",
                 "includeCanceled": "boolean",
+                "status": "string",
+                "locator": "string",
+                "fields": "string",
                 "tag": "string",
-                "includePersonal": "boolean"
+                "onlyPinned": "boolean",
+                "agentName": "string"
               },
-              "id": "serveAllBuilds",
+              "response": "builds",
               "name": "GET"
             }
           ]
@@ -1338,57 +1338,57 @@
         {
           "actions": [
             {
-              "request": "buildCancelRequest",
               "response": "build",
               "name": "POST",
               "param": {
                 "fields": "string"
               },
+              "request": "buildCancelRequest",
               "id": "cancelBuild"
             },
             {
-              "name": "DELETE",
-              "id": "deleteBuild"
+              "id": "deleteBuild",
+              "name": "DELETE"
             },
             {
+              "doc": "Serves a build described by the locator provided searching through those accessible by the current user. See {@link jetbrains.buildServer.server.rest.request.BuildRequest#serveAllBuilds(String, String, String, boolean, boolean, boolean, java.util.List, String, String, String, Long, Integer, String, javax.ws.rs.core.UriInfo, javax.servlet.http.HttpServletRequest)} If several builds are matched, the first one is used (the effect is the same as if \",count:1\" locator dimension is added)",
+              "id": "serveBuild",
+              "response": "build",
+              "name": "GET",
               "param": {
                 "fields": "string"
-              },
-              "id": "serveBuild",
-              "name": "GET",
-              "response": "build",
-              "doc": "Serves a build described by the locator provided searching through those accessible by the current user. See {@link jetbrains.buildServer.server.rest.request.BuildRequest#serveAllBuilds(String, String, String, boolean, boolean, boolean, java.util.List, String, String, String, Long, Integer, String, javax.ws.rs.core.UriInfo, javax.servlet.http.HttpServletRequest)} If several builds are matched, the first one is used (the effect is the same as if \",count:1\" locator dimension is added)"
+              }
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/archived{path:(/.*)?}",
           "actions": [
             {
-              "id": "getZippedArtifacts",
+              "response": "any",
+              "name": "GET",
               "param": {
-                "locator": "string",
                 "logBuildUsage": "boolean",
+                "locator": "string",
                 "resolveParameters": "boolean",
                 "name": "string"
               },
-              "name": "GET",
-              "response": "any",
-              "doc": "Experimental"
+              "doc": "Experimental",
+              "id": "getZippedArtifacts"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/archived{path:(/.*)?}"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/children{path:(/.*)?}",
           "actions": [
             {
+              "id": "getArtifactChildren",
               "response": "files",
               "name": "GET",
-              "id": "getArtifactChildren",
               "param": {
-                "locator": "string",
                 "resolveParameters": "boolean",
+                "locator": "string",
                 "fields": "string"
               }
             }
@@ -1397,147 +1397,147 @@
         {
           "actions": [
             {
-              "name": "GET",
-              "id": "getArtifactContent",
               "param": {
-                "resolveParameters": "boolean",
-                "logBuildUsage": "boolean"
+                "logBuildUsage": "boolean",
+                "resolveParameters": "boolean"
               },
-              "response": "any"
+              "name": "GET",
+              "response": "any",
+              "id": "getArtifactContent"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/content{path:(/.*)?}"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/files{path:(/.*)?}",
           "actions": [
             {
-              "id": "getArtifactFilesContent",
+              "response": "any",
               "name": "GET",
-              "response": "any"
+              "id": "getArtifactFilesContent"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/files{path:(/.*)?}"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts/metadata{path:(/.*)?}",
           "actions": [
             {
-              "response": "file",
               "id": "getArtifactMetadata",
               "param": {
-                "locator": "string",
-                "resolveParameters": "boolean"
+                "resolveParameters": "boolean",
+                "locator": "string"
               },
-              "name": "GET"
+              "name": "GET",
+              "response": "file"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifactsDirectory",
           "actions": [
             {
-              "doc": "Experimental support only",
               "response": "text",
               "name": "GET",
-              "id": "getArtifactsDirectory"
+              "id": "getArtifactsDirectory",
+              "doc": "Experimental support only"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifactsDirectory"
         },
         {
           "actions": [
             {
-              "doc": "More user-friendly URL for \"/{buildLocator}/artifacts/children\" one.",
-              "response": "files",
               "name": "GET",
-              "id": "getArtifacts",
+              "response": "files",
               "param": {
-                "fields": "string",
                 "locator": "string",
+                "fields": "string",
                 "resolveParameters": "boolean"
-              }
+              },
+              "doc": "More user-friendly URL for \"/{buildLocator}/artifacts/children\" one.",
+              "id": "getArtifacts"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/artifacts{path:(/.*)?}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/canceledInfo",
           "actions": [
             {
-              "response": "comment",
-              "name": "GET",
               "id": "getCanceledInfo",
               "param": {
                 "fields": "string"
-              }
+              },
+              "response": "comment",
+              "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/canceledInfo"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/comment",
           "actions": [
             {
-              "id": "deleteComment",
-              "name": "DELETE"
+              "name": "DELETE",
+              "id": "deleteComment"
             },
             {
-              "request": "text",
               "id": "replaceComment",
-              "name": "PUT"
+              "name": "PUT",
+              "request": "text"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/example/buildCancelRequest",
           "actions": [
             {
-              "id": "cancelBuild",
               "name": "GET",
-              "response": "buildCancelRequest"
+              "response": "buildCancelRequest",
+              "id": "cancelBuild"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/example/buildCancelRequest"
         },
         {
           "actions": [
             {
+              "response": "text",
               "name": "GET",
               "id": "getPinned",
-              "doc": "Fetches current build pinned status.",
-              "response": "text"
+              "doc": "Fetches current build pinned status."
             },
             {
-              "name": "PUT",
               "id": "pinBuild",
               "doc": "Pins a build",
-              "request": "text"
+              "request": "text",
+              "name": "PUT"
             },
             {
+              "id": "unpinBuild",
               "doc": "Unpins a build",
               "request": "text",
-              "name": "DELETE",
-              "id": "unpinBuild"
+              "name": "DELETE"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/pin/"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/problemOccurrences",
           "actions": [
             {
+              "response": "problemOccurrences",
               "name": "GET",
               "param": {
                 "fields": "string"
               },
-              "id": "getProblems",
-              "response": "problemOccurrences"
+              "id": "getProblems"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/problemOccurrences"
+          ]
         },
         {
           "actions": [
             {
+              "id": "serveBuildRelatedIssuesOld",
               "response": "issuesUsages",
               "name": "GET",
-              "id": "serveBuildRelatedIssuesOld",
               "param": {
                 "fields": "string"
               }
@@ -1576,114 +1576,114 @@
           "actions": [
             {
               "response": "text",
-              "id": "getParameter",
-              "name": "GET"
+              "name": "GET",
+              "id": "getParameter"
             }
           ]
         },
         {
           "actions": [
             {
+              "id": "serveSourceFile",
               "response": "any",
-              "name": "GET",
-              "id": "serveSourceFile"
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/sources/files/{fileName:.+}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/",
           "actions": [
             {
-              "name": "GET",
               "id": "serveBuildStatisticValues",
               "param": {
                 "fields": "string"
               },
-              "response": "properties"
+              "response": "properties",
+              "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/"
+          ]
         },
         {
           "actions": [
             {
               "id": "serveBuildStatisticValue",
-              "name": "GET",
-              "response": "text"
+              "response": "text",
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statistics/{name}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statusIcon",
           "actions": [
             {
+              "name": "GET",
               "response": "any",
-              "id": "serveBuildStatusIcon",
-              "name": "GET"
+              "id": "serveBuildStatusIcon"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/statusIcon"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/tags/",
           "actions": [
             {
               "id": "addTag",
-              "name": "POST",
+              "doc": "Adds a single tag to a build",
               "request": "text",
               "response": "text",
-              "doc": "Adds a single tag to a build"
+              "name": "POST"
             },
             {
-              "id": "addTags",
-              "name": "POST",
               "request": "tags",
+              "name": "POST",
+              "id": "addTags",
               "doc": "Adds a set of tags to a build"
             },
             {
-              "name": "PUT",
-              "param": {
-                "locator": "string",
-                "fields": "string"
-              },
-              "id": "replaceTags",
               "doc": "Replaces the build's tags designated by the tags 'locator' to the set of tags passed.",
-              "request": "tags",
-              "response": "tags"
-            },
-            {
+              "id": "replaceTags",
+              "name": "PUT",
               "response": "tags",
+              "request": "tags",
               "param": {
                 "locator": "string",
-                "fields": "string"
-              },
-              "id": "serveTags",
-              "name": "GET"
-            }
-          ]
-        },
-        {
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/testOccurrences",
-          "actions": [
-            {
-              "response": "testOccurrences",
-              "name": "GET",
-              "id": "getTests",
-              "param": {
                 "fields": "string"
               }
+            },
+            {
+              "id": "serveTags",
+              "name": "GET",
+              "response": "tags",
+              "param": {
+                "fields": "string",
+                "locator": "string"
+              }
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/tags/"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/{field}",
           "actions": [
             {
-              "id": "serveBuildFieldByBuildOnly",
+              "param": {
+                "fields": "string"
+              },
+              "response": "testOccurrences",
               "name": "GET",
-              "response": "text"
+              "id": "getTests"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/testOccurrences"
+        },
+        {
+          "actions": [
+            {
+              "response": "text",
+              "name": "GET",
+              "id": "serveBuildFieldByBuildOnly"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/builds/{buildLocator}/{field}"
         }
       ],
       "name": "builds"
@@ -1692,119 +1692,120 @@
       "name": "cctray",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/cctray",
           "actions": [
             {
-              "id": "serveProjectsConvenienceCopy",
               "param": {
                 "locator": "string"
               },
               "name": "GET",
-              "response": "Projects"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/cctray"
-        },
-        {
-          "uri": "http://tc.maxmind.com:8111/app/rest/cctray/projects.xml",
-          "actions": [
-            {
               "response": "Projects",
-              "id": "serveProjects",
-              "param": {
-                "locator": "string"
-              },
-              "name": "GET"
+              "id": "serveProjectsConvenienceCopy"
             }
           ]
+        },
+        {
+          "actions": [
+            {
+              "id": "serveProjects",
+              "name": "GET",
+              "response": "Projects",
+              "param": {
+                "locator": "string"
+              }
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/cctray/projects.xml"
         }
       ]
     },
     {
+      "name": "changes",
       "resources": [
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/changes",
           "actions": [
             {
               "name": "GET",
+              "response": "changes",
               "param": {
-                "vcsRoot": "string",
-                "locator": "string",
-                "project": "string",
-                "sinceChange": "string",
-                "start": "long",
                 "count": "int",
-                "fields": "string",
+                "vcsRoot": "string",
                 "buildType": "string",
-                "build": "string"
+                "start": "long",
+                "sinceChange": "string",
+                "fields": "string",
+                "locator": "string",
+                "build": "string",
+                "project": "string"
               },
-              "id": "serveChanges",
               "doc": "Lists changes by the specified locator",
-              "response": "changes"
+              "id": "serveChanges"
             }
           ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}",
           "actions": [
             {
-              "name": "GET",
               "param": {
                 "fields": "string"
               },
-              "id": "serveChange",
-              "response": "change"
+              "name": "GET",
+              "response": "change",
+              "id": "serveChange"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/attributes",
           "actions": [
             {
               "doc": "Experimental support only!",
+              "id": "getChangeAttributes",
               "response": "entries",
-              "name": "GET",
-              "id": "getChangeAttributes"
+              "name": "GET"
             }
           ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/buildTypes",
           "actions": [
             {
-              "response": "buildTypes",
               "doc": "Experimental support only!",
+              "id": "getRelatedBuildTypes",
+              "name": "GET",
+              "response": "buildTypes",
               "param": {
                 "fields": "string"
-              },
-              "id": "getRelatedBuildTypes",
-              "name": "GET"
+              }
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/buildTypes"
+          ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/duplicates",
           "actions": [
             {
-              "doc": "Experimental support only!",
-              "response": "changes",
-              "name": "GET",
               "param": {
                 "fields": "string"
               },
-              "id": "getChangeDuplicates"
+              "name": "GET",
+              "response": "changes",
+              "id": "getChangeDuplicates",
+              "doc": "Experimental support only!"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/duplicates"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/firstBuilds",
           "actions": [
             {
-              "name": "GET",
+              "id": "getChangeFirstBuilds",
+              "doc": "Experimental support only!",
               "param": {
                 "fields": "string"
               },
-              "id": "getChangeFirstBuilds",
-              "doc": "Experimental support only!",
+              "name": "GET",
               "response": "builds"
             }
           ]
@@ -1813,93 +1814,93 @@
           "actions": [
             {
               "response": "issues",
+              "name": "GET",
               "doc": "Experimental support only!",
-              "id": "getChangeIssue",
-              "name": "GET"
+              "id": "getChangeIssue"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/issues"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentChanges",
           "actions": [
             {
               "id": "getParentChanges",
+              "doc": "Experimental support only!",
               "param": {
                 "fields": "string"
               },
               "name": "GET",
-              "response": "changes",
-              "doc": "Experimental support only!"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentChanges"
-        },
-        {
-          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentRevisions",
-          "actions": [
-            {
-              "name": "GET",
-              "id": "getChangeParentRevisions",
-              "doc": "Experimental support only!",
-              "response": "items"
+              "response": "changes"
             }
           ]
         },
         {
           "actions": [
             {
-              "response": "vcs-root-instance",
+              "id": "getChangeParentRevisions",
+              "doc": "Experimental support only!",
+              "response": "items",
+              "name": "GET"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/parentRevisions"
+        },
+        {
+          "actions": [
+            {
+              "id": "getChangeVCSRoot",
               "param": {
                 "fields": "string"
               },
-              "id": "getChangeVCSRoot",
-              "name": "GET"
+              "name": "GET",
+              "response": "vcs-root-instance"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRoot"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRootInstance",
           "actions": [
             {
-              "response": "vcs-root-instance",
-              "doc": "Experimental support only!",
               "id": "getChangeVCSRootInstance",
+              "doc": "Experimental support only!",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "name": "GET",
+              "response": "vcs-root-instance"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/vcsRootInstance"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/changes/{changeLocator}/{field}",
           "actions": [
             {
-              "id": "getChangeField",
               "name": "GET",
-              "response": "text"
+              "response": "text",
+              "id": "getChangeField"
             }
           ]
         }
-      ],
-      "name": "changes"
+      ]
     },
     {
+      "name": "debug",
       "resources": [
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/debug/database/query/{query}",
           "actions": [
             {
+              "id": "executeDBQuery",
               "response": "text",
               "name": "GET",
               "param": {
                 "count": "int",
                 "fieldDelimiter": "string"
-              },
-              "id": "executeDBQuery"
+              }
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/debug/database/query/{query}"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/debug/database/tables",
@@ -1914,141 +1915,140 @@
         {
           "actions": [
             {
-              "response": "text",
               "doc": "Experimental use only!",
+              "id": "saveMemoryDump",
+              "name": "POST",
+              "response": "text",
               "param": {
                 "archived": "boolean"
-              },
-              "id": "saveMemoryDump",
-              "name": "POST"
+              }
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/debug/memory/dumps"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/debug/requestDetails",
           "actions": [
             {
-              "id": "getRequestDetails",
-              "name": "GET",
               "response": "text",
+              "name": "GET",
+              "id": "getRequestDetails",
               "doc": "Experimental use only!"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/debug/requestDetails"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/debug/threadDump",
           "actions": [
             {
-              "response": "text",
+              "id": "scheduleCheckingForChanges",
               "doc": "Experimental use only!",
               "param": {
                 "lockedMonitors": "string",
                 "lockedSynchronizers": "string"
               },
-              "id": "scheduleCheckingForChanges",
+              "response": "text",
               "name": "GET"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/debug/threadDump"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/debug/vcsCheckingForChangesQueue",
           "actions": [
             {
-              "id": "scheduleCheckingForChanges",
-              "param": {
-                "fields": "string",
-                "locator": "string"
-              },
               "name": "POST",
               "response": "vcs-root-instances",
-              "doc": "Experimental use only!"
+              "param": {
+                "locator": "string",
+                "fields": "string"
+              },
+              "doc": "Experimental use only!",
+              "id": "scheduleCheckingForChanges"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/debug/vcsCheckingForChangesQueue"
+          ]
         }
-      ],
-      "name": "debug"
+      ]
     },
     {
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/info",
           "actions": [
             {
-              "response": "plugin",
               "id": "servePluginInfo",
               "param": {
                 "fields": "string"
               },
+              "response": "plugin",
               "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/info"
+          ]
         }
       ],
       "name": "info"
     },
     {
+      "name": "investigations",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/investigations",
           "actions": [
             {
               "name": "GET",
+              "response": "investigations",
               "param": {
                 "fields": "string",
                 "locator": "string"
               },
-              "id": "getInvestigations",
               "doc": "Experimental, the requests and results returned will change in future versions!",
-              "response": "investigations"
+              "id": "getInvestigations"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/investigations"
+          ]
         },
         {
           "actions": [
             {
-              "name": "GET",
+              "id": "serveInstance",
               "param": {
                 "fields": "string"
               },
-              "id": "serveInstance",
-              "response": "investigation"
+              "response": "investigation",
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/investigations/{investigationLocator}"
         }
-      ],
-      "name": "investigations"
+      ]
     },
     {
       "resources": [
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/problemOccurrences",
           "actions": [
             {
               "id": "getProblems",
+              "doc": "Experimental, the requests and results returned will change in future versions!",
               "param": {
-                "locator": "string",
-                "fields": "string"
+                "fields": "string",
+                "locator": "string"
               },
               "name": "GET",
-              "response": "problemOccurrences",
-              "doc": "Experimental, the requests and results returned will change in future versions!"
+              "response": "problemOccurrences"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/problemOccurrences"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/problemOccurrences/{problemLocator}",
           "actions": [
             {
-              "id": "serveInstance",
               "param": {
                 "fields": "string"
               },
+              "response": "problemOccurrence",
               "name": "GET",
-              "response": "problemOccurrence"
+              "id": "serveInstance"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/problemOccurrences/{problemLocator}"
         }
       ],
       "name": "problemOccurrences"
@@ -2059,30 +2059,30 @@
         {
           "actions": [
             {
+              "id": "getProblems",
               "doc": "Experimental, the requests and results returned will change in future versions!",
-              "response": "problems",
-              "name": "GET",
               "param": {
                 "fields": "string",
                 "locator": "string"
               },
-              "id": "getProblems"
+              "response": "problems",
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/problems"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/problems/{problemLocator}",
           "actions": [
             {
-              "response": "problem",
-              "name": "GET",
               "id": "serveInstance",
+              "name": "GET",
+              "response": "problem",
               "param": {
                 "fields": "string"
               }
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/problems/{problemLocator}"
         }
       ]
     },
@@ -2090,12 +2090,13 @@
       "name": "projects",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects",
           "actions": [
             {
-              "id": "createEmptyProject",
+              "response": "project",
               "name": "POST",
               "request": "text",
-              "response": "project"
+              "id": "createEmptyProject"
             },
             {
               "request": "newProjectDescription",
@@ -2104,15 +2105,14 @@
               "id": "createProject"
             },
             {
-              "response": "projects",
-              "name": "GET",
               "param": {
                 "fields": "string"
               },
+              "response": "projects",
+              "name": "GET",
               "id": "serveProjects"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}",
@@ -2122,12 +2122,12 @@
               "name": "DELETE"
             },
             {
+              "name": "GET",
+              "response": "project",
               "param": {
                 "fields": "string"
               },
-              "id": "serveProject",
-              "name": "GET",
-              "response": "project"
+              "id": "serveProject"
             }
           ]
         },
@@ -2135,27 +2135,27 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/agentPools",
           "actions": [
             {
-              "name": "GET",
               "param": {
                 "fields": "string"
               },
-              "id": "getProjectAgentPools",
-              "response": "agentPools"
+              "response": "agentPools",
+              "name": "GET",
+              "id": "getProjectAgentPools"
             },
             {
-              "response": "agentPools",
-              "request": "agentPools",
-              "name": "PUT",
               "id": "setProjectAgentPools",
+              "name": "PUT",
+              "response": "agentPools",
               "param": {
                 "fields": "string"
-              }
+              },
+              "request": "agentPools"
             },
             {
               "id": "setProjectAgentPools",
+              "response": "agentPool",
               "name": "POST",
-              "request": "agentPool",
-              "response": "agentPool"
+              "request": "agentPool"
             }
           ]
         },
@@ -2169,46 +2169,46 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/agentPools/{agentPoolLocator}"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes",
           "actions": [
             {
+              "doc": "Creates a new build configuration by copying existing one.",
               "id": "createBuildType",
-              "param": {
-                "fields": "string"
-              },
-              "name": "POST",
               "response": "buildType",
+              "name": "POST",
               "request": "newBuildTypeDescription",
-              "doc": "Creates a new build configuration by copying existing one."
-            },
-            {
-              "id": "createEmptyBuildType",
-              "param": {
-                "fields": "string"
-              },
-              "name": "POST",
-              "response": "buildType",
-              "request": "text"
-            },
-            {
-              "response": "buildTypes",
-              "name": "GET",
-              "id": "serveBuildTypesInProject",
               "param": {
                 "fields": "string"
               }
+            },
+            {
+              "param": {
+                "fields": "string"
+              },
+              "request": "text",
+              "name": "POST",
+              "response": "buildType",
+              "id": "createEmptyBuildType"
+            },
+            {
+              "id": "serveBuildTypesInProject",
+              "param": {
+                "fields": "string"
+              },
+              "name": "GET",
+              "response": "buildTypes"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes"
         },
         {
           "actions": [
             {
+              "id": "serveBuildType",
               "response": "buildType",
+              "name": "GET",
               "param": {
                 "fields": "string"
-              },
-              "id": "serveBuildType",
-              "name": "GET"
+              }
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}"
@@ -2217,25 +2217,25 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds",
           "actions": [
             {
-              "response": "builds",
-              "doc": "Serves builds matching supplied condition.",
-              "id": "serveBuilds",
               "param": {
-                "locator": "string",
-                "sinceBuild": "string",
-                "onlyPinned": "boolean",
-                "start": "long",
-                "fields": "string",
                 "agentName": "string",
-                "count": "int",
-                "includeCanceled": "boolean",
-                "status": "string",
-                "triggeredByUser": "string",
-                "sinceDate": "string",
                 "tag": "string",
+                "onlyPinned": "boolean",
+                "status": "string",
+                "locator": "string",
+                "fields": "string",
+                "includeCanceled": "boolean",
+                "sinceBuild": "string",
+                "sinceDate": "string",
+                "start": "long",
+                "triggeredByUser": "string",
+                "count": "int",
                 "includePersonal": "boolean"
               },
-              "name": "GET"
+              "response": "builds",
+              "name": "GET",
+              "id": "serveBuilds",
+              "doc": "Serves builds matching supplied condition."
             }
           ]
         },
@@ -2243,94 +2243,94 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}",
           "actions": [
             {
-              "name": "GET",
               "id": "serveBuildWithProject",
               "param": {
                 "fields": "string"
               },
-              "response": "build"
+              "response": "build",
+              "name": "GET"
             }
           ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}/{field}",
           "actions": [
             {
+              "id": "serveBuildFieldWithProject",
               "response": "text",
-              "name": "GET",
-              "id": "serveBuildFieldWithProject"
+              "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/builds/{buildLocator}/{field}"
+          ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/{field}",
           "actions": [
             {
               "response": "text",
               "name": "GET",
               "id": "serveBuildTypeFieldWithProject"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/buildTypes/{btLocator}/{field}"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/example/newProjectDescription",
           "actions": [
             {
+              "doc": "Experimental support only. Use this to get an example of the bean to be posted to the /projects request to create a new project",
               "id": "getExampleNewProjectDescription",
-              "param": {
-                "id": "string"
-              },
               "name": "GET",
               "response": "newProjectDescription",
-              "doc": "Experimental support only. Use this to get an example of the bean to be posted to the /projects request to create a new project"
+              "param": {
+                "id": "string"
+              }
             }
           ]
         },
         {
           "actions": [
             {
-              "doc": "For compatibility with experimental feature of 8.0",
-              "response": "newProjectDescription",
-              "name": "GET",
               "id": "getExampleNewProjectDescriptionCompatibilityVersion1",
+              "doc": "For compatibility with experimental feature of 8.0",
               "param": {
                 "id": "string"
-              }
+              },
+              "response": "newProjectDescription",
+              "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/newProjectDescription"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters",
           "actions": [
             {
-              "response": "properties",
-              "request": "properties",
-              "name": "PUT",
-              "id": "changeAllParameters",
               "param": {
                 "fields": "string"
-              }
+              },
+              "request": "properties",
+              "response": "properties",
+              "name": "PUT",
+              "id": "changeAllParameters"
             },
             {
               "name": "DELETE",
               "id": "deleteAllParameters"
             },
             {
+              "response": "properties",
+              "name": "GET",
               "param": {
                 "fields": "string"
               },
-              "id": "serveParameters",
-              "name": "GET",
-              "response": "properties"
+              "id": "serveParameters"
             },
             {
-              "id": "setParameter",
+              "request": "property",
               "name": "POST",
               "response": "property",
-              "request": "property"
+              "id": "setParameter"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters"
         },
         {
           "actions": [
@@ -2340,18 +2340,18 @@
             },
             {
               "response": "property",
-              "id": "getParameter",
-              "name": "GET"
+              "name": "GET",
+              "id": "getParameter"
+            },
+            {
+              "name": "GET",
+              "response": "text",
+              "id": "getParameterValue"
             },
             {
               "response": "text",
-              "id": "getParameterValue",
-              "name": "GET"
-            },
-            {
-              "response": "text",
-              "request": "text",
               "name": "PUT",
+              "request": "text",
               "id": "putParameter"
             }
           ],
@@ -2360,152 +2360,152 @@
         {
           "actions": [
             {
-              "response": "text",
               "id": "getParameterValueLong",
+              "response": "text",
               "name": "GET"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parameters/{name}/value"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parentProject",
           "actions": [
             {
               "id": "getParentProject",
+              "name": "GET",
+              "response": "project",
               "param": {
                 "fields": "string"
-              },
-              "name": "GET",
-              "response": "project"
+              }
             },
             {
               "id": "setParentProject",
-              "name": "PUT",
               "request": "project",
+              "name": "PUT",
               "response": "project"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/parentProject"
+          ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/settingsFile",
           "actions": [
             {
+              "response": "text",
               "name": "GET",
-              "id": "getSettingsFile",
               "doc": "Experimental support only",
-              "response": "text"
+              "id": "getSettingsFile"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/settingsFile"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/templates",
           "actions": [
             {
+              "name": "POST",
+              "response": "buildType",
+              "param": {
+                "fields": "string"
+              },
               "request": "newBuildTypeDescription",
-              "response": "buildType",
               "doc": "Creates a new build configuration template by copying existing one.",
-              "param": {
-                "fields": "string"
-              },
-              "id": "createBuildTypeTemplate",
-              "name": "POST"
+              "id": "createBuildTypeTemplate"
             },
             {
-              "response": "buildType",
-              "request": "text",
               "id": "createEmptyBuildTypeTemplate",
+              "request": "text",
               "param": {
                 "fields": "string"
               },
+              "response": "buildType",
               "name": "POST"
             },
             {
-              "response": "buildTypes",
               "param": {
                 "fields": "string"
               },
-              "id": "serveTemplatesInProject",
-              "name": "GET"
+              "response": "buildTypes",
+              "name": "GET",
+              "id": "serveTemplatesInProject"
             }
           ]
         },
         {
           "actions": [
             {
-              "response": "buildType",
-              "id": "serveBuildTypeTemplates",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "name": "GET",
+              "response": "buildType",
+              "id": "serveBuildTypeTemplates"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/templates/{btLocator}"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/{field}",
           "actions": [
             {
+              "id": "serveProjectField",
               "response": "text",
-              "name": "GET",
-              "id": "serveProjectField"
+              "name": "GET"
             },
             {
               "id": "setProjectFiled",
-              "name": "PUT",
+              "request": "text",
               "response": "text",
-              "request": "text"
+              "name": "PUT"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/projects/{projectLocator}/{field}"
         }
       ]
     },
     {
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/server",
           "actions": [
             {
-              "response": "server",
+              "id": "serveServerInfo",
               "name": "GET",
-              "id": "serveServerInfo"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/server"
-        },
-        {
-          "uri": "http://tc.maxmind.com:8111/app/rest/server/backup",
-          "actions": [
-            {
-              "response": "text",
-              "id": "getBackupStatus",
-              "name": "GET"
-            },
-            {
-              "name": "POST",
-              "param": {
-                "includeBuildLogs": "boolean",
-                "fileName": "string",
-                "includeConfigs": "boolean",
-                "includeRunningBuilds": "boolean",
-                "includeDatabase": "boolean",
-                "includeSupplimentaryData": "boolean",
-                "includePersonalChanges": "boolean",
-                "addTimestamp": "boolean"
-              },
-              "id": "startBackup",
-              "response": "text"
+              "response": "server"
             }
           ]
         },
         {
           "actions": [
             {
-              "id": "servePlugins",
+              "id": "getBackupStatus",
+              "response": "text",
+              "name": "GET"
+            },
+            {
+              "id": "startBackup",
+              "param": {
+                "addTimestamp": "boolean",
+                "includeDatabase": "boolean",
+                "includeBuildLogs": "boolean",
+                "includePersonalChanges": "boolean",
+                "includeSupplimentaryData": "boolean",
+                "includeConfigs": "boolean",
+                "includeRunningBuilds": "boolean",
+                "fileName": "string"
+              },
+              "response": "text",
+              "name": "POST"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/server/backup"
+        },
+        {
+          "actions": [
+            {
               "param": {
                 "fields": "string"
               },
+              "response": "plugins",
               "name": "GET",
-              "response": "plugins"
+              "id": "servePlugins"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/server/plugins"
@@ -2515,8 +2515,8 @@
           "actions": [
             {
               "name": "GET",
-              "id": "serveServerVersion",
-              "response": "text"
+              "response": "text",
+              "id": "serveServerVersion"
             }
           ]
         }
@@ -2524,94 +2524,95 @@
       "name": "server"
     },
     {
+      "name": "testOccurrences",
       "resources": [
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/testOccurrences",
+          "actions": [
+            {
+              "response": "testOccurrences",
+              "name": "GET",
+              "param": {
+                "fields": "string",
+                "locator": "string"
+              },
+              "doc": "Experimental, the requests and results returned will change in future versions!",
+              "id": "getTestOccurrences"
+            }
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/testOccurrences"
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/testOccurrences/{testLocator}",
+          "actions": [
+            {
+              "name": "GET",
+              "response": "testOccurrence",
+              "param": {
+                "fields": "string"
+              },
+              "id": "serveInstance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "resources": [
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/tests",
           "actions": [
             {
               "doc": "Experimental, the requests and results returned will change in future versions!",
-              "response": "testOccurrences",
+              "id": "getTests",
               "name": "GET",
-              "id": "getTestOccurrences",
+              "response": "tests",
               "param": {
                 "fields": "string",
                 "locator": "string"
               }
             }
           ]
-        },
-        {
-          "actions": [
-            {
-              "name": "GET",
-              "id": "serveInstance",
-              "param": {
-                "fields": "string"
-              },
-              "response": "testOccurrence"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/testOccurrences/{testLocator}"
-        }
-      ],
-      "name": "testOccurrences"
-    },
-    {
-      "resources": [
-        {
-          "actions": [
-            {
-              "response": "tests",
-              "doc": "Experimental, the requests and results returned will change in future versions!",
-              "param": {
-                "fields": "string",
-                "locator": "string"
-              },
-              "id": "getTests",
-              "name": "GET"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/tests"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/tests/{testLocator}",
           "actions": [
             {
               "response": "test",
+              "name": "GET",
               "param": {
                 "fields": "string"
               },
-              "id": "serveInstance",
-              "name": "GET"
+              "id": "serveInstance"
             }
           ]
         }
-      ],
-      "name": "tests"
+      ]
     },
     {
+      "name": "userGroups",
       "resources": [
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups",
           "actions": [
             {
+              "name": "POST",
+              "response": "group",
               "param": {
                 "fields": "string"
               },
-              "id": "addGroup",
-              "name": "POST",
               "request": "group",
-              "response": "group"
+              "id": "addGroup"
             },
             {
-              "response": "groups",
-              "name": "GET",
               "id": "serveGroups",
               "param": {
                 "fields": "string"
-              }
+              },
+              "name": "GET",
+              "response": "groups"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups"
         },
         {
           "actions": [
@@ -2620,9 +2621,9 @@
               "id": "deleteGroup"
             },
             {
+              "id": "serveGroup",
               "response": "group",
               "name": "GET",
-              "id": "serveGroup",
               "param": {
                 "fields": "string"
               }
@@ -2631,81 +2632,80 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties",
           "actions": [
             {
-              "response": "properties",
               "param": {
                 "fields": "string"
               },
-              "id": "getProperties",
-              "name": "GET"
+              "response": "properties",
+              "name": "GET",
+              "id": "getProperties"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties"
+          ]
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties/{name}",
+          "actions": [
+            {
+              "response": "text",
+              "name": "PUT",
+              "request": "text",
+              "id": "putUserProperty"
+            },
+            {
+              "name": "DELETE",
+              "id": "removeUserProperty"
+            },
+            {
+              "name": "GET",
+              "response": "text",
+              "id": "serveUserProperties"
+            }
+          ]
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles",
+          "actions": [
+            {
+              "id": "addRole",
+              "name": "POST",
+              "response": "role",
+              "request": "role"
+            },
+            {
+              "id": "addRolePut",
+              "response": "roles",
+              "name": "PUT",
+              "request": "roles"
+            },
+            {
+              "id": "listRoles",
+              "name": "GET",
+              "response": "roles"
+            }
+          ]
         },
         {
           "actions": [
             {
-              "id": "putUserProperty",
-              "name": "PUT",
-              "response": "text",
-              "request": "text"
+              "id": "addRoleSimple",
+              "name": "POST",
+              "response": "role"
             },
             {
-              "id": "removeUserProperty",
+              "id": "deleteRole",
               "name": "DELETE"
             },
             {
               "name": "GET",
-              "id": "serveUserProperties",
-              "response": "text"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/properties/{name}"
-        },
-        {
-          "actions": [
-            {
-              "name": "POST",
-              "id": "addRole",
-              "request": "role",
-              "response": "role"
-            },
-            {
-              "request": "roles",
-              "response": "roles",
-              "id": "addRolePut",
-              "name": "PUT"
-            },
-            {
-              "response": "roles",
-              "name": "GET",
-              "id": "listRoles"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles"
-        },
-        {
-          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}",
-          "actions": [
-            {
               "response": "role",
-              "name": "POST",
-              "id": "addRoleSimple"
-            },
-            {
-              "name": "DELETE",
-              "id": "deleteRole"
-            },
-            {
-              "name": "GET",
-              "id": "listRole",
-              "response": "role"
+              "id": "listRole"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/userGroups/{groupLocator}/roles/{roleId}/{scope}"
         }
-      ],
-      "name": "userGroups"
+      ]
     },
     {
       "name": "users",
@@ -2713,21 +2713,21 @@
         {
           "actions": [
             {
+              "id": "createUser",
               "param": {
                 "fields": "string"
               },
-              "id": "createUser",
-              "name": "POST",
               "request": "user",
-              "response": "user"
+              "response": "user",
+              "name": "POST"
             },
             {
-              "response": "users",
-              "name": "GET",
               "id": "serveUsers",
               "param": {
                 "fields": "string"
-              }
+              },
+              "name": "GET",
+              "response": "users"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/users"
@@ -2736,25 +2736,25 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}",
           "actions": [
             {
-              "name": "DELETE",
-              "id": "deleteUser"
+              "id": "deleteUser",
+              "name": "DELETE"
             },
             {
-              "response": "user",
-              "name": "GET",
+              "id": "serveUser",
               "param": {
                 "fields": "string"
               },
-              "id": "serveUser"
+              "response": "user",
+              "name": "GET"
             },
             {
               "response": "user",
+              "name": "PUT",
               "request": "user",
-              "id": "updateUser",
               "param": {
                 "fields": "string"
               },
-              "name": "PUT"
+              "id": "updateUser"
             }
           ]
         },
@@ -2762,31 +2762,31 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/groups",
           "actions": [
             {
-              "request": "group",
-              "response": "group",
-              "name": "POST",
+              "id": "addGroup",
               "param": {
                 "fields": "string"
               },
-              "id": "addGroup"
+              "request": "group",
+              "name": "POST",
+              "response": "group"
             },
             {
+              "name": "GET",
               "response": "groups",
               "param": {
                 "fields": "string"
               },
-              "id": "getGroups",
-              "name": "GET"
+              "id": "getGroups"
             },
             {
+              "id": "replaceGroups",
               "doc": "Replaces user's roles with the submitted ones",
               "request": "groups",
-              "response": "groups",
-              "name": "PUT",
               "param": {
                 "fields": "string"
               },
-              "id": "replaceGroups"
+              "response": "groups",
+              "name": "PUT"
             }
           ]
         },
@@ -2794,12 +2794,12 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/properties",
           "actions": [
             {
-              "name": "GET",
               "id": "serveUserProperties",
+              "name": "GET",
+              "response": "properties",
               "param": {
                 "fields": "string"
-              },
-              "response": "properties"
+              }
             }
           ]
         },
@@ -2807,29 +2807,30 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/properties/{name}",
           "actions": [
             {
+              "name": "PUT",
               "response": "text",
               "request": "text",
-              "id": "putUserProperty",
-              "name": "PUT"
+              "id": "putUserProperty"
             },
             {
               "name": "DELETE",
               "id": "removeUserProperty"
             },
             {
+              "name": "GET",
               "response": "text",
-              "id": "serveUserProperty",
-              "name": "GET"
+              "id": "serveUserProperty"
             }
           ]
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles",
           "actions": [
             {
               "id": "addRole",
+              "response": "role",
               "name": "POST",
-              "request": "role",
-              "response": "role"
+              "request": "role"
             },
             {
               "id": "listRoles",
@@ -2838,21 +2839,20 @@
             },
             {
               "doc": "Replaces user's roles with the submitted ones",
-              "request": "roles",
-              "response": "roles",
+              "id": "replaceRoles",
               "name": "PUT",
-              "id": "replaceRoles"
+              "response": "roles",
+              "request": "roles"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles"
+          ]
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/roles/{roleId}/{scope}",
           "actions": [
             {
               "name": "PUT",
-              "id": "addRoleSimple",
-              "response": "role"
+              "response": "role",
+              "id": "addRoleSimple"
             },
             {
               "id": "addRoleSimplePost",
@@ -2863,27 +2863,27 @@
               "id": "deleteRole"
             },
             {
-              "response": "role",
               "name": "GET",
+              "response": "role",
               "id": "listRole"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/{field}",
           "actions": [
             {
               "name": "GET",
-              "id": "serveUserField",
-              "response": "text"
+              "response": "text",
+              "id": "serveUserField"
             },
             {
-              "request": "text",
-              "response": "text",
               "id": "setUserField",
-              "name": "PUT"
+              "response": "text",
+              "name": "PUT",
+              "request": "text"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/users/{userLocator}/{field}"
         }
       ]
     },
@@ -2893,13 +2893,13 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances",
           "actions": [
             {
+              "response": "vcs-root-instances",
               "name": "GET",
-              "id": "serveInstances",
               "param": {
                 "fields": "string",
                 "locator": "string"
               },
-              "response": "vcs-root-instances"
+              "id": "serveInstances"
             }
           ]
         },
@@ -2907,11 +2907,11 @@
           "actions": [
             {
               "id": "serveInstance",
+              "name": "GET",
+              "response": "vcs-root-instance",
               "param": {
                 "fields": "string"
-              },
-              "name": "GET",
-              "response": "vcs-root-instance"
+              }
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}"
@@ -2923,9 +2923,9 @@
               "param": {
                 "fields": "string"
               },
-              "id": "getVcsFileListing",
               "name": "GET",
               "response": "files",
+              "id": "getVcsFileListing",
               "doc": "Lists files in VCS Experimental support only"
             }
           ]
@@ -2934,86 +2934,86 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/content{path:(/.*)?}",
           "actions": [
             {
-              "name": "GET",
-              "id": "getVcsFileContent",
               "doc": "Gets content of a file form VCS Experimental support only",
-              "response": "any"
+              "id": "getVcsFileContent",
+              "response": "any",
+              "name": "GET"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path:(/.*)?}",
           "actions": [
             {
-              "doc": "Gets VCS file details Experimental support only",
               "response": "file",
               "name": "GET",
-              "id": "getVcsFile"
+              "id": "getVcsFile",
+              "doc": "Gets VCS file details Experimental support only"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/files/latest/metadata{path:(/.*)?}"
         },
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/properties",
           "actions": [
             {
-              "response": "properties",
               "id": "serveRootInstanceProperties",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "name": "GET",
+              "response": "properties"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/properties"
+          ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState",
           "actions": [
             {
               "name": "DELETE",
               "id": "deleteRepositoryState"
             },
             {
-              "id": "getRepositoryState",
+              "response": "entries",
               "name": "GET",
-              "response": "entries"
+              "id": "getRepositoryState"
             },
             {
-              "response": "entries",
-              "request": "entries",
+              "id": "setRepositoryState",
               "name": "PUT",
-              "id": "setRepositoryState"
+              "response": "entries",
+              "request": "entries"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState"
         },
         {
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/repositoryState/creationDate",
           "actions": [
             {
-              "response": "any",
               "id": "getRepositoryStateCreationDate",
+              "response": "any",
               "name": "GET"
             }
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}",
           "actions": [
             {
               "name": "DELETE",
               "id": "deleteInstanceField"
             },
             {
-              "response": "text",
+              "id": "serveInstanceField",
               "name": "GET",
-              "id": "serveInstanceField"
+              "response": "text"
             },
             {
+              "id": "setInstanceField",
               "request": "text",
               "response": "text",
-              "name": "PUT",
-              "id": "setInstanceField"
+              "name": "PUT"
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-root-instances/{vcsRootInstanceLocator}/{field}"
         }
       ],
       "name": "vcs-root-instances"
@@ -3023,17 +3023,17 @@
         {
           "actions": [
             {
-              "id": "addRoot",
+              "name": "POST",
+              "response": "vcs-root",
               "param": {
                 "fields": "string"
               },
-              "name": "POST",
-              "response": "vcs-root",
-              "request": "vcs-root"
+              "request": "vcs-root",
+              "id": "addRoot"
             },
             {
-              "response": "vcs-roots",
               "name": "GET",
+              "response": "vcs-roots",
               "param": {
                 "locator": "string",
                 "fields": "string"
@@ -3044,31 +3044,31 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots"
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}",
           "actions": [
             {
-              "name": "DELETE",
-              "id": "deleteRoot"
+              "id": "deleteRoot",
+              "name": "DELETE"
             },
             {
+              "id": "serveRoot",
               "name": "GET",
+              "response": "vcs-root",
               "param": {
                 "fields": "string"
-              },
-              "id": "serveRoot",
-              "response": "vcs-root"
+              }
             }
-          ]
+          ],
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}"
         },
         {
           "actions": [
             {
-              "response": "vcs-root-instances",
               "id": "serveRootInstances",
               "param": {
                 "fields": "string"
               },
-              "name": "GET"
+              "name": "GET",
+              "response": "vcs-root-instances"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances"
@@ -3077,40 +3077,40 @@
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}",
           "actions": [
             {
-              "id": "serveRootInstance",
               "param": {
                 "fields": "string"
               },
               "name": "GET",
-              "response": "vcs-root-instance"
+              "response": "vcs-root-instance",
+              "id": "serveRootInstance"
+            }
+          ]
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties",
+          "actions": [
+            {
+              "id": "serveRootInstanceProperties",
+              "response": "properties",
+              "name": "GET",
+              "param": {
+                "fields": "string"
+              }
             }
           ]
         },
         {
           "actions": [
             {
-              "response": "properties",
+              "id": "serveInstanceField",
               "name": "GET",
-              "param": {
-                "fields": "string"
-              },
-              "id": "serveRootInstanceProperties"
-            }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/properties"
-        },
-        {
-          "actions": [
-            {
-              "response": "text",
-              "name": "GET",
-              "id": "serveInstanceField"
+              "response": "text"
             },
             {
+              "response": "text",
               "name": "PUT",
-              "id": "setInstanceField",
               "request": "text",
-              "response": "text"
+              "id": "setInstanceField"
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/instances/{vcsRootInstanceLocator}/{field}"
@@ -3118,25 +3118,25 @@
         {
           "actions": [
             {
-              "request": "properties",
               "response": "properties",
               "name": "PUT",
+              "request": "properties",
               "param": {
                 "fields": "string"
               },
-              "id": "changProperties"
+              "id": "changeProperties"
             },
             {
               "id": "deleteAllProperties",
               "name": "DELETE"
             },
             {
+              "id": "serveProperties",
               "name": "GET",
+              "response": "properties",
               "param": {
                 "fields": "string"
-              },
-              "id": "serveProperties",
-              "response": "properties"
+              }
             }
           ],
           "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/properties"
@@ -3149,9 +3149,9 @@
               "id": "deleteParameter"
             },
             {
+              "id": "putParameter",
               "request": "text",
               "response": "text",
-              "id": "putParameter",
               "name": "PUT"
             },
             {
@@ -3162,31 +3162,31 @@
           ]
         },
         {
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/settingsFile",
           "actions": [
             {
-              "id": "getSettingsFile",
+              "response": "text",
               "name": "GET",
-              "response": "text",
-              "doc": "Experimental support only"
-            }
-          ]
-        },
-        {
-          "actions": [
-            {
-              "response": "text",
-              "id": "serveField",
-              "name": "GET"
-            },
-            {
-              "id": "setField",
-              "name": "PUT",
-              "request": "text",
-              "response": "text"
+              "doc": "Experimental support only",
+              "id": "getSettingsFile"
             }
           ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/{field}"
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/settingsFile"
+        },
+        {
+          "uri": "http://tc.maxmind.com:8111/app/rest/vcs-roots/{vcsRootLocator}/{field}",
+          "actions": [
+            {
+              "response": "text",
+              "name": "GET",
+              "id": "serveField"
+            },
+            {
+              "request": "text",
+              "response": "text",
+              "name": "PUT",
+              "id": "setField"
+            }
+          ]
         }
       ],
       "name": "vcs-roots"
@@ -3195,14 +3195,14 @@
       "name": "version",
       "resources": [
         {
+          "uri": "http://tc.maxmind.com:8111/app/rest/version",
           "actions": [
             {
-              "response": "text",
               "id": "serveVersion",
+              "response": "text",
               "name": "GET"
             }
-          ],
-          "uri": "http://tc.maxmind.com:8111/app/rest/version"
+          ]
         }
       ]
     },
@@ -3222,5 +3222,2450 @@
       "name": "{projectLocator}"
     }
   ],
+  "typemap": {
+    "step": {
+      "name": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "type": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "properties": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1,
+        "from": "propEntity"
+      },
+      "disabled": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "id": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      }
+    },
+    "parameterType": {
+      "rawValue": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "investigation": {
+      "resolution": {
+        "type": "resolution",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "state": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "target": {
+        "is_sequence": 1,
+        "type": "problemTarget",
+        "minOccurs": "0"
+      },
+      "responsible": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "user"
+      },
+      "assignee": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "user"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "scope": {
+        "is_sequence": 1,
+        "type": "problemScope",
+        "minOccurs": "0"
+      },
+      "assignment": {
+        "type": "comment",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "buildType": {
+      "description": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "features": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "snapshot-dependencies": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "steps": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "triggers": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "investigations": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "uuid": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "builds": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "projectName": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "projectInternalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "locator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "project": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "settings": {
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1
+      },
+      "projectId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agent-requirements": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "vcs-root-entries": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "parameters": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "properties"
+      },
+      "template": {
+        "type": "buildType",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "internalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "templateFlag": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "paused": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "artifact-dependencies": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "webUrl": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "investigations": {
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "investigation": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "minOccurs": "0"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "comment": {
+      "timestamp": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "user": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "text": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      }
+    },
+    "copyOptionsDescription": {
+      "projectsIdsMap": {
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1
+      },
+      "vcsRootsIdsMap": {
+        "type": "properties",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "copyAllAssociatedSettings": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "buildTypesIdsMap": {
+        "type": "properties",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "problem": {
+      "investigations": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "type": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "identity": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "problemOccurrences": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "mutes": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "triggeredBy": {
+      "buildType": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "date": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "user": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "rawValue": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "type": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "details": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "branch": {
+      "unspecified": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "default": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "role": {
+      "roleId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "scope": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "branches": {
+      "branch": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      }
+    },
+    "files": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "file": {
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "is_ref": 1
+      }
+    },
+    "items": {
+      "item": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      }
+    },
+    "tests": {
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "test": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "user": {
+      "properties": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "roles": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "email": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "username": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastLogin": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "groups": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "password": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "id": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "realm": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "vcs-root": {
+      "status": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "properties": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "projectLocator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "project": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "vcsRootInstances": {
+        "type": "vcs-root-instances",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastChecked": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "uuid": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "internalId": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "modificationCheckInterval": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "agent-requirements": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "agent-requirement": {
+        "is_ref": 1,
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "problemOccurrences": {
+      "newFailed": {
+        "type": "int",
+        "is_attribute": 1,
+        "from": "occurrencesSummary"
+      },
+      "problemOccurrence": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "is_sequence": 1
+      },
+      "passed": {
+        "type": "int",
+        "from": "occurrencesSummary",
+        "is_attribute": 1
+      },
+      "failed": {
+        "type": "int",
+        "from": "occurrencesSummary",
+        "is_attribute": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "muted": {
+        "is_attribute": 1,
+        "from": "occurrencesSummary",
+        "type": "int"
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "ignored": {
+        "type": "int",
+        "is_attribute": 1,
+        "from": "occurrencesSummary"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "newBuildTypeDescription": {
+      "sourceBuildTypeLocator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsRootsIdsMap": {
+        "from": "copyOptionsDescription",
+        "type": "properties",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "sourceBuildType": {
+        "type": "buildType",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "copyAllAssociatedSettings": {
+        "type": "boolean",
+        "is_attribute": 1,
+        "from": "copyOptionsDescription"
+      },
+      "buildTypesIdsMap": {
+        "from": "copyOptionsDescription",
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "projectsIdsMap": {
+        "from": "copyOptionsDescription",
+        "type": "properties",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "tag": {
+      "private": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "owner": {
+        "type": "user",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "project": {
+      "parentProjectInternalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "parameters": {
+        "is_sequence": 1,
+        "type": "properties",
+        "minOccurs": "0"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "internalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "projects": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "webUrl": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "locator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "templates": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "buildTypes"
+      },
+      "parentProjectId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsRoots": {
+        "is_sequence": 1,
+        "type": "vcs-roots",
+        "minOccurs": "0"
+      },
+      "parentProjectName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "archived": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "uuid": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "description": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "buildTypes": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "parentProject": {
+        "type": "project",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "resolution": {
+      "type": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "time": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "xs:string"
+      }
+    },
+    "agent-requirement": {
+      "id": {
+        "type": "string",
+        "is_attribute": 1,
+        "from": "propEntity"
+      },
+      "disabled": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "properties": {
+        "is_ref": 1,
+        "from": "propEntity",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "type": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "name": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "revisions": {
+      "revision": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "type": "revision",
+        "minOccurs": "0"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "snapshot-dependency": {
+      "name": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "type": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "source-buildType": {
+        "minOccurs": "0",
+        "type": "buildType",
+        "is_sequence": 1
+      },
+      "properties": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1,
+        "from": "propEntity"
+      },
+      "disabled": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "id": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      }
+    },
+    "problemTarget": {
+      "anyProblem": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "problems": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "tests": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      }
+    },
+    "plugins": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "plugin": {
+        "is_ref": 1,
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "vcsLabeling": {
+      "vcsRoots": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "vcs-roots"
+      },
+      "type": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "branchFilter": {
+        "type": "xs:string",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "labelName": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "mute": {
+      "resolution": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "resolution"
+      },
+      "target": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "problemTarget"
+      },
+      "id": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "scope": {
+        "type": "problemScope",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "assignment": {
+        "is_sequence": 1,
+        "type": "comment",
+        "minOccurs": "0"
+      }
+    },
+    "file-ref": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "agent": {
+      "pool": {
+        "minOccurs": "0",
+        "type": "agentPool",
+        "is_sequence": 1
+      },
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "connected": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "properties": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "typeId": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "enabled": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "ip": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "authorized": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "id": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "uptodate": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "vcs-root-instances": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "vcs-root-instance": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "minOccurs": "0"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "properties": {
+      "property": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "snapshot-dependencies": {
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "snapshot-dependency": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      }
+    },
+    "roles": {
+      "role": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "minOccurs": "0"
+      }
+    },
+    "features": {
+      "feature": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "fileChange": {
+      "after-revision": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "relative-file": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "file": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "before-revision": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "vcs-root-entry": {
+      "vcs-root": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "checkout-rules": {
+        "type": "xs:string",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "problemOccurrence": {
+      "mute": {
+        "minOccurs": "0",
+        "type": "mute",
+        "is_sequence": 1
+      },
+      "problem": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "currentlyMuted": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "details": {
+        "type": "xs:string",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "build": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "muted": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "type": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "identity": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "additionalData": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      },
+      "currentlyInvestigated": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "artifact-dependencies": {
+      "artifact-dependency": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "groups": {
+      "group": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "is_sequence": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "feature": {
+      "properties": {
+        "from": "propEntity",
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "name": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "type": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "string"
+      },
+      "id": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "disabled": {
+        "type": "boolean",
+        "is_attribute": 1,
+        "from": "propEntity"
+      }
+    },
+    "propEntity": {
+      "disabled": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "type": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "properties": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      }
+    },
+    "buildTriggeringOptions": {
+      "rebuildDependencies": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "buildTypes"
+      },
+      "queueAtTop": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "rebuildAllDependencies": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "cleanSources": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "server": {
+      "currentTime": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "users": {
+        "minOccurs": "0",
+        "type": "href",
+        "is_sequence": 1
+      },
+      "vcsRoots": {
+        "type": "href",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "versionMinor": {
+        "is_attribute": 1,
+        "type": "byte"
+      },
+      "userGroups": {
+        "minOccurs": "0",
+        "type": "href",
+        "is_sequence": 1
+      },
+      "agentPools": {
+        "type": "href",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "buildNumber": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "buildQueue": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "href"
+      },
+      "versionMajor": {
+        "is_attribute": 1,
+        "type": "byte"
+      },
+      "buildDate": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "version": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "internalId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "projects": {
+        "is_sequence": 1,
+        "type": "href",
+        "minOccurs": "0"
+      },
+      "startTime": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "builds": {
+        "type": "href",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "agents": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "href"
+      }
+    },
+    "agents": {
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "agent": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "file": {
+      "parent": {
+        "type": "file-ref",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1,
+        "from": "file-ref"
+      },
+      "content": {
+        "minOccurs": "0",
+        "type": "href",
+        "is_sequence": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1,
+        "from": "file-ref"
+      },
+      "size": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "children": {
+        "is_sequence": 1,
+        "type": "href",
+        "minOccurs": "0"
+      },
+      "modificationTime": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "progress-info": {
+      "estimatedTotalSeconds": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "outdated": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "probablyHanging": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "elapsedSeconds": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "currentStageText": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "percentageComplete": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "trigger": {
+      "id": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "disabled": {
+        "type": "boolean",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "properties": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1,
+        "from": "propEntity"
+      },
+      "name": {
+        "type": "string",
+        "from": "propEntity",
+        "is_attribute": 1
+      },
+      "type": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "occurrencesSummary": {
+      "muted": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "ignored": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "failed": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "passed": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "newFailed": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "builds": {
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "build": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "minOccurs": "0"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "artifact-dependency": {
+      "id": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "disabled": {
+        "is_attribute": 1,
+        "from": "propEntity",
+        "type": "boolean"
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "from": "propEntity",
+        "is_ref": 1
+      },
+      "source-buildType": {
+        "minOccurs": "0",
+        "type": "buildType",
+        "is_sequence": 1
+      },
+      "type": {
+        "type": "string",
+        "is_attribute": 1,
+        "from": "propEntity"
+      },
+      "name": {
+        "from": "propEntity",
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "steps": {
+      "step": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "vcs-roots": {
+      "vcs-root": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "plugin": {
+      "parameters": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "properties"
+      },
+      "loadPath": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "displayName": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "version": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "issueUsage": {
+      "changes": {
+        "is_sequence": 1,
+        "type": "changes",
+        "minOccurs": "0"
+      },
+      "issue": {
+        "is_sequence": 1,
+        "type": "issue",
+        "minOccurs": "0"
+      }
+    },
+    "href": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "build": {
+      "personal": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "agent": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "running": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "canceledInfo": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "comment"
+      },
+      "tags": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "startEstimate": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "xs:string"
+      },
+      "snapshot-dependencies": {
+        "is_sequence": 1,
+        "type": "builds",
+        "minOccurs": "0"
+      },
+      "properties": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "compatibleAgents": {
+        "is_sequence": 1,
+        "type": "agents",
+        "minOccurs": "0"
+      },
+      "buildTypeInternalId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "waitReason": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      },
+      "triggered": {
+        "minOccurs": "0",
+        "type": "triggeredBy",
+        "is_sequence": 1
+      },
+      "webUrl": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "artifact-dependencies": {
+        "type": "builds",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "running-info": {
+        "minOccurs": "0",
+        "type": "progress-info",
+        "is_sequence": 1
+      },
+      "number": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "relatedIssues": {
+        "type": "issuesUsages",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "statistics": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "properties"
+      },
+      "defaultBranch": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "unspecifiedBranch": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "locator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "pinned": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "triggeringOptions": {
+        "type": "buildTriggeringOptions",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "comment": {
+        "minOccurs": "0",
+        "type": "comment",
+        "is_sequence": 1
+      },
+      "custom-artifact-dependencies": {
+        "type": "artifact-dependencies",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "statusText": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "percentageComplete": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "buildType": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "branchName": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "finishDate": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "xs:string"
+      },
+      "artifacts": {
+        "minOccurs": "0",
+        "type": "files",
+        "is_sequence": 1
+      },
+      "buildTypeId": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "changes": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "history": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "queuedDate": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "xs:string"
+      },
+      "pinInfo": {
+        "minOccurs": "0",
+        "type": "comment",
+        "is_sequence": 1
+      },
+      "status": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "lastChanges": {
+        "minOccurs": "0",
+        "type": "changes",
+        "is_sequence": 1
+      },
+      "user": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "taskId": {
+        "type": "long",
+        "is_attribute": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "testOccurrences": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "problemOccurrences": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "attributes": {
+        "minOccurs": "0",
+        "type": "entries",
+        "is_sequence": 1
+      },
+      "state": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "revisions": {
+        "is_sequence": 1,
+        "type": "revisions",
+        "minOccurs": "0"
+      },
+      "startDate": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "xs:string"
+      }
+    },
+    "changes": {
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "change": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      }
+    },
+    "mutes": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "mute": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "type": "mute",
+        "minOccurs": "0"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "entries": {
+      "count": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "entry": {
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "minOccurs": "0",
+        "is_ref": 1
+      }
+    },
+    "buildTypes": {
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "buildType": {
+        "is_ref": 1,
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "testOccurrence": {
+      "mute": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "mute"
+      },
+      "currentlyMuted": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "ignored": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "nextFixed": {
+        "type": "testOccurrence",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "duration": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "test": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "muted": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "build": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "ignoreDetails": {
+        "type": "xs:string",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "firstFailed": {
+        "is_sequence": 1,
+        "type": "testOccurrence",
+        "minOccurs": "0"
+      },
+      "status": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "details": {
+        "minOccurs": "0",
+        "type": "xs:string",
+        "is_sequence": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "currentlyInvestigated": {
+        "type": "boolean",
+        "is_attribute": 1
+      }
+    },
+    "change": {
+      "locator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "files": {
+        "type": "fileChanges",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "vcsRootInstance": {
+        "minOccurs": "0",
+        "type": "vcs-root-instance",
+        "is_sequence": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "id": {
+        "is_attribute": 1,
+        "type": "long"
+      },
+      "webUrl": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "username": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "user": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "personal": {
+        "type": "boolean",
+        "is_attribute": 1
+      },
+      "comment": {
+        "is_sequence": 1,
+        "type": "xs:string",
+        "minOccurs": "0"
+      },
+      "version": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "issuesUsages": {
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "issueUsage": {
+        "minOccurs": "0",
+        "type": "issueUsage",
+        "maxOccurs": "unbounded",
+        "is_sequence": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "testOccurrences": {
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "testOccurrence": {
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "ignored": {
+        "type": "int",
+        "is_attribute": 1,
+        "from": "occurrencesSummary"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "muted": {
+        "from": "occurrencesSummary",
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "newFailed": {
+        "from": "occurrencesSummary",
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "passed": {
+        "type": "int",
+        "is_attribute": 1,
+        "from": "occurrencesSummary"
+      },
+      "failed": {
+        "type": "int",
+        "from": "occurrencesSummary",
+        "is_attribute": 1
+      }
+    },
+    "fileChanges": {
+      "file": {
+        "minOccurs": "0",
+        "type": "fileChange",
+        "maxOccurs": "unbounded",
+        "is_sequence": 1
+      }
+    },
+    "group": {
+      "description": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "properties": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "roles": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "parent-groups": {
+        "type": "groups",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "users": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "key": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "child-groups": {
+        "type": "groups",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "vcs-root-instance": {
+      "status": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastVersion": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "properties": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastVersionInternal": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsName": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "projectLocator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcs-root": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "lastChecked": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsRootInternalId": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcs-root-id": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "agentPool": {
+      "id": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "locator": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "agents": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "projects": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      }
+    },
+    "users": {
+      "user": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      }
+    },
+    "triggers": {
+      "trigger": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "revision": {
+      "internalVersion": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "version": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "vcs-root-instance": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      }
+    },
+    "test": {
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "mutes": {
+        "is_sequence": 1,
+        "minOccurs": "0",
+        "is_ref": 1
+      },
+      "investigations": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "testOccurrences": {
+        "is_ref": 1,
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "id": {
+        "type": "long",
+        "is_attribute": 1
+      }
+    },
+    "tags": {
+      "tag": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "maxOccurs": "unbounded",
+        "is_sequence": 1
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "agentPools": {
+      "agentPool": {
+        "is_ref": 1,
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "href": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "nextHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      }
+    },
+    "entry": {
+      "value": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "projects": {
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "href": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "prevHref": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "project": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded",
+        "is_ref": 1
+      }
+    },
+    "problems": {
+      "prevHref": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "problem": {
+        "is_ref": 1,
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      },
+      "count": {
+        "is_attribute": 1,
+        "type": "int"
+      },
+      "nextHref": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "vcs-root-entries": {
+      "count": {
+        "type": "int",
+        "is_attribute": 1
+      },
+      "vcs-root-entry": {
+        "is_ref": 1,
+        "maxOccurs": "unbounded",
+        "is_sequence": 1,
+        "minOccurs": "0"
+      }
+    },
+    "property": {
+      "own": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "name": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "type": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "parameterType"
+      },
+      "value": {
+        "is_attribute": 1,
+        "type": "string"
+      }
+    },
+    "problemScope": {
+      "buildType": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "is_ref": 1
+      },
+      "project": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      },
+      "buildTypes": {
+        "is_ref": 1,
+        "minOccurs": "0",
+        "is_sequence": 1
+      }
+    },
+    "buildCancelRequest": {
+      "readdIntoQueue": {
+        "is_attribute": 1,
+        "type": "boolean"
+      },
+      "comment": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "newProjectDescription": {
+      "sourceProject": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "project"
+      },
+      "projectsIdsMap": {
+        "minOccurs": "0",
+        "type": "properties",
+        "is_sequence": 1,
+        "from": "copyOptionsDescription"
+      },
+      "name": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "buildTypesIdsMap": {
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "properties",
+        "from": "copyOptionsDescription"
+      },
+      "sourceProjectLocator": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "copyAllAssociatedSettings": {
+        "type": "boolean",
+        "from": "copyOptionsDescription",
+        "is_attribute": 1
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      },
+      "vcsRootsIdsMap": {
+        "from": "copyOptionsDescription",
+        "minOccurs": "0",
+        "is_sequence": 1,
+        "type": "properties"
+      },
+      "parentProject": {
+        "is_sequence": 1,
+        "type": "project",
+        "minOccurs": "0"
+      }
+    },
+    "issue": {
+      "url": {
+        "is_attribute": 1,
+        "type": "string"
+      },
+      "id": {
+        "type": "string",
+        "is_attribute": 1
+      }
+    },
+    "issues": {
+      "issue": {
+        "minOccurs": "0",
+        "type": "issue",
+        "is_sequence": 1,
+        "maxOccurs": "unbounded"
+      }
+    }
+  },
   "base_uri": "http://tc.maxmind.com:8111/app/rest"
 }

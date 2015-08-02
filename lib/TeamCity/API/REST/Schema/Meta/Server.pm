@@ -6,13 +6,13 @@ use namespace::autoclean;
 
 use Data::Structure::Util qw( unbless );
 use JSON::XS;
-use MooseX::Types::Moose qw( ArrayRef Str );
+use MooseX::Types::Moose qw( ArrayRef HashRef Str );
 
-use relative -to => qw( TeamCity::API::REST::Schema::Generator),
-    -aliased     => qw( HTML );
-
-use relative -to => qw( TeamCity::API::REST::Schema::Meta),
-    -aliased     => qw( Entity );
+use relative -aliased => qw(
+    ..::..::Typemap
+    ..::..::Generator::HTML
+    ..::Entity
+);
 
 our $JSON = JSON::XS->new->allow_blessed(1)->convert_blessed(1);
 
@@ -25,6 +25,12 @@ has base_uri => (
 has entities => (
     is       => 'ro',
     isa      => ArrayRef [Entity],
+    required => 1,
+);
+
+has typemap => (
+    is       => 'ro',
+    isa      => HashRef [ HashRef ],
     required => 1,
 );
 

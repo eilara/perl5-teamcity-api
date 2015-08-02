@@ -20,7 +20,7 @@ has xsd_file => (
     default => sub { shift->schema_file(XSD_NAME) },
 );
 
-has _typemap => (
+has typemap => (
     is      => 'ro',
     isa     => HashRef [HashRef],
     lazy    => 1,

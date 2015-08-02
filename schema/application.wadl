@@ -432,7 +432,7 @@
             <ns2:representation element="properties" mediaType="application/json"/>
           </ns2:response>
         </ns2:method>
-        <ns2:method id="changProperties" name="PUT">
+        <ns2:method id="changeProperties" name="PUT">
           <ns2:request>
             <ns2:param name="fields" style="query" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
             <ns2:representation element="properties" mediaType="application/xml"/>
