@@ -6,6 +6,10 @@ TeamCity::API - TeamCity REST Perl API
 
 version 0.000001
 
+# SCHEMA
+
+[REST schema](http://eilara.github.io/perl5-teamcity-api/).
+
 # DESIGN
 
     dev-bin/generate.pl - serialize TeamCity REST API schema
