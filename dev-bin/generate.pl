@@ -12,6 +12,5 @@ my $schema = Schema->new;
 
 my $schema_dir = dir('.')->subdir('schema');
 
-$schema_dir->file('schema.json')->spew( $schema->generate_json_schema );
-
-$schema_dir->file('schema.html')->spew( $schema->generate_html_description );
+$schema_dir->file('schema.html')->spew( $schema->to_html );
+$schema_dir->file('schema.json')->spew( $schema->to_json );

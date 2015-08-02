@@ -8,28 +8,25 @@ version 0.000001
 
 # DESIGN
 
-    dev-bin/generate.pl -
+    dev-bin/generate.pl - serialize TeamCity REST API schema
 
-        generates TeamCity schema Perl code by using Schema
+    TeamCity::API::REST::Schema::Meta::Server - the schema entry point
 
-    TeamCity::API::Rest::Schema -
+        A server has a base uri and an ordered list of entities. This is where
+        you start navigating the schema.
 
-        a schema is composed of a meta schema, a typemap, and a generator. It
-        collects the methods parsed by the meta schema into resources.
+    TeamCity::API::REST::Schema - the API schema
 
-    TeamCity::API::Rest::Schema::Meta -
+        Composed of meta schema and typemap. Converts these into a server.
 
-        a model of a WADL file, converts it into a list of methods.
+    TeamCity::API::REST::Schema::Meta - the WADL meta schema
 
-    TeamCity::API::Rest::Schema::Meta -
+        A model of a WADL file, converts it into a list of methods.
 
-        a model of an XSD file, converts it into a hash type name => type
+    TeamCity::API::REST::Schema::Types - the typemap
+
+        A model of an XSD file, converts it into a hash type name => type
         details.
-
-    TeamCity::API::Rest::Schema::Generator -
-
-        converts the list of entities methods and type definitions into a
-        facade of Perl classes.
 
 
 # AUTHOR
