@@ -62,10 +62,14 @@ html, body {
   }
 
   .method-GET, .method-POST, .method-PUT, .method-DELETE {
+    border-radius    : 3pt;
+    display          : inline-block;
     font-family      : monospace;
     font-weight      : bold;
     padding-left     : 2pt;
     padding-right    : 2pt;
+    text-align       : center;
+    width            : 4em;
   }
 
   .method-GET {
@@ -82,6 +86,13 @@ html, body {
 
   .method-DELETE {
     background-color : #E08080;
+  }
+
+  .spacer-cell {
+    border-left      : none;
+    border-right     : none;
+    padding          : 2px;
+    margin           : 0px;
   }
 
   </style>
@@ -105,6 +116,10 @@ html, body {
 
     <tbody>
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="1">/</td>
 
         <td class="path" rowspan="1">/</td>
@@ -115,6 +130,10 @@ html, body {
         <td><span class="action-id">serveRoot</span><span class=
         "param-name">(</span><span class="param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -258,6 +277,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="7">agents</td>
 
         <td class="path" rowspan="1">/</td>
@@ -267,14 +290,14 @@ html, body {
 
         <td><span class="action-id">serveAgents</span><span class=
         "param-name">(</span><span class=
-        "param-name">fields</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">includeDisconnected</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
         <span class=
         "param-name">includeUnauthorized</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
         <span class="param-name">locator</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
+        <span class="param-name">fields</span><span>:</span>
         <span class="param-type">string</span><span class=
         "param-name">)</span></td>
 
@@ -349,6 +372,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="1">apiVersion</td>
 
         <td class="path" rowspan="1">/</td>
@@ -360,6 +387,10 @@ html, body {
         "action-id">serveApiVersion</span><span class=
         "param-name">(</span><span class="param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -472,9 +503,9 @@ html, body {
 
         <td><span class="action-id">serveTags</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">fields</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">locator</span><span>:</span> <span class=
         "param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
@@ -541,6 +572,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="96">buildTypes</td>
 
         <td class="path" rowspan="2">/</td>
@@ -561,9 +596,9 @@ html, body {
         "param-type">()</span><span>→</span><span class="param-type">buildTypes</span></td>
 
         <td><span class=
-        "action-id">getBuildTypes</span><span class="param-name">(</span><span class="param-name">fields</span><span>:</span>
+        "action-id">getBuildTypes</span><span class="param-name">(</span><span class="param-name">locator</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">locator</span><span>:</span>
+        <span class="param-name">fields</span><span>:</span>
         <span class="param-type">string</span><span class=
         "param-name">)</span></td>
 
@@ -814,31 +849,31 @@ html, body {
 
         <td><span class="action-id">serveBuilds</span><span class=
         "param-name">(</span><span class=
-        "param-name">fields</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">count</span><span>:</span> <span class=
-        "param-type">int</span><span>,</span> <span class=
-        "param-name">includeCanceled</span><span>:</span>
-        <span class="param-type">boolean</span><span>,</span>
-        <span class="param-name">agentName</span><span>:</span>
-        <span class="param-type">string</span><span>,</span>
-        <span class="param-name">status</span><span>:</span>
-        <span class="param-type">string</span><span>,</span>
-        <span class="param-name">sinceDate</span><span>:</span>
+        "param-name">triggeredByUser</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
         <span class=
-        "param-name">triggeredByUser</span><span>:</span>
+        "param-name">includePersonal</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">count</span><span>:</span>
+        <span class="param-type">int</span><span>,</span>
+        <span class="param-name">sinceBuild</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
+        <span class=
+        "param-name">includeCanceled</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">start</span><span>:</span>
+        <span class="param-type">long</span><span>,</span>
+        <span class="param-name">sinceDate</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
+        <span class="param-name">fields</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
         <span class="param-name">locator</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">sinceBuild</span><span>:</span>
+        <span class="param-name">status</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">start</span><span>:</span>
-        <span class="param-type">long</span><span>,</span>
+        <span class="param-name">agentName</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
         <span class="param-name">onlyPinned</span><span>:</span>
-        <span class="param-type">boolean</span><span>,</span>
-        <span class=
-        "param-name">includePersonal</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
         <span class="param-name">tag</span><span>:</span>
         <span class="param-type">string</span><span class=
@@ -1842,6 +1877,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="34">builds</td>
 
         <td class="path" rowspan="2">/</td>
@@ -1864,36 +1903,36 @@ html, body {
         <td><span class=
         "action-id">serveAllBuilds</span><span class=
         "param-name">(</span><span class=
-        "param-name">start</span><span>:</span> <span class=
-        "param-type">long</span><span>,</span> <span class=
-        "param-name">onlyPinned</span><span>:</span> <span class=
-        "param-type">boolean</span><span>,</span> <span class=
-        "param-name">sinceBuild</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">sinceDate</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
+        "param-name">count</span><span>:</span> <span class=
+        "param-type">int</span><span>,</span> <span class=
+        "param-name">includePersonal</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
+        <span class=
         "param-name">triggeredByUser</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">status</span><span>:</span>
+        <span class="param-name">sinceDate</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
+        <span class="param-name">start</span><span>:</span>
+        <span class="param-type">long</span><span>,</span>
         <span class="param-name">buildType</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">agentName</span><span>:</span>
+        <span class="param-name">sinceBuild</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">fields</span><span>:</span>
-        <span class="param-type">string</span><span>,</span>
-        <span class="param-name">count</span><span>:</span>
-        <span class="param-type">int</span><span>,</span>
         <span class=
         "param-name">includeCanceled</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">status</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
+        <span class="param-name">locator</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
+        <span class="param-name">fields</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
         <span class="param-name">tag</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class=
-        "param-name">includePersonal</span><span>:</span>
-        <span class="param-type">boolean</span><span class=
+        <span class="param-name">onlyPinned</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">agentName</span><span>:</span>
+        <span class="param-type">string</span><span class=
         "param-name">)</span></td>
 
         <td>Serves builds matching supplied condition.</td>
@@ -1954,10 +1993,10 @@ html, body {
         <td><span class=
         "action-id">getZippedArtifacts</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">logBuildUsage</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">locator</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
         <span class=
         "param-name">resolveParameters</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
@@ -1978,10 +2017,10 @@ html, body {
         <td><span class=
         "action-id">getArtifactChildren</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">resolveParameters</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">locator</span><span>:</span>
+        <span class="param-type">string</span><span>,</span>
         <span class="param-name">fields</span><span>:</span>
         <span class="param-type">string</span><span class=
         "param-name">)</span></td>
@@ -1998,9 +2037,10 @@ html, body {
         <td><span class=
         "action-id">getArtifactContent</span><span class=
         "param-name">(</span><span class=
-        "param-name">resolveParameters</span><span>:</span>
+        "param-name">logBuildUsage</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
-        <span class="param-name">logBuildUsage</span><span>:</span>
+        <span class=
+        "param-name">resolveParameters</span><span>:</span>
         <span class="param-type">boolean</span><span class=
         "param-name">)</span></td>
         <td>
@@ -2029,10 +2069,10 @@ html, body {
         <td><span class=
         "action-id">getArtifactMetadata</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">resolveParameters</span><span>:</span>
-        <span class="param-type">boolean</span><span class=
+        <span class="param-type">boolean</span><span>,</span>
+        <span class="param-name">locator</span><span>:</span>
+        <span class="param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
       </tr>
@@ -2060,9 +2100,9 @@ html, body {
 
         <td><span class="action-id">getArtifacts</span><span class=
         "param-name">(</span><span class=
-        "param-name">fields</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">locator</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">fields</span><span>:</span> <span class=
         "param-type">string</span><span>,</span> <span class=
         "param-name">resolveParameters</span><span>:</span>
         <span class="param-type">boolean</span><span class=
@@ -2327,9 +2367,9 @@ html, body {
 
         <td><span class="action-id">serveTags</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">fields</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">locator</span><span>:</span> <span class=
         "param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
@@ -2363,6 +2403,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="2">cctray</td>
 
         <td class="path" rowspan="1">/</td>
@@ -2393,6 +2437,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="12">changes</td>
 
         <td class="path" rowspan="1">/</td>
@@ -2402,23 +2450,23 @@ html, body {
 
         <td><span class="action-id">serveChanges</span><span class=
         "param-name">(</span><span class=
-        "param-name">vcsRoot</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">project</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">sinceChange</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">start</span><span>:</span> <span class=
-        "param-type">long</span><span>,</span> <span class=
         "param-name">count</span><span>:</span> <span class=
         "param-type">int</span><span>,</span> <span class=
-        "param-name">fields</span><span>:</span> <span class=
+        "param-name">vcsRoot</span><span>:</span> <span class=
         "param-type">string</span><span>,</span> <span class=
         "param-name">buildType</span><span>:</span> <span class=
         "param-type">string</span><span>,</span> <span class=
+        "param-name">start</span><span>:</span> <span class=
+        "param-type">long</span><span>,</span> <span class=
+        "param-name">sinceChange</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">fields</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">locator</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
         "param-name">build</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">project</span><span>:</span> <span class=
         "param-type">string</span><span class=
         "param-name">)</span></td>
 
@@ -2593,6 +2641,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="6">debug</td>
 
         <td class="path" rowspan="1">/database/query/{query}</td>
@@ -2680,13 +2732,17 @@ html, body {
         <td><span class=
         "action-id">scheduleCheckingForChanges</span><span class=
         "param-name">(</span><span class=
-        "param-name">fields</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">locator</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">fields</span><span>:</span> <span class=
         "param-type">string</span><span class=
         "param-name">)</span></td>
 
         <td>Experimental use only!</td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -2704,6 +2760,10 @@ html, body {
         "param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -2741,6 +2801,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="2">problemOccurrences</td>
 
         <td class="path" rowspan="1">/</td>
@@ -2750,9 +2814,9 @@ html, body {
 
         <td><span class="action-id">getProblems</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
         "param-name">fields</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">locator</span><span>:</span> <span class=
         "param-type">string</span><span class=
         "param-name">)</span></td>
 
@@ -2771,6 +2835,10 @@ html, body {
         <span class="param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -2804,6 +2872,10 @@ html, body {
         <span class="param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -2984,31 +3056,31 @@ html, body {
 
         <td><span class="action-id">serveBuilds</span><span class=
         "param-name">(</span><span class=
-        "param-name">locator</span><span>:</span> <span class=
+        "param-name">agentName</span><span>:</span> <span class=
         "param-type">string</span><span>,</span> <span class=
-        "param-name">sinceBuild</span><span>:</span> <span class=
+        "param-name">tag</span><span>:</span> <span class=
         "param-type">string</span><span>,</span> <span class=
         "param-name">onlyPinned</span><span>:</span> <span class=
         "param-type">boolean</span><span>,</span> <span class=
-        "param-name">start</span><span>:</span> <span class=
-        "param-type">long</span><span>,</span> <span class=
+        "param-name">status</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
+        "param-name">locator</span><span>:</span> <span class=
+        "param-type">string</span><span>,</span> <span class=
         "param-name">fields</span><span>:</span> <span class=
         "param-type">string</span><span>,</span> <span class=
-        "param-name">agentName</span><span>:</span> <span class=
-        "param-type">string</span><span>,</span> <span class=
-        "param-name">count</span><span>:</span> <span class=
-        "param-type">int</span><span>,</span> <span class=
         "param-name">includeCanceled</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
-        <span class="param-name">status</span><span>:</span>
-        <span class="param-type">string</span><span>,</span>
-        <span class=
-        "param-name">triggeredByUser</span><span>:</span>
+        <span class="param-name">sinceBuild</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
         <span class="param-name">sinceDate</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
-        <span class="param-name">tag</span><span>:</span>
+        <span class="param-name">start</span><span>:</span>
+        <span class="param-type">long</span><span>,</span>
+        <span class=
+        "param-name">triggeredByUser</span><span>:</span>
         <span class="param-type">string</span><span>,</span>
+        <span class="param-name">count</span><span>:</span>
+        <span class="param-type">int</span><span>,</span>
         <span class=
         "param-name">includePersonal</span><span>:</span>
         <span class="param-type">boolean</span><span class=
@@ -3315,6 +3387,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="5">server</td>
 
         <td class="path" rowspan="1">/</td>
@@ -3346,27 +3422,27 @@ html, body {
 
         <td><span class="action-id">startBackup</span><span class=
         "param-name">(</span><span class=
+        "param-name">addTimestamp</span><span>:</span> <span class=
+        "param-type">boolean</span><span>,</span> <span class=
+        "param-name">includeDatabase</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
+        <span class=
         "param-name">includeBuildLogs</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
-        <span class="param-name">fileName</span><span>:</span>
-        <span class="param-type">string</span><span>,</span>
+        <span class=
+        "param-name">includePersonalChanges</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
+        <span class=
+        "param-name">includeSupplimentaryData</span><span>:</span>
+        <span class="param-type">boolean</span><span>,</span>
         <span class=
         "param-name">includeConfigs</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
         <span class=
         "param-name">includeRunningBuilds</span><span>:</span>
         <span class="param-type">boolean</span><span>,</span>
-        <span class=
-        "param-name">includeDatabase</span><span>:</span>
-        <span class="param-type">boolean</span><span>,</span>
-        <span class=
-        "param-name">includeSupplimentaryData</span><span>:</span>
-        <span class="param-type">boolean</span><span>,</span>
-        <span class=
-        "param-name">includePersonalChanges</span><span>:</span>
-        <span class="param-type">boolean</span><span>,</span>
-        <span class="param-name">addTimestamp</span><span>:</span>
-        <span class="param-type">boolean</span><span class=
+        <span class="param-name">fileName</span><span>:</span>
+        <span class="param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
       </tr>
@@ -3395,6 +3471,10 @@ html, body {
         "action-id">serveServerVersion</span><span class=
         "param-name">(</span><span class="param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -3432,6 +3512,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="2">tests</td>
 
         <td class="path" rowspan="1">/</td>
@@ -3462,6 +3546,10 @@ html, body {
         <span class="param-type">string</span><span class=
         "param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -3619,6 +3707,10 @@ html, body {
         <td><span class="action-id">listRole</span><span class=
         "param-name">(</span><span class="param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
@@ -3862,6 +3954,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="13">vcs-root-instances</td>
 
         <td class="path" rowspan="1">/</td>
@@ -4033,6 +4129,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="18">vcs-roots</td>
 
         <td class="path" rowspan="2">/</td>
@@ -4164,7 +4264,7 @@ html, body {
         "param-type">properties</span><span>→</span><span class="param-type">properties</span></td>
 
         <td><span class=
-        "action-id">changProperties</span><span class=
+        "action-id">changeProperties</span><span class=
         "param-name">(</span><span class=
         "param-name">fields</span><span>:</span> <span class=
         "param-type">string</span><span class=
@@ -4261,6 +4361,10 @@ html, body {
       </tr>
 
       <tr>
+        <td class="spacer-cell" colspan="5">
+      </tr>
+
+      <tr>
         <td class="entity" rowspan="1">version</td>
 
         <td class="path" rowspan="1">/</td>
@@ -4271,6 +4375,10 @@ html, body {
         <td><span class="action-id">serveVersion</span><span class=
         "param-name">(</span><span class="param-name">)</span></td>
         <td>
+      </tr>
+
+      <tr>
+        <td class="spacer-cell" colspan="5">
       </tr>
 
       <tr>
